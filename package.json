@@ -4,7 +4,7 @@
   "description": "My personal blog",
   "main": "index.js",
   "scripts": {
-    "build": "hugo -d blog",
+    "build": "hugo -d docs",
     "debug": "hugo server -D"
   },
   "keywords": [],
