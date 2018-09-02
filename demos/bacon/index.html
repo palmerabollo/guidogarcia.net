@@ -1,0 +1,68 @@
+<html>
+<head>
+    <script src="./bower_components/jquery/dist/jquery.min.js"></script>
+    <script src="./bower_components/bacon/dist/Bacon.min.js"></script>
+    <script src="./bower_components/d3/d3.min.js"></script>
+    <script src="./bower_components/rickshaw/rickshaw.min.js"></script>
+    <style>
+    body {
+        margin: 0;
+        padding: 0;
+    }
+    </style>
+</head>
+<body>
+    <script>
+        $(function() {
+            function avg(array) {
+                var sum = array.reduce(function(a, b) { return a + b; }, 0);
+                return sum / array.length;
+            }
+
+            var ypos = $(document).asEventStream('mousemove')
+                                  .map(function(pos) { return pos.pageY });
+
+            var yposavg = ypos.slidingWindow(50, 50).map(avg);
+
+            var dataRaw = [];
+            var dataMovingAverage = [];
+
+            var graph = new Rickshaw.Graph({
+                element: document.getElementById('chart'),
+                renderer: 'line',
+                series: [{
+                    color: 'steelblue',
+                    data: dataRaw
+                }, {
+                    color: 'tomato',
+                    data: dataMovingAverage
+                }]
+            });
+            graph.render();
+
+            yposavg.onValue(function (value) {
+                dataMovingAverage.push({x: Date.now(), y: window.innerHeight - value});
+                graph.update();
+            });
+
+            ypos.onValue(function (value) {
+                dataRaw.push({x: Date.now(), y: window.innerHeight - value});
+                graph.update();
+            });
+
+            var resize = function() {
+                [dataRaw, dataMovingAverage].forEach(function (arr) { arr.splice(0, arr.length) });
+                graph.configure({
+                    width: window.innerWidth,
+                    height: window.innerHeight
+                });
+                graph.render();
+            }
+            window.addEventListener('resize', resize);
+            resize();
+        });
+    </script>
+
+    <div id="chart"></div>
+</body>
+</html>
