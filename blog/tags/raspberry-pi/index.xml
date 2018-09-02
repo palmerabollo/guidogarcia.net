@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Raspberry Pi on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/raspberry-pi/</link>
+    <description>Recent content in Raspberry Pi on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 13 Sep 2012 19:24:58 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/raspberry-pi/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Node.js running on my Raspberry Pi. A benchmark.</title>
+      <link>http://guidogarcia.net/blog/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</link>
+      <pubDate>Thu, 13 Sep 2012 19:24:58 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</guid>
+      <description>Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
+See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.</description>
+    </item>
+    
+  </channel>
+</rss>

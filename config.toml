@@ -1,4 +1,4 @@
-baseURL = "http://guidogarcia.net/"
+baseURL = "http://guidogarcia.net/blog/"
 languageCode = "en-us"
 title = "Call me Guido"
 theme = "sam"
@@ -10,3 +10,7 @@ theme = "sam"
 [[params.mainMenu]]
   link = "https://twitter.com/palmerabollo"
   text = "Twitter"
+
+[[params.mainMenu]]
+  link = "http://bot.guidogarcia.net/"
+  text = "My bot"

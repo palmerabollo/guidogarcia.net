@@ -1,0 +1,246 @@
+<html>
+<head>
+	<script type="text/javascript" src="lib/common.js"></script>
+	<script type="text/javascript" src="lib/agent.js"></script>
+	<script type="text/javascript" src="lib/kdtree.js"></script>
+	<script type="text/javascript" src="lib/simulator.js"></script>
+	<title>Simulator</title>
+	
+	<style type="text/css">  
+      canvas {
+      	border: 1px dotted gray;
+      	float: left;
+      	margin-right: 2em;
+      } 
+      
+      label {
+      	display: block;
+      }
+      
+      body {
+      	text-align: justify;
+      	font-family: Verdana, Arial, serif;
+      	font-size: smaller;
+      	margin-right: 2em;
+      }
+      
+      .clearfix {
+      	clear: both;
+      }
+      
+      #dump_area {
+      	font-family: courier new, serif;
+      	font-size: small;
+      }
+    </style>
+</head>
+<body>
+	<canvas id="board" width="500" height="500">
+		Your browser does not support canvas.  Please use a modern browser with HTML5 support.
+	</canvas>
+	
+	<div id="params">
+		<p id="intro">
+		Algorithm for interactive navigation and planning of large numbers of agents in two-dimensional (crowded) environments.
+		<br/>
+		At runtime, each agent senses the environment independently and computes a collision-free motion based on the optimal
+		reciprocal collision avoidance (ORCA) formalism.
+		</p>
+		
+		<label for="agents"># agents</label>
+		<input type="text" name="agents" id="agents" value="10" />
+		
+		<label for="radius">agent radius</label>
+		<input type="text" name="radius" id="radius" value="12" />
+		
+		<input type="checkbox" name="obstacles" id="obstacles" checked="checked"> add obstacle (experimental)
+		<br /><br />
+		
+		<label for="speed">simulation speed</label>
+		<input type="range" min="0.1" max="1.0" step="0.1" value="0.3" name="speed" id="speed"/>
+		<br />
+		
+		<input type="button" value="start new simulation >>" id="run" onclick="run()">
+		
+		<input type="button" value="debug info" id="dump" onclick="dump()">
+		
+		<p id="dump_area">
+		</p>
+	</div>
+	
+	<div class="clearfix"></div>
+	
+	<a href="http://guidogarcia.net">guidogarcia.net</a> - <a href="https://github.com/palmerabollo/rvo2-js">rvo2-js project at github</a>
+	
+	<script type="text/javascript">
+		$ = function(id) {
+			return document.getElementById(id);
+		};
+		
+		var Board = function() {
+			var canvas = document.getElementById('board');
+			var ctx = canvas.getContext('2d');
+			
+			var w = canvas.width;
+			var h = canvas.height;
+
+			this.drawObstacles = function(simulator) {
+				var obstacles = simulator.getObstacles();
+
+				if (obstacles.length) {
+					ctx.fillStyle = "rgb(100,100,100)";
+					ctx.beginPath();
+					ctx.moveTo(obstacles[0].point.x + w/2, obstacles[0].point.y + h/2);
+					for (var i=1; i<obstacles.length; i++) {
+						ctx.lineTo(obstacles[i].point.x + w/2, obstacles[i].point.y + h/2);
+					}
+					ctx.closePath();
+					ctx.fill();
+				}
+			};
+			
+			this.drawAgents = function(simulator) {
+				var numAgents = simulator.getNumAgents();
+				
+				for (var i=0; i<numAgents; i++) {
+					ctx.fillStyle = "red";
+					
+					var pos = simulator.getAgentPosition(i);
+					var radius = simulator.getAgentRadius(i);
+					ctx.beginPath();
+					ctx.arc(pos.x + w/2 - 2, pos.y + h/2 - 2, radius, 0, Math.PI * 2, true);
+					ctx.fill();
+				}
+			};
+			
+			this.drawGoals = function(simulator) {
+				ctx.strokeStyle = "rgb(200,200,200)";
+				
+				var numAgents = simulator.getNumAgents();
+				for (var i=0; i<numAgents; i++) {
+					var pos = simulator.getGoal(i);
+					var radius = simulator.getAgentRadius(i);
+					ctx.beginPath();
+					ctx.arc(pos.x + w/2 - 2, pos.y + h/2 - 2, radius, 0, Math.PI * 2, true);
+					ctx.stroke();
+				}
+			};
+			
+			this.draw = function(simulator) {
+				this.reset();
+				this.drawObstacles(simulator);
+				this.drawAgents(simulator);
+				this.drawGoals(simulator);
+			}
+			
+			this.reset = function() {
+				ctx.clearRect(0,0,w,h);
+			}
+		}
+
+		var setPreferredVelocities = function(simulator) {
+			var stopped = 0;
+			for (var i = 0; i < simulator.getNumAgents (); ++i) {
+				if (RVOMath.absSq(simulator.getGoal(i).minus(simulator.getAgentPosition(i))) < simulator.getAgentRadius(i) * simulator.getAgentRadius(i)) {
+					// Agent is within one radius of its goal, set preferred velocity to zero
+					simulator.setAgentPrefVelocity (i, new Vector2 (0.0, 0.0));
+					stopped++;
+				} else {
+					// Agent is far away from its goal, set preferred velocity as unit vector towards agent's goal.
+					simulator.setAgentPrefVelocity(i, RVOMath.normalize (simulator.getGoal(i).minus(simulator.getAgentPosition(i))));
+				}
+			}
+			return stopped;
+		}
+		
+		var setupScenario = function(simulator)
+		{
+			// Specify global time step of the simulation.
+			var speed = new Number($("speed").value);
+			simulator.setTimeStep(speed);
+			
+			// Specify default parameters for agents that are subsequently added.
+			var velocity = new Vector2(1, 1);
+			var radius = new Number($("radius").value); // TODO validate
+			simulator.setAgentDefaults(
+					900, // neighbor distance (min = radius * radius)
+					30, // max neighbors
+					1000, // time horizon
+					1000, // time horizon obstacles
+					radius, // agent radius
+					10, // max speed
+					velocity // default velocity
+				);
+			
+			var NUM_AGENTS = $("agents").value;
+			for (var i=0; i<NUM_AGENTS; i++) {
+				var angle = i * (2*Math.PI) / NUM_AGENTS;
+				var x = -200;
+				var y = (500 / (NUM_AGENTS-1)) * i - 250;
+				simulator.addAgent(new Vector2 (x,y));
+ 			}
+			
+			// Create goals
+			var goals = [];
+			for (var i = 0; i < simulator.getNumAgents (); ++i) {
+				goals.push(simulator.getAgentPosition(i).scale(-0.8));
+			}
+			simulator.addGoals(goals);
+			
+			// Add (polygonal) obstacle(s), specifying vertices in counterclockwise order.
+			var vertices = [];
+			
+			if ($("obstacles").checked) {
+				for (var i=0; i<3; i++) {
+					var angle = i * (2*Math.PI) / 3 + Math.PI/4;
+					var x = Math.cos(angle) * 50 - 40;
+					var y = Math.sin(angle) * 50;
+					vertices.push(new Vector2(x,y));
+	 			}
+			}
+
+			simulator.addObstacle (vertices);
+			
+			// Process obstacles so that they are accounted for in the simulation.
+			simulator.processObstacles();
+		}
+
+		var simulator;
+		var board = new Board();
+		
+		var interval;
+		var run = function() {
+			simulator = Simulator.instance = new Simulator(); // not a real singleton (TODO)
+			clearInterval(interval);
+			board.reset();
+			setupScenario(simulator);
+			
+			var step = function() {
+				setPreferredVelocities(simulator);
+				simulator.run();
+				board.draw(simulator);
+				
+				if (simulator.reachedGoal()) {
+					clearInterval(interval);
+				}
+			}
+			
+			interval = setInterval(step, 5);
+		}
+		
+		var dump = function() {
+			$("dump_area").innerHTML = "";
+			if (simulator && simulator.agents.length) {
+				for (var i=0; i<simulator.agents.length; i++) {
+					$("dump_area").innerHTML += "<b>AGENT " + i + "</b>" +
+						" <b>position</b> => " + simulator.agents[i].position.x.toFixed(3) + "," + simulator.agents[i].position.y.toFixed(3) +
+						" <b>dir</b> => " + simulator.agents[i].velocity.x.toFixed(3) + "," + simulator.agents[i].velocity.y.toFixed(3) + "<br />";
+				}
+			} else {
+				$("dump_area").innerHTML += "No agent info was found. Please start a simulation.";
+			}
+		}
+		
+	</script>
+</body>
+</html>

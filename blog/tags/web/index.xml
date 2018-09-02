@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Web on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/web/</link>
+    <description>Recent content in Web on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 28 Feb 2013 23:38:42 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/web/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Playing around with Meteor</title>
+      <link>http://guidogarcia.net/blog/blog/2013/03/01/playing-with-meteor-framewor/</link>
+      <pubDate>Thu, 28 Feb 2013 23:38:42 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2013/03/01/playing-with-meteor-framewor/</guid>
+      <description>I have been playing around with meteor, an open-source platform for building web apps. The result is a 200 LOC game ladder with a live demo.
+The platform is built on top of nodejs, what is great. In my opinion, it is not yet ready for production environments, but I am really impressed with how fast you can create simple web applications with live page updates, automatic data synchronization and many other niceties I have never seen before in any other web framework.</description>
+    </item>
+    
+  </channel>
+</rss>

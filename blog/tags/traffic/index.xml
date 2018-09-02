@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Traffic on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/traffic/</link>
+    <description>Recent content in Traffic on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 23 Jan 2014 15:30:46 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/traffic/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>The long tail in this blog</title>
+      <link>http://guidogarcia.net/blog/blog/2014/01/23/the-long-tail/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2014/01/23/the-long-tail/</guid>
+      <description>This blog is two years old, and I&amp;rsquo;d like to share how its &amp;gt;50K visits are distributed.
+
+One single post drives 40% of the traffic to the blog. At the bottom, 70% of its posts represent 4% of the traffic.
+In my opinion, the most popular ones are not the best ones. They are about very specific technical subjects, containing keywords in the title and in the URL slug. Google does the rest.</description>
+    </item>
+    
+  </channel>
+</rss>

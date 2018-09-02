@@ -1,0 +1,95 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/blog/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/blog/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/blog/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/blog/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/blog/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/blog/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+BigDecimal : detalles que hacen que Java de asco
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">BigDecimal : detalles que hacen que Java de asco</div>
+
+<div class="section" id="content"><p>Sirva como ejemplo el siguiente fragmento de código, en el que se utiliza la clase <code>BigDecimal</code> que ofrece Java para trabajar con precisión arbitraria en operaciones con números en coma flotante:</p>
+
+<pre><code>BigDecimal num = new BigDecimal(2);
+num = num.add(new BigDecimal(3.2));
+System.out.println(num.toString());
+System.out.println(num.doubleValue());
+</code></pre>
+
+<p>Para empezar, esta es la salida del programa, que no necesita comentarios:</p>
+
+<pre><code>5.20000000000000017763568394002504646778106689453125
+5.2
+</code></pre>
+
+<p>En Java, salvo el caso del operador &ldquo;+&rdquo; para la concatenación de cadenas, tampoco existe sobrecarga de operadores, por lo que una simple operación como sumar dos números se realiza de forma poco natural:</p>
+
+<pre><code>BigDecimal num1 = new BigDecimal(2);
+BigDecimal num2 = new BigDecimal(2);
+System.out.println(num1 + num2); // error de compilación
+System.out.println(num1.add(num2)); // contra natura
+</code></pre>
+
+<p>Y el operador &ldquo;==&rdquo; seguirá comparando objetos en lugar de valores:</p>
+
+<pre><code>System.out.println(num1 == num2); // output = false
+</code></pre>
+
+<p>Para rematar la faena, el método <code>BigDecimal#equals</code> considera diferentes números con el mismo valor y distinta escala (por ejemplo 2.0 y 2.00 serían diferentes), obligando a utilizar el método <a href="http://download.oracle.com/javase/1,5.0/docs/api/java/math/BigDecimal.html#compareTo(java.math.BigDecimal)"><code>compareTo</code></a> en este caso.</p>
+
+<p>Nota: Desde aquí hago un llamamiento para que en Java 8 también podamos comparar cadenas con el operador &ldquo;==&rdquo; en lugar del engorroso <code>equals</code>. Piedad.</p>
+
+<p>Como colofón, no es posible utilizar un <code>BigDecimal</code> como clave en un <code>SortedMap</code> o como elemento de un <code>SortedSet</code>, ya que el orden natural no es consistente con equals.</p>
+
+<p>Me gustaría conocer una comparativa con C#, si alguien se aventura que deje un comentario.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+&#183; <a href="http://bot.guidogarcia.net/">My bot</a>
+
+&#183; <a href="http://guidogarcia.net/blog/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

@@ -1,0 +1,933 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Tags on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/</link>
+    <description>Recent content in Tags on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 02 Jan 2014 14:00:00 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ab Testing</title>
+      <link>http://guidogarcia.net/blog/tags/ab-testing/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/ab-testing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Acra</title>
+      <link>http://guidogarcia.net/blog/tags/acra/</link>
+      <pubDate>Tue, 20 Dec 2011 20:02:30 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/acra/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Agile</title>
+      <link>http://guidogarcia.net/blog/tags/agile/</link>
+      <pubDate>Mon, 12 Aug 2013 14:11:54 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/agile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Android</title>
+      <link>http://guidogarcia.net/blog/tags/android/</link>
+      <pubDate>Tue, 20 Dec 2011 20:02:30 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/android/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Anova</title>
+      <link>http://guidogarcia.net/blog/tags/anova/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/anova/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Apache</title>
+      <link>http://guidogarcia.net/blog/tags/apache/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/apache/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Api</title>
+      <link>http://guidogarcia.net/blog/tags/api/</link>
+      <pubDate>Sun, 17 Feb 2013 20:23:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/api/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Asynchronous</title>
+      <link>http://guidogarcia.net/blog/tags/asynchronous/</link>
+      <pubDate>Mon, 09 Dec 2013 14:43:51 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/asynchronous/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Auditable</title>
+      <link>http://guidogarcia.net/blog/tags/auditable/</link>
+      <pubDate>Tue, 24 Jan 2012 23:06:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/auditable/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Benchmark</title>
+      <link>http://guidogarcia.net/blog/tags/benchmark/</link>
+      <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/benchmark/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Blog</title>
+      <link>http://guidogarcia.net/blog/tags/blog/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/blog/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Books</title>
+      <link>http://guidogarcia.net/blog/tags/books/</link>
+      <pubDate>Sun, 17 Jul 2011 15:28:50 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/books/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Classification</title>
+      <link>http://guidogarcia.net/blog/tags/classification/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/classification/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cloud</title>
+      <link>http://guidogarcia.net/blog/tags/cloud/</link>
+      <pubDate>Tue, 18 Mar 2014 06:56:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/cloud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Collections</title>
+      <link>http://guidogarcia.net/blog/tags/collections/</link>
+      <pubDate>Sat, 29 Oct 2011 13:37:43 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/collections/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Confidence</title>
+      <link>http://guidogarcia.net/blog/tags/confidence/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/confidence/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Configuration</title>
+      <link>http://guidogarcia.net/blog/tags/configuration/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/configuration/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Contest</title>
+      <link>http://guidogarcia.net/blog/tags/contest/</link>
+      <pubDate>Sun, 06 May 2012 18:29:45 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/contest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Cxf</title>
+      <link>http://guidogarcia.net/blog/tags/cxf/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/cxf/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Database</title>
+      <link>http://guidogarcia.net/blog/tags/database/</link>
+      <pubDate>Tue, 24 Jan 2012 23:06:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/database/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Development</title>
+      <link>http://guidogarcia.net/blog/tags/development/</link>
+      <pubDate>Tue, 19 Jul 2011 14:41:56 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/development/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Digg</title>
+      <link>http://guidogarcia.net/blog/tags/digg/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/digg/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Distribution</title>
+      <link>http://guidogarcia.net/blog/tags/distribution/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/distribution/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Elo</title>
+      <link>http://guidogarcia.net/blog/tags/elo/</link>
+      <pubDate>Thu, 28 Feb 2013 23:38:42 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/elo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Evolutionary Computing</title>
+      <link>http://guidogarcia.net/blog/tags/evolutionary-computing/</link>
+      <pubDate>Wed, 05 Nov 2014 08:13:34 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/evolutionary-computing/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Experiment</title>
+      <link>http://guidogarcia.net/blog/tags/experiment/</link>
+      <pubDate>Sun, 18 Feb 2018 19:29:39 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/experiment/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Fraud</title>
+      <link>http://guidogarcia.net/blog/tags/fraud/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/fraud/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Function</title>
+      <link>http://guidogarcia.net/blog/tags/function/</link>
+      <pubDate>Sat, 18 Jan 2014 11:31:44 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/function/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gae</title>
+      <link>http://guidogarcia.net/blog/tags/gae/</link>
+      <pubDate>Thu, 08 Sep 2011 22:37:16 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/gae/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gather</title>
+      <link>http://guidogarcia.net/blog/tags/gather/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/gather/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Genetic Algorithms</title>
+      <link>http://guidogarcia.net/blog/tags/genetic-algorithms/</link>
+      <pubDate>Sun, 18 Feb 2018 19:29:39 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/genetic-algorithms/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gephi</title>
+      <link>http://guidogarcia.net/blog/tags/gephi/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/gephi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gephi Toolkit</title>
+      <link>http://guidogarcia.net/blog/tags/gephi-toolkit/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/gephi-toolkit/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Google</title>
+      <link>http://guidogarcia.net/blog/tags/google/</link>
+      <pubDate>Thu, 08 Sep 2011 22:37:16 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/google/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Graph</title>
+      <link>http://guidogarcia.net/blog/tags/graph/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/graph/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Gtd</title>
+      <link>http://guidogarcia.net/blog/tags/gtd/</link>
+      <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/gtd/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Hibernate</title>
+      <link>http://guidogarcia.net/blog/tags/hibernate/</link>
+      <pubDate>Tue, 24 Jan 2012 23:06:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/hibernate/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Iaas</title>
+      <link>http://guidogarcia.net/blog/tags/iaas/</link>
+      <pubDate>Tue, 18 Mar 2014 06:56:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/iaas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Instantservers</title>
+      <link>http://guidogarcia.net/blog/tags/instantservers/</link>
+      <pubDate>Sun, 17 Feb 2013 20:23:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/instantservers/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Java</title>
+      <link>http://guidogarcia.net/blog/tags/java/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/java/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Javascript</title>
+      <link>http://guidogarcia.net/blog/tags/javascript/</link>
+      <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/javascript/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jax Rs</title>
+      <link>http://guidogarcia.net/blog/tags/jax-rs/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jax-rs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jaxrs</title>
+      <link>http://guidogarcia.net/blog/tags/jaxrs/</link>
+      <pubDate>Sun, 31 Jul 2011 22:42:53 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jaxrs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jboss</title>
+      <link>http://guidogarcia.net/blog/tags/jboss/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jboss/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jdbc</title>
+      <link>http://guidogarcia.net/blog/tags/jdbc/</link>
+      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jdbc/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jdo</title>
+      <link>http://guidogarcia.net/blog/tags/jdo/</link>
+      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jdo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jee</title>
+      <link>http://guidogarcia.net/blog/tags/jee/</link>
+      <pubDate>Sun, 31 Jul 2011 22:42:53 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jee/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jersey</title>
+      <link>http://guidogarcia.net/blog/tags/jersey/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jersey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Jpa</title>
+      <link>http://guidogarcia.net/blog/tags/jpa/</link>
+      <pubDate>Tue, 24 Jan 2012 23:06:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/jpa/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Json</title>
+      <link>http://guidogarcia.net/blog/tags/json/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/json/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Ladder</title>
+      <link>http://guidogarcia.net/blog/tags/ladder/</link>
+      <pubDate>Thu, 28 Feb 2013 23:38:42 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/ladder/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lazy Loading</title>
+      <link>http://guidogarcia.net/blog/tags/lazy-loading/</link>
+      <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/lazy-loading/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Lingpipe</title>
+      <link>http://guidogarcia.net/blog/tags/lingpipe/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/lingpipe/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Long Tail</title>
+      <link>http://guidogarcia.net/blog/tags/long-tail/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/long-tail/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Math</title>
+      <link>http://guidogarcia.net/blog/tags/math/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/math/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Meteor</title>
+      <link>http://guidogarcia.net/blog/tags/meteor/</link>
+      <pubDate>Thu, 28 Feb 2013 23:38:42 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/meteor/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Micro Services</title>
+      <link>http://guidogarcia.net/blog/tags/micro-services/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/micro-services/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mobile</title>
+      <link>http://guidogarcia.net/blog/tags/mobile/</link>
+      <pubDate>Tue, 20 Dec 2011 20:02:30 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/mobile/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mouse</title>
+      <link>http://guidogarcia.net/blog/tags/mouse/</link>
+      <pubDate>Tue, 19 Jul 2011 14:41:56 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/mouse/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Mybatis</title>
+      <link>http://guidogarcia.net/blog/tags/mybatis/</link>
+      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/mybatis/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Neo4j</title>
+      <link>http://guidogarcia.net/blog/tags/neo4j/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/neo4j/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nlp</title>
+      <link>http://guidogarcia.net/blog/tags/nlp/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/nlp/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Nodejs</title>
+      <link>http://guidogarcia.net/blog/tags/nodejs/</link>
+      <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/nodejs/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Npm</title>
+      <link>http://guidogarcia.net/blog/tags/npm/</link>
+      <pubDate>Mon, 09 Dec 2013 14:43:51 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/npm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Orm</title>
+      <link>http://guidogarcia.net/blog/tags/orm/</link>
+      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/orm/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Paas</title>
+      <link>http://guidogarcia.net/blog/tags/paas/</link>
+      <pubDate>Thu, 08 Sep 2011 22:37:16 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/paas/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Parameters</title>
+      <link>http://guidogarcia.net/blog/tags/parameters/</link>
+      <pubDate>Sat, 18 Jan 2014 11:31:44 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/parameters/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Patterns</title>
+      <link>http://guidogarcia.net/blog/tags/patterns/</link>
+      <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/patterns/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Performance</title>
+      <link>http://guidogarcia.net/blog/tags/performance/</link>
+      <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/performance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Python</title>
+      <link>http://guidogarcia.net/blog/tags/python/</link>
+      <pubDate>Sat, 18 Jan 2014 11:31:44 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/python/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rad</title>
+      <link>http://guidogarcia.net/blog/tags/rad/</link>
+      <pubDate>Mon, 05 Dec 2011 14:52:22 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/rad/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Raspberry Pi</title>
+      <link>http://guidogarcia.net/blog/tags/raspberry-pi/</link>
+      <pubDate>Thu, 13 Sep 2012 19:24:58 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/raspberry-pi/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Require</title>
+      <link>http://guidogarcia.net/blog/tags/require/</link>
+      <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/require/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rest</title>
+      <link>http://guidogarcia.net/blog/tags/rest/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/rest/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Resteasy</title>
+      <link>http://guidogarcia.net/blog/tags/resteasy/</link>
+      <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/resteasy/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Review</title>
+      <link>http://guidogarcia.net/blog/tags/review/</link>
+      <pubDate>Sun, 17 Jul 2011 15:28:50 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/review/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Robotics</title>
+      <link>http://guidogarcia.net/blog/tags/robotics/</link>
+      <pubDate>Sun, 18 Sep 2011 17:03:47 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/robotics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Rvo2</title>
+      <link>http://guidogarcia.net/blog/tags/rvo2/</link>
+      <pubDate>Mon, 12 Sep 2011 23:02:22 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/rvo2/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Script</title>
+      <link>http://guidogarcia.net/blog/tags/script/</link>
+      <pubDate>Thu, 03 Nov 2011 07:44:57 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/script/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Server</title>
+      <link>http://guidogarcia.net/blog/tags/server/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/server/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Service Directory</title>
+      <link>http://guidogarcia.net/blog/tags/service-directory/</link>
+      <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/service-directory/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Significance</title>
+      <link>http://guidogarcia.net/blog/tags/significance/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/significance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Simulator</title>
+      <link>http://guidogarcia.net/blog/tags/simulator/</link>
+      <pubDate>Sun, 18 Sep 2011 17:03:47 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/simulator/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Software</title>
+      <link>http://guidogarcia.net/blog/tags/software/</link>
+      <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/software/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring</title>
+      <link>http://guidogarcia.net/blog/tags/spring/</link>
+      <pubDate>Sun, 31 Jul 2011 22:42:53 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/spring/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Framework</title>
+      <link>http://guidogarcia.net/blog/tags/spring-framework/</link>
+      <pubDate>Mon, 05 Dec 2011 14:52:22 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/spring-framework/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Spring Roo</title>
+      <link>http://guidogarcia.net/blog/tags/spring-roo/</link>
+      <pubDate>Mon, 05 Dec 2011 14:52:22 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/spring-roo/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Sql</title>
+      <link>http://guidogarcia.net/blog/tags/sql/</link>
+      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/sql/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Statistics</title>
+      <link>http://guidogarcia.net/blog/tags/statistics/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/statistics/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Survey</title>
+      <link>http://guidogarcia.net/blog/tags/survey/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/survey/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Teams</title>
+      <link>http://guidogarcia.net/blog/tags/teams/</link>
+      <pubDate>Mon, 12 Aug 2013 14:11:54 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/teams/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tefcon</title>
+      <link>http://guidogarcia.net/blog/tags/tefcon/</link>
+      <pubDate>Wed, 05 Nov 2014 08:13:34 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/tefcon/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tools</title>
+      <link>http://guidogarcia.net/blog/tags/tools/</link>
+      <pubDate>Tue, 19 Jul 2011 14:41:56 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/tools/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Traffic</title>
+      <link>http://guidogarcia.net/blog/tags/traffic/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/traffic/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Troll</title>
+      <link>http://guidogarcia.net/blog/tags/troll/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/troll/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Tuenti</title>
+      <link>http://guidogarcia.net/blog/tags/tuenti/</link>
+      <pubDate>Sun, 06 May 2012 18:29:45 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/tuenti/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Twitter</title>
+      <link>http://guidogarcia.net/blog/tags/twitter/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/twitter/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Variance</title>
+      <link>http://guidogarcia.net/blog/tags/variance/</link>
+      <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/variance/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Verbosity</title>
+      <link>http://guidogarcia.net/blog/tags/verbosity/</link>
+      <pubDate>Sat, 18 Jan 2014 11:31:44 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/verbosity/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Virtualization</title>
+      <link>http://guidogarcia.net/blog/tags/virtualization/</link>
+      <pubDate>Sun, 17 Feb 2013 20:23:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/virtualization/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web</title>
+      <link>http://guidogarcia.net/blog/tags/web/</link>
+      <pubDate>Thu, 28 Feb 2013 23:38:42 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/web/</guid>
+      <description></description>
+    </item>
+    
+    <item>
+      <title>Web Development</title>
+      <link>http://guidogarcia.net/blog/tags/web-development/</link>
+      <pubDate>Mon, 05 Dec 2011 14:52:22 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/tags/web-development/</guid>
+      <description></description>
+    </item>
+    
+  </channel>
+</rss>

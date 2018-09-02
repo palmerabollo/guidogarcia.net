@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Twitter on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/twitter/</link>
+    <description>Recent content in Twitter on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 21 Jan 2012 09:37:14 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/twitter/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Graph your Twitter network with Gephi</title>
+      <link>http://guidogarcia.net/blog/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</link>
+      <pubDate>Sat, 21 Jan 2012 09:37:14 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</guid>
+      <description>Gephi is a really cool open-source (GPL) project for visualizing and analyzing network graphs.
+Getting started If you want to start using Gephi you have two choices:
+ * The blue pill, a simple **GUI**, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. * The red pill, the **[Gephi Toolkit](http://wiki.gephi.org/index.php/Toolkit_portal)**. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/blog/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/blog/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/blog/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/blog/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/blog/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/blog/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Lazy loading of modules in nodejs
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Lazy loading of modules in nodejs</div>
+
+<div class="section" id="content"><p>This is a pattern I found in <a href="https://github.com/pkgcloud/pkgcloud/blob/master/lib/pkgcloud.js#L93">pkgcloud</a> to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.</p>
+
+<pre><code>var providers = [ 'amazon', 'azure', ..., 'joyent' ];
+...
+
+//
+// Setup all providers as lazy-loaded getters
+//
+providers.forEach(function (provider) {
+  pkgcloud.providers.__defineGetter__(provider, function () {
+    return require('./pkgcloud/' + provider);
+  });
+});
+</code></pre>
+
+<p>It basically defines a getter, so modules won&rsquo;t be loaded until you do:</p>
+
+<pre><code>var provider = pkgcloud.providers.amazon;
+</code></pre>
+
+<p>It might be useful in applications where you have different adapters (&ldquo;providers&rdquo; in the example above) offering different implementations of the same API, and you want to let the user choose which one to use at runtime. This is a common requirement in cloud environments but it could be applicable to other scenarios as well (e.g. choose a payment gateway).</p>
+
+<p>This is the first time I see it, so please share your thoughts on it and any other alternative approaches.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+&#183; <a href="http://bot.guidogarcia.net/">My bot</a>
+
+&#183; <a href="http://guidogarcia.net/blog/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

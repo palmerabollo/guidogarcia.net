@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Reflexión on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/categories/reflexi%C3%B3n/</link>
+    <description>Recent content in Reflexión on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 16 Jun 2015 14:04:13 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/categories/reflexi%C3%B3n/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Mi experiencia HackForGood 2015</title>
+      <link>http://guidogarcia.net/blog/blog/2015/06/16/mi-experiencia-hackforgood-2015/</link>
+      <pubDate>Tue, 16 Jun 2015 14:04:13 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2015/06/16/mi-experiencia-hackforgood-2015/</guid>
+      <description>HackForGood es un hackaton centrado en la innovación social, donde se desarrollan de forma colaborativa nuevas ideas que ayuden a resolver problemas sociales. Los días 16-18 de abril sacrificamos un día de vacaciones para pasarnos por la tercera edición de la iniciativa HackForGood en la Universidad de Valladolid.
+Nuestro equipo &amp;ldquo;Senior OS&amp;rdquo; iba con la idea de hacer un teléfono móvil para personas mayores, sin ningún tipo de configuración y que se pudiese gestionar íntegramente de forma remota.</description>
+    </item>
+    
+    <item>
+      <title>The long tail in this blog</title>
+      <link>http://guidogarcia.net/blog/blog/2014/01/23/the-long-tail/</link>
+      <pubDate>Thu, 23 Jan 2014 15:30:46 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2014/01/23/the-long-tail/</guid>
+      <description>This blog is two years old, and I&amp;rsquo;d like to share how its &amp;gt;50K visits are distributed.
+
+One single post drives 40% of the traffic to the blog. At the bottom, 70% of its posts represent 4% of the traffic.
+In my opinion, the most popular ones are not the best ones. They are about very specific technical subjects, containing keywords in the title and in the URL slug. Google does the rest.</description>
+    </item>
+    
+    <item>
+      <title>Big teams are not agile in the digital world</title>
+      <link>http://guidogarcia.net/blog/blog/2013/08/12/big-teams-are-not-agile-in-the-digital-world/</link>
+      <pubDate>Mon, 12 Aug 2013 14:11:54 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2013/08/12/big-teams-are-not-agile-in-the-digital-world/</guid>
+      <description>The post today is not so technical. I have been thinking about why many big corporations, with almost unlimited resources, are not able to deliver top quality products and services. Why companies with a small fraction of resources create new products faster?
+I have found several sociopsychological causes, most of them related with an aspect of human activity: working in a team.
+Diffusion of responsibility Diffusion of responsibility is a sociopsychological phenomenon whereby a person is less likely to take responsibility for action or inaction when others are present.</description>
+    </item>
+    
+    <item>
+      <title>Inauguro el blog</title>
+      <link>http://guidogarcia.net/blog/blog/2011/07/14/inauguracion-blog/</link>
+      <pubDate>Thu, 14 Jul 2011 15:08:41 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2011/07/14/inauguracion-blog/</guid>
+      <description>Con varios años de retraso inauguro el blog en el que ire recogiendo mis reflexiones relacionadas con el mundo en general y la tecnología en particular. Aprovecharé para recoger lo que tenía desperdigado por la red.
+Os animo a suscribiros, a participar en los comentarios y a que me enviéis vuestras sugerencias y críticas.</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Instantservers on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/instantservers/</link>
+    <description>Recent content in Instantservers on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 17 Feb 2013 20:23:26 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/instantservers/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Deploy virtual machines on Instant Servers cloud with Java</title>
+      <link>http://guidogarcia.net/blog/blog/2013/02/17/deploy-virtual-machines-on-instant-servers-cloud-with-java/</link>
+      <pubDate>Sun, 17 Feb 2013 20:23:26 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2013/02/17/deploy-virtual-machines-on-instant-servers-cloud-with-java/</guid>
+      <description>Instant Servers is the infrastructure as a service (IaaS) system I have been working on during the last months in Telefónica Digital.
+The service offers a public REST API (Cloud API) that is super simple to use. However, in this post I will show you how to manage your infrastructure using a Java client, without dealing with HTTP requests.
+Build the Cloud API client Man does not live by nodejs alone.</description>
+    </item>
+    
+  </channel>
+</rss>

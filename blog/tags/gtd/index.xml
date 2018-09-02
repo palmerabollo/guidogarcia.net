@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Gtd on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/gtd/</link>
+    <description>Recent content in Gtd on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 18 Jan 2014 19:06:03 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/gtd/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Performance is premature optimization</title>
+      <link>http://guidogarcia.net/blog/blog/2014/01/18/performance-is-premature-optimization/</link>
+      <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2014/01/18/performance-is-premature-optimization/</guid>
+      <description>I will burn in hell, but performance is premature optimization nowadays. Despite it is very interesting from an engineering perspective, from the practical point of view of someone who wants to follow the make-shit-happen startup mantra, my advice is not to worry much about it when it comes to choosing a programming language.
+There are things that matter more than the technology stack you choose. In this post I will try to explain why; then you can vent your rage in the comments section.</description>
+    </item>
+    
+  </channel>
+</rss>

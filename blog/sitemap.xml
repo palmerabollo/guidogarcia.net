@@ -1,0 +1,854 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2016/07/13/road-serverless-computing/</loc>
+    <lastmod>2016-07-13T21:20:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2015/10/18/ansible-automate-everything/</loc>
+    <lastmod>2015-10-18T19:13:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2015/06/16/mi-experiencia-hackforgood-2015/</loc>
+    <lastmod>2015-06-16T14:04:13+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2015/03/24/apache-mesos-and-the-future-of-microservice-architectures/</loc>
+    <lastmod>2015-03-24T08:07:05+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2015/01/15/moving-average-with-baconjs/</loc>
+    <lastmod>2015-01-15T08:22:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/11/05/evolutionary-computation-%c2%b7-tefcon-2014/</loc>
+    <lastmod>2014-11-05T08:13:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/08/25/dtrace-para-flipar-pepinillos/</loc>
+    <lastmod>2014-08-25T08:16:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/04/25/how-to-catch-an-internet-troll/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/03/27/lazy-loading-modules-nodejs/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/03/18/cloud-is-not-cheap/</loc>
+    <lastmod>2014-03-18T06:56:37+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/01/23/the-long-tail/</loc>
+    <lastmod>2014-01-23T15:30:46+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/01/18/performance-is-premature-optimization/</loc>
+    <lastmod>2014-01-18T19:06:03+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/01/18/function-parameters-python-java-javascript/</loc>
+    <lastmod>2014-01-18T11:31:44+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2014/01/02/a-rest-configuration-server/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</loc>
+    <lastmod>2013-12-09T14:43:51+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2013/08/12/big-teams-are-not-agile-in-the-digital-world/</loc>
+    <lastmod>2013-08-12T14:11:54+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2013/03/01/playing-with-meteor-framewor/</loc>
+    <lastmod>2013-02-28T23:38:42+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2013/02/17/deploy-virtual-machines-on-instant-servers-cloud-with-java/</loc>
+    <lastmod>2013-02-17T20:23:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</loc>
+    <lastmod>2012-09-13T19:24:58+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/08/26/analysis-of-variance-anova-applied-to-fraud-detection/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/05/06/my-experience-in-tuenti-programming-challenge/</loc>
+    <lastmod>2012-05-06T18:29:45+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/03/02/how-to-develop-java-rest-client/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/01/25/auditing-jpa-entities-with-hibernate-envers/</loc>
+    <lastmod>2012-01-24T23:06:26+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/12/20/acra-reporting-crashes-in-your-android-application-the-easy-way/</loc>
+    <lastmod>2011-12-20T20:02:30+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/12/05/getting-started-with-spring-roo/</loc>
+    <lastmod>2011-12-05T14:52:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/11/03/scripting-for-the-java-platform/</loc>
+    <lastmod>2011-11-03T07:44:57+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/10/29/java-different-ways-filter-collection/</loc>
+    <lastmod>2011-10-29T13:37:43+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/09/18/first-javascript-simulator-ii/</loc>
+    <lastmod>2011-09-18T17:03:47+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/09/13/first-javascript-robotics-simulator/</loc>
+    <lastmod>2011-09-12T23:02:22+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/09/08/google-app-engine-new-pricing/</loc>
+    <lastmod>2011-09-08T22:37:16+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/08/28/to-orm-or-not-to-orm/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/08/15/bigdecimal-detalle-que-hacen-que-java-de-asco/</loc>
+    <lastmod>2011-08-15T18:31:34+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</loc>
+    <lastmod>2011-07-31T22:42:53+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/07/19/las-herramientas-de-un-desarrollador/</loc>
+    <lastmod>2011-07-19T14:41:56+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/07/17/book-review-the-clean-coder/</loc>
+    <lastmod>2011-07-17T15:28:50+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/blog/2011/07/14/inauguracion-blog/</loc>
+    <lastmod>2011-07-14T15:08:41+00:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/ab-testing/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/acra/</loc>
+    <lastmod>2011-12-20T20:02:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/agile/</loc>
+    <lastmod>2013-08-12T14:11:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/android/</loc>
+    <lastmod>2011-12-20T20:02:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/anova/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/apache/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/api/</loc>
+    <lastmod>2013-02-17T20:23:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/asynchronous/</loc>
+    <lastmod>2013-12-09T14:43:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/auditable/</loc>
+    <lastmod>2012-01-24T23:06:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/benchmark/</loc>
+    <lastmod>2014-01-18T19:06:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/blog/</loc>
+    <lastmod>2014-01-23T15:30:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/books/</loc>
+    <lastmod>2011-07-17T15:28:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/categories/</loc>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/classification/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/cloud/</loc>
+    <lastmod>2014-03-18T06:56:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/categories/cloud/</loc>
+    <lastmod>2015-10-18T19:13:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/collections/</loc>
+    <lastmod>2011-10-29T13:37:43+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/confidence/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/configuration/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/contest/</loc>
+    <lastmod>2012-05-06T18:29:45+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/cxf/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/database/</loc>
+    <lastmod>2012-01-24T23:06:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/development/</loc>
+    <lastmod>2011-07-19T14:41:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/digg/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/distribution/</loc>
+    <lastmod>2014-01-23T15:30:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/elo/</loc>
+    <lastmod>2013-02-28T23:38:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/evolutionary-computing/</loc>
+    <lastmod>2014-11-05T08:13:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/experiment/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/fraud/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/function/</loc>
+    <lastmod>2014-01-18T11:31:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/gae/</loc>
+    <lastmod>2011-09-08T22:37:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/gather/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/genetic-algorithms/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/gephi/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/gephi-toolkit/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/google/</loc>
+    <lastmod>2011-09-08T22:37:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/graph/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/gtd/</loc>
+    <lastmod>2014-01-18T19:06:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/hibernate/</loc>
+    <lastmod>2012-01-24T23:06:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/iaas/</loc>
+    <lastmod>2014-03-18T06:56:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/instantservers/</loc>
+    <lastmod>2013-02-17T20:23:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/java/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/javascript/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jax-rs/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jaxrs/</loc>
+    <lastmod>2011-07-31T22:42:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jboss/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jdbc/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jdo/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jee/</loc>
+    <lastmod>2011-07-31T22:42:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jersey/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/jpa/</loc>
+    <lastmod>2012-01-24T23:06:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/json/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/ladder/</loc>
+    <lastmod>2013-02-28T23:38:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/lazy-loading/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/lingpipe/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/long-tail/</loc>
+    <lastmod>2014-01-23T15:30:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/math/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/meteor/</loc>
+    <lastmod>2013-02-28T23:38:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/micro-services/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/mobile/</loc>
+    <lastmod>2011-12-20T20:02:30+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/mouse/</loc>
+    <lastmod>2011-07-19T14:41:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/mybatis/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/neo4j/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/nlp/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/nodejs/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/npm/</loc>
+    <lastmod>2013-12-09T14:43:51+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/orm/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/paas/</loc>
+    <lastmod>2011-09-08T22:37:16+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/parameters/</loc>
+    <lastmod>2014-01-18T11:31:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/patterns/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/performance/</loc>
+    <lastmod>2014-01-18T19:06:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/posts/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/python/</loc>
+    <lastmod>2014-01-18T11:31:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/rad/</loc>
+    <lastmod>2011-12-05T14:52:22+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/raspberry-pi/</loc>
+    <lastmod>2012-09-13T19:24:58+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/categories/reflexi%C3%B3n/</loc>
+    <lastmod>2015-06-16T14:04:13+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/require/</loc>
+    <lastmod>2014-03-27T16:43:59+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/rest/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/resteasy/</loc>
+    <lastmod>2012-03-02T20:10:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/review/</loc>
+    <lastmod>2011-07-17T15:28:50+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/robotics/</loc>
+    <lastmod>2011-09-18T17:03:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/rvo2/</loc>
+    <lastmod>2011-09-12T23:02:22+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/script/</loc>
+    <lastmod>2011-11-03T07:44:57+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/server/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/service-directory/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/significance/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/simulator/</loc>
+    <lastmod>2011-09-18T17:03:47+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/software/</loc>
+    <lastmod>2014-01-18T19:06:03+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/categories/software/</loc>
+    <lastmod>2015-10-18T19:13:07+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/spring/</loc>
+    <lastmod>2011-07-31T22:42:53+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/spring-framework/</loc>
+    <lastmod>2011-12-05T14:52:22+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/spring-roo/</loc>
+    <lastmod>2011-12-05T14:52:22+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/sql/</loc>
+    <lastmod>2011-08-28T18:01:35+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/statistics/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/survey/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/</loc>
+    <lastmod>2014-01-02T14:00:00+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/teams/</loc>
+    <lastmod>2013-08-12T14:11:54+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/categories/tecnolog%C3%ADa/</loc>
+    <lastmod>2018-02-18T19:29:39+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/tefcon/</loc>
+    <lastmod>2014-11-05T08:13:34+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/tools/</loc>
+    <lastmod>2011-07-19T14:41:56+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/traffic/</loc>
+    <lastmod>2014-01-23T15:30:46+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/troll/</loc>
+    <lastmod>2014-04-25T16:19:37+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/tuenti/</loc>
+    <lastmod>2012-05-06T18:29:45+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/twitter/</loc>
+    <lastmod>2012-01-21T09:37:14+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/variance/</loc>
+    <lastmod>2012-08-26T17:42:41+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/verbosity/</loc>
+    <lastmod>2014-01-18T11:31:44+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/virtualization/</loc>
+    <lastmod>2013-02-17T20:23:26+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/web/</loc>
+    <lastmod>2013-02-28T23:38:42+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+  <url>
+    <loc>http://guidogarcia.net/blog/tags/web-development/</loc>
+    <lastmod>2011-12-05T14:52:22+00:00</lastmod>
+    <priority>0</priority>
+  </url>
+  
+</urlset>

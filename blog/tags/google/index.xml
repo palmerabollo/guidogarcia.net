@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Google on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/google/</link>
+    <description>Recent content in Google on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 08 Sep 2011 22:37:16 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/google/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Google App Engine: Disturbances in the Force</title>
+      <link>http://guidogarcia.net/blog/blog/2011/09/08/google-app-engine-new-pricing/</link>
+      <pubDate>Thu, 08 Sep 2011 22:37:16 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2011/09/08/google-app-engine-new-pricing/</guid>
+      <description>A New Hope. The pay as you go promise. I&amp;rsquo;ve been a big fan of Google App Engine (GAE) since it first appeared back in 2008. For those of you who don&amp;rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.
+You only have to deploy your application (using a very simple toolkit) and Google takes care of launching new application instances when necessary.</description>
+    </item>
+    
+  </channel>
+</rss>

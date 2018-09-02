@@ -1,0 +1,84 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/blog/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/blog/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/blog/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/blog/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/blog/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/blog/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Google App Engine: Disturbances in the Force
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Google App Engine: Disturbances in the Force</div>
+
+<div class="section" id="content">
+
+<h3 id="a-new-hope-the-pay-as-you-go-promise">A New Hope. The pay as you go promise.</h3>
+
+<p>I&rsquo;ve been a big fan of <a href="http://appspot.com">Google App Engine</a> (GAE) since it first appeared back in 2008. For those of you who don&rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.</p>
+
+<p>You only have to deploy your application (using a very simple toolkit) and Google takes care of launching new application instances when necessary. This way you can focus on your application instead of the underlying infrastructure, that automagically scales to the infinity and beyond. In that sense, it really is much simpler than Amazon EC2.</p>
+
+<p>Sounds great, but with great power comes great responsibility. All that comes at the cost of certain limitations and some degree of <strong>vendor lock-in</strong>, first because Google offers a mix of standard (JSP/servlets, JPA, JDO, JCache/JSR-107 if you choose Java) and proprietary APIs, and second because you are required to adapt your relational mind and design your application to cope with the pros and cons of their non-relational storage system (the Datastore), from where it is really hard to escape.</p>
+
+<p>One of the most appealing features is that GAE offers a real <strong>pay-as-you-go model</strong> because you pay for the computational resources you use (not for running instances), even with reasonably free quotas.</p>
+
+<h3 id="the-empire-strikes-back">The Empire Strikes Back</h3>
+
+<p>Yes, GAE is free up to a certain level of used resources. This makes it a perfect fit for personal projects or small projects that plan to grow (i.e. startups). In fact we use GAE in Gather Estudios to offer a <a href="http://precision.gatherestudios.es/">software as a service survey manager</a>, where GAE capacity to handle bursting has proven itself to work great.</p>
+
+<p>That was until last week. On Aug 31, Google communicated (see <a href="http://googleappengine.blogspot.com/2011/08/50-credit-for-new-billing-signups-and.html">blog post</a>) that the GAE &ldquo;preview&rdquo; is over. This includes lowering the free quotas for all applications, and assuming that &ldquo;almost all applications will be billed more under the new pricing&rdquo;, mainly because from now we are going to pay for every running instance, no matters wether you use it or not. You start to worry when you compare the existing cost to the new costs and you realize the new pricing means a <strong>5-10X increase in your monthly bill</strong>. Well&hellip; at least they kindly give us 2 weeks to adapt to the new pricing model.</p>
+
+<p>Google, this is not serious. This time you are setting a very dangerous precedent, I&rsquo;ve learned a valuable lesson and I am definitely going to start looking into other <strong>alternatives</strong> such as <a href="http://www.cloudfoundry.com/">CloudFoundry</a>, <a href="https://openshift.redhat.com">Openshift</a> or <a href="http://aws.amazon.com/elasticbeanstalk/">Amazon Elastic Beanstalk</a> or even Heroku.</p>
+
+<h3 id="my-advice-to-google">My advice to Google</h3>
+
+<p>Don&rsquo;t screw with developers. You&rsquo;ll regret.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+&#183; <a href="http://bot.guidogarcia.net/">My bot</a>
+
+&#183; <a href="http://guidogarcia.net/blog/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

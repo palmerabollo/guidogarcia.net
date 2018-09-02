@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Asynchronous on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/asynchronous/</link>
+    <description>Recent content in Asynchronous on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 09 Dec 2013 14:43:51 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/asynchronous/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Why is node.js so cool? (from a Java guy)</title>
+      <link>http://guidogarcia.net/blog/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</link>
+      <pubDate>Mon, 09 Dec 2013 14:43:51 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</guid>
+      <description>I confess: I am a Java guy At least I used to be. Until I meet node.js. I still think the JVM is one of the greatest pieces of technology ever created by man, and I love the Spring Framework, the hundreds of Apache Java libraries or the over-six-hundred-page books about JEE patterns. It is great for big applications that are created by many developers, or applications that are made to last.</description>
+    </item>
+    
+  </channel>
+</rss>

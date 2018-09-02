@@ -1,0 +1,117 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/blog/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/blog/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/blog/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/blog/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/blog/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/blog/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Auditing JPA entities with Hibernate Envers
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Auditing JPA entities with Hibernate Envers</div>
+
+<div class="section" id="content">
+
+<p>In a recent project we had the need to keep a record of the changes made in every domain entity. That is, we need to insert a new record on an audit table every time an entity is created/updated/deleted.</p>
+
+<p>This is not the first time this problem arises. I think this is a the case of a <a href="http://en.wikipedia.org/wiki/Cross-cutting_concern">cross-cutting concern</a>, that fits well into the <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming">aspect-oriented programming</a> area. I have seen this very same problem in many different projects I have worked on, always solved with one variant of these two approches:</p>
+
+<pre><code>  * Use a database trigger, that fires with every change in the entities you need to track.
+  * Manage it programmatically, a painful solution that contaminates your code.
+</code></pre>
+
+<h3 id="hibernate-envers-to-the-rescue">Hibernate Envers to the rescue</h3>
+
+<p>The Envers project &ldquo;aims to enable easy auditing of persistent classes. All that you have to do is annotate your persistent class or some of its properties, that you want to keep track of, with <strong>@Audited</strong>. For each audited entity, a table will be created, which will hold the history of changes made to the entity&rdquo;.</p>
+
+<p>The <a href="http://www.jboss.org/envers">Envers project</a> is now a <a href="http://hibernate.org/">Hibernate</a> core module (since 3.5+), so it is really easy to include it in your projects. As promised, you only need to annotate your entities:</p>
+
+<pre><code>@Entity
+@Audited
+public class MyEntity {
+   ...
+}
+</code></pre>
+
+<p>If you are using Hibernate Hibernate 3.x, add the following properties to your <strong>persistence.xml</strong>, to configure the listeners that need to be called when a persistence related event is fired:</p>
+
+<pre><code>&lt;property name=&quot;hibernate.ejb.event.post-insert&quot; value=&quot;org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+&lt;property name=&quot;hibernate.ejb.event.post-update&quot; value=&quot;org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+&lt;property name=&quot;hibernate.ejb.event.post-delete&quot; value=&quot;org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+&lt;property name=&quot;hibernate.ejb.event.pre-collection-update&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+&lt;property name=&quot;hibernate.ejb.event.pre-collection-remove&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+&lt;property name=&quot;hibernate.ejb.event.post-collection-recreate&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
+</code></pre>
+
+<p>And last, if you are using Maven, include it as a dependency in your pom.xml (the <a href="http://planet.jboss.org/view/post.seam?post=envers_bundled_with_jboss_as_7_0_2">dependency scope is &ldquo;provided&rdquo; if you use JBoss AS 7.0.2</a>):</p>
+
+<pre><code>&lt;dependency&gt;
+    &lt;groupId&gt;org.hibernate&lt;/groupId&gt;
+    &lt;artifactId&gt;hibernate-envers&lt;/artifactId&gt;
+    &lt;version&gt;${envers.version}&lt;/version&gt; &lt;-- i.e. 3.6.8.Final --&gt;
+&lt;/dependency&gt;
+</code></pre>
+
+<p>That is all. Every change in an entity will be audited in an automatically generated &ldquo;player_aud&rdquo; table. This is the simplest and, most important, cleanest way I currently know to solve the aforementioned problem.</p>
+
+<p>The <a href="http://docs.jboss.org/envers/docs/index.html">official docs</a> include other features such as logging, querying historical data, advanced configuration and some unsupported features (bags).</p>
+
+<h3 id="any-critics">Any critics?</h3>
+
+<p>Hibernate Envers is so simple that the only improvement I can think about is to see it standardized as part of the next version of JPA, and to include a single configuration property covering 90% of the cases (or even better, discover if the entities are marked as auditable at runtime):</p>
+
+<pre><code>&lt;property name=&quot;hibernate.auditable&quot; value=&quot;true&quot; /&gt; 
+</code></pre>
+
+<p>Any comment is welcome.</p>
+
+<p><strong>UPDATE</strong>: With Hibernate 4.x it is no longer necessary to add the event listeners to your Hibernate configuration. All you need is to put hibernate-envers on your classpath and annotate your entities.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+&#183; <a href="http://bot.guidogarcia.net/">My bot</a>
+
+&#183; <a href="http://guidogarcia.net/blog/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

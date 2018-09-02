@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Genetic Algorithms on Call me Guido</title>
+    <link>http://guidogarcia.net/blog/tags/genetic-algorithms/</link>
+    <description>Recent content in Genetic Algorithms on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Feb 2018 19:29:39 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/blog/tags/genetic-algorithms/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Evolutionary art experiment with Marilyn</title>
+      <link>http://guidogarcia.net/blog/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</link>
+      <pubDate>Sun, 18 Feb 2018 19:29:39 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</guid>
+      <description>You know I like evolutionary algorithms. In the past month I ran a small art experiment reflecting the impact of brands and the harmful effect of advertisements in modern life. The idea was to pick a cultural icon and recreate it using corporate logos only.
+I started with Marilyn Monroe and a genetic algorithm that combined a set of logos in a mutation and a crossover loop. The mutation phase randomly picked some individuals (an individual is a specific combination of logos) and modified them, as nature would do, replacing some logos, resizing or rotating them.</description>
+    </item>
+    
+    <item>
+      <title>Evolutionary computation · TEFcon 2014</title>
+      <link>http://guidogarcia.net/blog/blog/2014/11/05/evolutionary-computation-%c2%b7-tefcon-2014/</link>
+      <pubDate>Wed, 05 Nov 2014 08:13:34 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/blog/2014/11/05/evolutionary-computation-%c2%b7-tefcon-2014/</guid>
+      <description>This is my presentation (spanish) about evolutionary computation for the TEFcon 2014. It was a talk about how we code and how genetic algorithms and genetic programming might help us. Because &amp;ldquo;programming should be more about the what and less about the how&amp;rdquo;.
+Edit: I&amp;rsquo;ve pushed the Java code for the queens problem using genetic algorithms to github.</description>
+    </item>
+    
+  </channel>
+</rss>

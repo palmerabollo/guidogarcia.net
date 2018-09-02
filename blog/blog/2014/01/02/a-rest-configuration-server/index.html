@@ -1,0 +1,179 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/blog/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/blog/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/blog/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/blog/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/blog/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/blog/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Give your configuration some REST
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Give your configuration some REST</div>
+
+<div class="section" id="content">
+
+<p>I have built a simple <strong>configuration server</strong> to expose your app&rsquo;s configuration as a REST service. Its name is <strong>rest-confidence</strong> (<a href="https://github.com/palmerabollo/rest-confidence">github</a>). In this post I will try to explain its basics and three use cases where it could be useful:</p>
+
+<pre><code>  1. To configure distributed services.
+  2. As a foundation for A/B testing.
+  3. As a simple service directory.
+</code></pre>
+
+<h3 id="install-and-run-a-basic-rest-confidence-configuration-server">Install and run a basic rest-confidence configuration server</h3>
+
+<p>The first step is installing the configuration server:</p>
+
+<pre><code>git clone https://github.com/palmerabollo/rest-confidence.git
+cd rest-confidence
+npm install
+</code></pre>
+
+<p>After that, you are ready to edit your <em><code>config.json</code></em> configuration file. For example:</p>
+
+<pre><code>{
+  &quot;mongodb&quot;: {
+    &quot;host&quot;: &quot;localhost&quot;,
+    &quot;user&quot;: &quot;root&quot;
+  },
+  &quot;redis&quot;: {
+    &quot;host&quot;: &quot;redis-server&quot;,
+    &quot;port&quot;: 6379
+  },
+  &quot;logging&quot;: {
+    &quot;appender&quot;: {
+      &quot;type&quot;: &quot;file&quot;,
+      &quot;filename&quot;: &quot;log_file.log&quot;,
+      &quot;maxSize&quot;: 10240
+    }
+  }
+}
+</code></pre>
+
+<p>Launch the configuration server (<code>npm start</code>) and you are done. You are now ready to start retrieving the values associated with any key, in a <strong>hierarchical way</strong>:</p>
+
+<pre><code># curl http://localhost:8000/logging/appender
+{&quot;type&quot;:&quot;file&quot;,&quot;filename&quot;:&quot;log_file.log&quot;,&quot;maxSize&quot;:10240}
+</code></pre>
+
+<p>or</p>
+
+<pre><code># curl http://localhost:8000/logging/appender/maxSize
+10240
+</code></pre>
+
+<h3 id="use-case-1-configure-distributed-services">Use case #1: Configure distributed services</h3>
+
+<p>In my last post I wrote about <a href="http://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/">why I like nodejs</a>, a great platform for building <a href="http://yobriefca.se/blog/2013/04/28/micro-service-architecture/">micro-service-based architectures</a>. However, these kind of architectures also come with their own drawbacks. One of them is that they are <strong>more difficult to deploy and configure</strong>.</p>
+
+<p>[caption id=&ldquo;attachment_736&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;500&rdquo;]<img src="http://guidogarcia.net/blog/wp-content/uploads/2013/12/micro-service-architecture.png" alt="Micro Service Architecture" />
+<em>Micro Service Architecture. Image courtesy of <a href="http://yobriefca.se/">James Hughes</a></em>[/caption]</p>
+
+<p>With a centralized configuration server such as rest-confidence everything becomes easier. Instead of configuring hundreds of settings on each component, you only need to configure the URL of your configuration server. Your service will go there to look up any configuration property it needs.</p>
+
+<h3 id="use-case-2-a-b-testing">Use case #2: A/B testing</h3>
+
+<p><a href="http://en.wikipedia.org/wiki/A/B_testing">A/B testing</a> is a simple way to test different changes to your application and determine which ones produce positive results.</p>
+
+<p>As a simplistic example, imagine you want to test an alternative color for your blue sign-up button, and check how it affects the conversion rate. You can define a <code>$filter</code> with a <code>$range</code> limit in your configuration:</p>
+
+<pre><code>{
+  &quot;color&quot;: {
+    &quot;$filter&quot;: &quot;random&quot;,
+    &quot;$range&quot;: [
+      { &quot;limit&quot;: 10, &quot;value&quot;: &quot;red&quot; }
+    ],
+    &quot;$default&quot;: &quot;blue&quot;
+  }
+}
+</code></pre>
+
+<p>So when you retrieve the &ldquo;color&rdquo; property value using a random filtering criteria, you&rsquo;ll get different colors depending on the ranges.</p>
+
+<pre><code># curl http://localhost:8000/?random=5
+{&quot;color&quot;:&quot;red&quot;}
+</code></pre>
+
+<p>And with a different filtering value out of the range you will get the default value.</p>
+
+<pre><code># curl http://localhost:8000/?random=15
+{&quot;color&quot;:&quot;blue&quot;}
+</code></pre>
+
+<h3 id="use-case-3-simple-service-directory">Use case #3: Simple service directory</h3>
+
+<p>You can use <a href="https://github.com/palmerabollo/rest-confidence">rest-confidence</a> as a simple <strong>service directory</strong>,  that is, a centralized server that facilitates dynamic location of other services&rsquo; endpoints, based on different criteria.</p>
+
+<pre><code>{
+  &quot;myservice&quot;: {
+    &quot;$filter&quot;: &quot;env&quot;,
+    &quot;production&quot;: {
+      &quot;url&quot;: {
+        &quot;$filter&quot;: &quot;country&quot;,
+        &quot;ES&quot;: &quot;http://myservice-production.es&quot;,
+        &quot;UK&quot;: &quot;http://myservice-production.co.uk&quot;,
+        &quot;$default&quot;: &quot;http://myservice-production.co.uk&quot;
+      },
+    },
+    &quot;development&quot;: {
+      &quot;url&quot;: &quot;http://myservice-production.com&quot; 
+    }
+  }
+}
+</code></pre>
+
+<p>With some criteria applied (for example, env=production and country=ES) you will get the proper service endpoint, or any other information you need:</p>
+
+<pre><code># curl http://localhost:8000/myservice?country=ES&amp;env=production
+{&quot;url&quot;:&quot;http://myservice-production.es&quot;}
+</code></pre>
+
+<p>I hope you find it useful. There is also a <a href="https://github.com/palmerabollo/rest-confidence-client">nodejs client</a>. Contributions are welcome.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+&#183; <a href="http://bot.guidogarcia.net/">My bot</a>
+
+&#183; <a href="http://guidogarcia.net/blog/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>
