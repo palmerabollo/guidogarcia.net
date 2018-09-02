@@ -1,4 +1,4 @@
-baseURL = "http://guidogarcia.net"
+baseURL = "https://guidogarcia.net"
 languageCode = "en-us"
 title = "Call me Guido"
 theme = "sam"
@@ -13,4 +13,4 @@ theme = "sam"
 
 [[params.mainMenu]]
   link = "http://bot.guidogarcia.net/"
-  text = "My bot"
+  text = "My bot (alpha)"

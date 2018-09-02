@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Mouse on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/mouse/</link>
+    <link>https://guidogarcia.net/tags/mouse/</link>
     <description>Recent content in Mouse on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 19 Jul 2011 14:41:56 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/mouse/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Las herramientas de un desarrollador</title>
-      <link>http://guidogarcia.net/blog/2011/07/19/las-herramientas-de-un-desarrollador/</link>
+      <link>https://guidogarcia.net/blog/2011/07/19/las-herramientas-de-un-desarrollador/</link>
       <pubDate>Tue, 19 Jul 2011 14:41:56 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2011/07/19/las-herramientas-de-un-desarrollador/</guid>
+      <guid>https://guidogarcia.net/blog/2011/07/19/las-herramientas-de-un-desarrollador/</guid>
       <description>A quien le cuento que he trabajado años desarrollando software con un Pentium IV no me cree. Es un ordenador que ya no se encuentra ni en un punto limpio, y el equivalente a que un carpintero tuviese que clavar sus clavos con ayuda de una piedra o un futbolista jugar con chanclas.
 Además de ser poco productivo para la empresa, es muy estresante para el trabajador. Razón no le falta a Alejandro cuando dice que son tus herramientas de trabajo y deberías utilizar las mejores que te puedas permitir.</description>
     </item>

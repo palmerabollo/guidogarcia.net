@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Patterns on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/patterns/</link>
+    <link>https://guidogarcia.net/tags/patterns/</link>
     <description>Recent content in Patterns on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Mar 2014 16:43:59 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/patterns/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/patterns/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lazy loading of modules in nodejs</title>
-      <link>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
+      <link>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
       <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
+      <guid>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
       <description>This is a pattern I found in pkgcloud to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.
 var providers = [ &#39;amazon&#39;, &#39;azure&#39;, ..., &#39;joyent&#39; ]; ... // // Setup all providers as lazy-loaded getters // providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&#39;./pkgcloud/&#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
     </item>
     
     <item>
       <title>Why is node.js so cool? (from a Java guy)</title>
-      <link>http://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</link>
+      <link>https://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</link>
       <pubDate>Mon, 09 Dec 2013 14:43:51 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</guid>
+      <guid>https://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/</guid>
       <description>I confess: I am a Java guy At least I used to be. Until I meet node.js. I still think the JVM is one of the greatest pieces of technology ever created by man, and I love the Spring Framework, the hundreds of Apache Java libraries or the over-six-hundred-page books about JEE patterns. It is great for big applications that are created by many developers, or applications that are made to last.</description>
     </item>
     

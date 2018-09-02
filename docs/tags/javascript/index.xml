@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Javascript on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/javascript/</link>
+    <link>https://guidogarcia.net/tags/javascript/</link>
     <description>Recent content in Javascript on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Mar 2014 16:43:59 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/javascript/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lazy loading of modules in nodejs</title>
-      <link>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
+      <link>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
       <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
+      <guid>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
       <description>This is a pattern I found in pkgcloud to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.
 var providers = [ &#39;amazon&#39;, &#39;azure&#39;, ..., &#39;joyent&#39; ]; ... // // Setup all providers as lazy-loaded getters // providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&#39;./pkgcloud/&#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
     </item>
     
     <item>
       <title>Function parameters in Python, Java and Javascript</title>
-      <link>http://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</link>
+      <link>https://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</link>
       <pubDate>Sat, 18 Jan 2014 11:31:44 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</guid>
+      <guid>https://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</guid>
       <description>This is a short post about how these programming languages compare with each other when it comes to declaring functions with optional parameters and default values. Feel free to leave alternatives in other languages in the comments.
 Python. The good. Python is my favorite. Use your parameters in any order and define their default values as part of the function signature itself.
 def foo(arg1, arg2=&amp;quot;default&amp;quot;): print &amp;quot;arg1:&amp;quot;, arg1, &amp;quot;arg2:&amp;quot;, arg2  The price to pay is that you can not define two methods with the same name in the same class.</description>
@@ -34,30 +34,30 @@ def foo(arg1, arg2=&amp;quot;default&amp;quot;): print &amp;quot;arg1:&amp;quot;
     
     <item>
       <title>Scripting for the Java platform</title>
-      <link>http://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</link>
+      <link>https://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</link>
       <pubDate>Thu, 03 Nov 2011 07:44:57 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</guid>
+      <guid>https://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</guid>
       <description>Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
 Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:</description>
     </item>
     
     <item>
       <title>My first Javascript robotics simulator (and II)</title>
-      <link>http://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</link>
+      <link>https://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</link>
       <pubDate>Sun, 18 Sep 2011 17:03:47 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</guid>
+      <guid>https://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</guid>
       <description>A week ago I wrote a post about a Javascript robotics simulator. As an experimental project, I took the opportunity to try different technologies: HTML5, Javascript and Git. In this post I am going to write about what I have learnt with this project from a technical point of view, and what the future lines of work could be.
 HTML5 I learnt how the new slider input works, and how to use a canvas to display graphical information into a web browser.</description>
     </item>
     
     <item>
       <title>My first Javascript robotics simulator (I)</title>
-      <link>http://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</link>
+      <link>https://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</link>
       <pubDate>Mon, 12 Sep 2011 23:02:22 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</guid>
+      <guid>https://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</guid>
       <description>I must admit I have always been fascinated about robotics, especially about how a swarm of robots can cooperate, following a set of simple rules that lead to complex emergent behaviours, like those you can see in the exciting motion of a flock of birds.
 Whereas I have some elctronics background, the bad news is that I am a software developer at heart. This is why I find a big obstacle when it comes to the hardware layer.</description>
     </item>

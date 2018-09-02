@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Review on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/review/</link>
+    <link>https://guidogarcia.net/tags/review/</link>
     <description>Recent content in Review on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 17 Jul 2011 15:28:50 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/review/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/review/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Book review : The Clean Coder</title>
-      <link>http://guidogarcia.net/blog/2011/07/17/book-review-the-clean-coder/</link>
+      <link>https://guidogarcia.net/blog/2011/07/17/book-review-the-clean-coder/</link>
       <pubDate>Sun, 17 Jul 2011 15:28:50 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2011/07/17/book-review-the-clean-coder/</guid>
+      <guid>https://guidogarcia.net/blog/2011/07/17/book-review-the-clean-coder/</guid>
       <description>&amp;ldquo;The Clean Coder&amp;rdquo; me deja una sensación agridulce porque lo compré esperando que fuese un libro técnico sobre programación y me encontré otra cosa: un libro técnico sobre cómo ser un desarrollador profesional. Culpa mía por comprarlo por una recomendación en Twitter y no pararme a leer la sinopsis.
 El libro cubre distintos aspectos a los que se enfrenta un programador: técnicas de desarrollo (muy centrado en metodologías ágiles y TDD), gestión del tiempo y de la presión, dar estimaciones, colaboración, equipos y proyectos, etc.</description>
     </item>

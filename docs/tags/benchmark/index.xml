@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Benchmark on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/benchmark/</link>
+    <link>https://guidogarcia.net/tags/benchmark/</link>
     <description>Recent content in Benchmark on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sat, 18 Jan 2014 19:06:03 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/benchmark/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Performance is premature optimization</title>
-      <link>http://guidogarcia.net/blog/2014/01/18/performance-is-premature-optimization/</link>
+      <link>https://guidogarcia.net/blog/2014/01/18/performance-is-premature-optimization/</link>
       <pubDate>Sat, 18 Jan 2014 19:06:03 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2014/01/18/performance-is-premature-optimization/</guid>
+      <guid>https://guidogarcia.net/blog/2014/01/18/performance-is-premature-optimization/</guid>
       <description>I will burn in hell, but performance is premature optimization nowadays. Despite it is very interesting from an engineering perspective, from the practical point of view of someone who wants to follow the make-shit-happen startup mantra, my advice is not to worry much about it when it comes to choosing a programming language.
 There are things that matter more than the technology stack you choose. In this post I will try to explain why; then you can vent your rage in the comments section.</description>
     </item>
     
     <item>
       <title>Node.js running on my Raspberry Pi. A benchmark.</title>
-      <link>http://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</link>
+      <link>https://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</link>
       <pubDate>Thu, 13 Sep 2012 19:24:58 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</guid>
+      <guid>https://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</guid>
       <description>Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
 See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.</description>
     </item>

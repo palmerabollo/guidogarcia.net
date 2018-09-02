@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Gather on Call me Guido</title>
-    <link>http://guidogarcia.net/tags/gather/</link>
+    <link>https://guidogarcia.net/tags/gather/</link>
     <description>Recent content in Gather on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 26 Aug 2012 17:42:41 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/tags/gather/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="https://guidogarcia.net/tags/gather/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Analysis of variance (ANOVA) applied to fraud detection</title>
-      <link>http://guidogarcia.net/blog/2012/08/26/analysis-of-variance-anova-applied-to-fraud-detection/</link>
+      <link>https://guidogarcia.net/blog/2012/08/26/analysis-of-variance-anova-applied-to-fraud-detection/</link>
       <pubDate>Sun, 26 Aug 2012 17:42:41 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/2012/08/26/analysis-of-variance-anova-applied-to-fraud-detection/</guid>
+      <guid>https://guidogarcia.net/blog/2012/08/26/analysis-of-variance-anova-applied-to-fraud-detection/</guid>
       <description>Fraud detection is a topic applicable to many sectors (financial, insurance, etc). The method explained in this post is applied in the market research field by Gather Precision (a great market research tool developed by Gather Estudios, BTW), as an early signal to detect frauds in opinion polls.
 Imagine you have four field workers (Peter, John, Mary, Ann) taking surveys on the street. They spend different times gathering the data, and we want to discover if there are significant differences on the average levels.</description>
     </item>
