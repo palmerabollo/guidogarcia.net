@@ -2,47 +2,47 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Categories on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/categories/</link>
+    <link>http://guidogarcia.net/categories/</link>
     <description>Recent content in Categories on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     
-	<atom:link href="http://guidogarcia.net/blog/categories/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/categories/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cloud</title>
-      <link>http://guidogarcia.net/blog/categories/cloud/</link>
+      <link>http://guidogarcia.net/categories/cloud/</link>
       <pubDate>Sun, 18 Oct 2015 19:13:07 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/categories/cloud/</guid>
+      <guid>http://guidogarcia.net/categories/cloud/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Reflexión</title>
-      <link>http://guidogarcia.net/blog/categories/reflexi%C3%B3n/</link>
+      <link>http://guidogarcia.net/categories/reflexi%C3%B3n/</link>
       <pubDate>Tue, 16 Jun 2015 14:04:13 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/categories/reflexi%C3%B3n/</guid>
+      <guid>http://guidogarcia.net/categories/reflexi%C3%B3n/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Software</title>
-      <link>http://guidogarcia.net/blog/categories/software/</link>
+      <link>http://guidogarcia.net/categories/software/</link>
       <pubDate>Sun, 18 Oct 2015 19:13:07 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/categories/software/</guid>
+      <guid>http://guidogarcia.net/categories/software/</guid>
       <description></description>
     </item>
     
     <item>
       <title>Tecnología</title>
-      <link>http://guidogarcia.net/blog/categories/tecnolog%C3%ADa/</link>
+      <link>http://guidogarcia.net/categories/tecnolog%C3%ADa/</link>
       <pubDate>Sun, 18 Feb 2018 19:29:39 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/categories/tecnolog%C3%ADa/</guid>
+      <guid>http://guidogarcia.net/categories/tecnolog%C3%ADa/</guid>
       <description></description>
     </item>
     

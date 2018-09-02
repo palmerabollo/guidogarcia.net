@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Require on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/require/</link>
+    <link>http://guidogarcia.net/tags/require/</link>
     <description>Recent content in Require on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 27 Mar 2014 16:43:59 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/require/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/require/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Lazy loading of modules in nodejs</title>
-      <link>http://guidogarcia.net/blog/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
+      <link>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</link>
       <pubDate>Thu, 27 Mar 2014 16:43:59 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
+      <guid>http://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
       <description>This is a pattern I found in pkgcloud to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.
 var providers = [ &#39;amazon&#39;, &#39;azure&#39;, ..., &#39;joyent&#39; ]; ... // // Setup all providers as lazy-loaded getters // providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&#39;./pkgcloud/&#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
     </item>

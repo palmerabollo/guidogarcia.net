@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jdbc on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/jdbc/</link>
+    <link>http://guidogarcia.net/tags/jdbc/</link>
     <description>Recent content in Jdbc on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 28 Aug 2011 18:01:35 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/jdbc/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>To ORM or not to ORM</title>
-      <link>http://guidogarcia.net/blog/blog/2011/08/28/to-orm-or-not-to-orm/</link>
+      <link>http://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</link>
       <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2011/08/28/to-orm-or-not-to-orm/</guid>
+      <guid>http://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</guid>
       <description>In the last days I have had a couple of interesting discussions about wether to include an ORM library (such as Hibernate JPA implementation) in an application is a good idea or not.
 In this case, as usual, I think there is not a single best choice for every scenario, so I&amp;rsquo;ll try to list pros (and cons) for each alternative.
 Use an ORM layer  * Easy to develop and maintain.</description>

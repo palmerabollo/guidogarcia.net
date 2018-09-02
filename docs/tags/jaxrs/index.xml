@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jaxrs on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/jaxrs/</link>
+    <link>http://guidogarcia.net/tags/jaxrs/</link>
     <description>Recent content in Jaxrs on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 31 Jul 2011 22:42:53 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/jaxrs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/jaxrs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Cómo implementar un API REST en Java/JEE</title>
-      <link>http://guidogarcia.net/blog/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</link>
+      <link>http://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</link>
       <pubDate>Sun, 31 Jul 2011 22:42:53 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</guid>
+      <guid>http://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</guid>
       <description>Me pidieron consejo hace unos días sobre este tema. Personalmente, a día de hoy sólo recomiendo estas opciones, muy parecidas y que se basan en anotar las clases Java:
  * El especificación **[JAX-RS](http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services)**, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras [Jersey](http://jersey.java.net/), [Restlet](http://www.restlet.org/) o [Resteasy]( http://www.jboss.org/resteasy). Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1. @Path(&amp;quot;/product/{id}&amp;quot;) public class ProductResource { @GET public String get(@PathParam(&amp;quot;id&amp;quot;) String id) { return .</description>
     </item>

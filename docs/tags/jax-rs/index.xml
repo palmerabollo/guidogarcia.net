@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Jax Rs on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/jax-rs/</link>
+    <link>http://guidogarcia.net/tags/jax-rs/</link>
     <description>Recent content in Jax Rs on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Fri, 02 Mar 2012 20:10:07 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/jax-rs/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/jax-rs/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>How to develop a Java REST client in 3 minutes</title>
-      <link>http://guidogarcia.net/blog/blog/2012/03/02/how-to-develop-java-rest-client/</link>
+      <link>http://guidogarcia.net/blog/2012/03/02/how-to-develop-java-rest-client/</link>
       <pubDate>Fri, 02 Mar 2012 20:10:07 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2012/03/02/how-to-develop-java-rest-client/</guid>
+      <guid>http://guidogarcia.net/blog/2012/03/02/how-to-develop-java-rest-client/</guid>
       <description>Some time ago I wrote a post about how to implement a REST API with Java (spanish). Today I am going to write about how to consume a REST API as a client. More specifically, I am going to use Digg API (probably not the best REST API out there) to search stories by a given keyword.
 Show me the code As it is a third party REST API, I am going to use the client framework provided by RESTEasy, that I find extremely easy to use.</description>
     </item>

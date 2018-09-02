@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Database on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/database/</link>
+    <link>http://guidogarcia.net/tags/database/</link>
     <description>Recent content in Database on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Tue, 24 Jan 2012 23:06:26 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/database/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/database/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Auditing JPA entities with Hibernate Envers</title>
-      <link>http://guidogarcia.net/blog/blog/2012/01/25/auditing-jpa-entities-with-hibernate-envers/</link>
+      <link>http://guidogarcia.net/blog/2012/01/25/auditing-jpa-entities-with-hibernate-envers/</link>
       <pubDate>Tue, 24 Jan 2012 23:06:26 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2012/01/25/auditing-jpa-entities-with-hibernate-envers/</guid>
+      <guid>http://guidogarcia.net/blog/2012/01/25/auditing-jpa-entities-with-hibernate-envers/</guid>
       <description>In a recent project we had the need to keep a record of the changes made in every domain entity. That is, we need to insert a new record on an audit table every time an entity is created/updated/deleted.
 This is not the first time this problem arises. I think this is a the case of a cross-cutting concern, that fits well into the aspect-oriented programming area. I have seen this very same problem in many different projects I have worked on, always solved with one variant of these two approches:</description>
     </item>

@@ -1,4 +1,4 @@
-baseURL = "http://guidogarcia.net/blog/"
+baseURL = "http://guidogarcia.net"
 languageCode = "en-us"
 title = "Call me Guido"
 theme = "sam"

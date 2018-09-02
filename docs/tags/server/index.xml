@@ -2,31 +2,31 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Server on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/server/</link>
+    <link>http://guidogarcia.net/tags/server/</link>
     <description>Recent content in Server on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Thu, 02 Jan 2014 14:00:00 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/server/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/server/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Give your configuration some REST</title>
-      <link>http://guidogarcia.net/blog/blog/2014/01/02/a-rest-configuration-server/</link>
+      <link>http://guidogarcia.net/blog/2014/01/02/a-rest-configuration-server/</link>
       <pubDate>Thu, 02 Jan 2014 14:00:00 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2014/01/02/a-rest-configuration-server/</guid>
+      <guid>http://guidogarcia.net/blog/2014/01/02/a-rest-configuration-server/</guid>
       <description>I have built a simple configuration server to expose your app&amp;rsquo;s configuration as a REST service. Its name is rest-confidence (github). In this post I will try to explain its basics and three use cases where it could be useful:
  1. To configure distributed services. 2. As a foundation for A/B testing. 3. As a simple service directory.  Install and run a basic rest-confidence configuration server The first step is installing the configuration server:</description>
     </item>
     
     <item>
       <title>Node.js running on my Raspberry Pi. A benchmark.</title>
-      <link>http://guidogarcia.net/blog/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</link>
+      <link>http://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</link>
       <pubDate>Thu, 13 Sep 2012 19:24:58 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</guid>
+      <guid>http://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/</guid>
       <description>Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
 See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.</description>
     </item>

@@ -2,21 +2,21 @@
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
     <title>Experiment on Call me Guido</title>
-    <link>http://guidogarcia.net/blog/tags/experiment/</link>
+    <link>http://guidogarcia.net/tags/experiment/</link>
     <description>Recent content in Experiment on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
     <lastBuildDate>Sun, 18 Feb 2018 19:29:39 +0000</lastBuildDate>
     
-	<atom:link href="http://guidogarcia.net/blog/tags/experiment/index.xml" rel="self" type="application/rss+xml" />
+	<atom:link href="http://guidogarcia.net/tags/experiment/index.xml" rel="self" type="application/rss+xml" />
     
     
     <item>
       <title>Evolutionary art experiment with Marilyn</title>
-      <link>http://guidogarcia.net/blog/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</link>
+      <link>http://guidogarcia.net/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</link>
       <pubDate>Sun, 18 Feb 2018 19:29:39 +0000</pubDate>
       
-      <guid>http://guidogarcia.net/blog/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</guid>
+      <guid>http://guidogarcia.net/blog/2018/02/18/evolutionary-art-experiment-with-marilyn/</guid>
       <description>You know I like evolutionary algorithms. In the past month I ran a small art experiment reflecting the impact of brands and the harmful effect of advertisements in modern life. The idea was to pick a cultural icon and recreate it using corporate logos only.
 I started with Marilyn Monroe and a genetic algorithm that combined a set of logos in a mutation and a crossover loop. The mutation phase randomly picked some individuals (an individual is a specific combination of logos) and modified them, as nature would do, replacing some logos, resizing or rotating them.</description>
     </item>
