@@ -1,0 +1,155 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Java : different ways to filter a Collection
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Java : different ways to filter a Collection</div>
+
+<div class="section" id="content">
+
+<p>Imagine we have a simple Java class:</p>
+
+<pre><code>  public class Person {
+    private int age;
+    private Gender sex;
+
+    // constructor, getters &amp; setters
+  }
+
+  enum Gender { MALE, FEMALE };
+</code></pre>
+
+<p>And that you have a <code>Collection</code> of <code>Person</code> objects, such as the following one:</p>
+
+<pre><code>  Person p1 = new Person(35, Gender.MALE);
+  Person p2 = new Person(30, Gender.MALE);
+  Person p3 = new Person(25, Gender.FEMALE);
+  Person p4 = new Person(15, Gender.FEMALE);        
+
+  List&lt;Person&gt; people = Arrays.asList(p1,p2,p3,p4);
+</code></pre>
+
+<p>How would you create a new <code>Collection</code> containing only men over 21?</p>
+
+<h3 id="use-plain-java-like-real-men-do">Use plain Java, like real men do</h3>
+
+<pre><code>  List&lt;Person&gt; result = new ArrayList&lt;Person&gt;();
+  for (Person person : people) {
+    if (person.getAge() &gt; 21 &amp;&amp; person.getGender() == Gender.MALE) {
+      result.add(person);
+    }
+  }
+
+  // now result contains the filtered collection
+</code></pre>
+
+<h3 id="filtering-by-predicate">Filtering by predicate</h3>
+
+<p>The second option is what <a href="http://commons.apache.org/collections/">Commons Collections</a> and <a href="http://code.google.com/p/guava-libraries/">Guava</a> propose, and that I think should have been part of the Java core at least since Java 5.</p>
+
+<pre><code>  public interface Predicate&lt;T&gt; { boolean apply(T type); }
+
+  public static &lt;T&gt; Collection&lt;T&gt; filter(Collection&lt;T&gt; col, Predicate&lt;T&gt; predicate) {
+    Collection&lt;T&gt; result = new ArrayList&lt;T&gt;();
+    for (T element: col) {
+      if (predicate.apply(element)) {
+        result.add(element);
+      }
+    }
+    return result;
+  }
+</code></pre>
+
+<p>It remembers me the visitor pattern. With this approach in mind, you can define a set of predicates:</p>
+
+<pre><code>  Predicate&lt;Person&gt; validPersonPredicate = new Predicate&lt;Person&gt;() {
+    public boolean apply(Person person) {
+      return person.getAge() &gt; 21 &amp;&amp; person.getGender() == Gender.MALE;
+    }
+  };
+
+  Collection&lt;Person&gt; result = filter(people, validPersonPredicate);
+</code></pre>
+
+<p>I find it very similar to Python&rsquo;s <code>filter()</code> function, but more verbose due to Java&rsquo;s nature.</p>
+
+<p>This way your code becomes cleaner, and you can combine fine-grained reusable predicates. As a future line of work, it would be interesting to define a <a href="http://martinfowler.com/bliki/FluentInterface.html">fluent interface</a> that allows chaining of several predicates in a more natural way.</p>
+
+<h3 id="jsr-335-project-lambda-and-lambdaj">JSR 335, Project Lambda and lambdaj</h3>
+
+<p><a href="http://jcp.org/en/jsr/detail?id=335">JSR 335</a> (Lambda Expressions for the Java Programming Language) is part of JSR 337 (Java SE 8), which is scheduled for release in late 2012.</p>
+
+<p>Lambda syntax is <a href="http://mail.openjdk.java.net/pipermail/lambda-dev/2011-September/003936.html">already decided</a> (it is similar to C# and Scala) and what I hope is to see something similar to this kind of filtering, method chaining included:</p>
+
+<pre><code>Collection&lt;Person&gt; result = people
+    .filter(p =&gt; { return p.age &gt; 21 })
+    .filter(p =&gt; { return p.gender == Gender.MALE });
+</code></pre>
+
+<p>If you can not wait and need to start using that kind of syntax today, I recommend the <a href="http://code.google.com/p/lambdaj/">lambdaj library</a>, it is not the same but it is handy in some cases:</p>
+
+<pre><code>Collection&lt;Person&gt; result = with(people).clone()
+    .retain(having(on(Person.class).getAge(), greaterThan(21)))
+    .retain(having(on(Person.class).getGender(), equals(Gender.MALE)));
+</code></pre>
+
+<p>I have not tried the last snippet but you get the idea. Notice you have to call <code>clone()</code> if you want to leave the original collection unchanged.</p>
+
+<h2 id="a-small-benchmark">A small benchmark</h2>
+
+<p>As a second line of work, a comparison between the three alternatives is still to be done. I suppose the use of predicates is cleaner at the cost of a lower performance.</p>
+
+<p>Comments are open.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+
+&#183; <a href="http://guidogarcia.net/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

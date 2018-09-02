@@ -1,0 +1,157 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+How to develop a Java REST client in 3 minutes
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">How to develop a Java REST client in 3 minutes</div>
+
+<div class="section" id="content">
+
+<p>Some time ago I wrote a post about <a href="http://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/">how to implement a REST API with Java</a> (spanish). Today I am going to write about how to consume a REST API as a client. More specifically, I am going to use <a href="http://developers.digg.com/documentation">Digg API</a> (probably not the best REST API out there) to search stories by a given keyword.</p>
+
+<h3 id="show-me-the-code">Show me the code</h3>
+
+<p>As it is a third party REST API, I am going to use the <a href="http://docs.jboss.org/resteasy/docs/2.3.1.GA/userguide/html/RESTEasy_Client_Framework.html">client framework provided by RESTEasy</a>, that I find extremely easy to use.</p>
+
+<p>You only have to add one dependency to your pom.xml:</p>
+
+<pre><code>  &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-jaxrs&lt;/artifactId&gt;
+      &lt;version&gt;2.3.1.GA&lt;/version&gt;
+  &lt;/dependency&gt;
+</code></pre>
+
+<p>And you are now ready to start coding. I think the Java code is self explanatory, so here it goes:</p>
+
+<pre><code>import org.jboss.resteasy.client.ClientRequest;
+import org.jboss.resteasy.client.ClientResponse;
+
+public class DiggClient {
+    private static final String DIGG_SEARCH_ENDPOINT =
+            &quot;http://services.digg.com/{version}/search.search&quot;;
+
+    public static void main(String[] args) throws Exception {
+        ClientRequest req = new ClientRequest(DIGG_SEARCH_ENDPOINT);
+        req
+            .pathParameter(&quot;version&quot;, &quot;2.0&quot;)
+            .queryParameter(&quot;query&quot;, &quot;health&quot;);
+
+        ClientResponse&lt;String&gt; res = req.get(String.class);
+        System.out.println(res.getEntity());
+    }
+}
+</code></pre>
+
+<p><strong>Update:</strong> As pointed out by Andy MacKinlay in the comments, ClientRequest is deprecated in RESTEasy 3.x.</p>
+
+<h3 id="but-i-do-not-want-to-parse-a-string">But I do not want to parse a String&hellip;</h3>
+
+<p>You might have noticed that the response is converted to a String. In most cases an API will return a XML or a JSON representation of the data as response to the request. In these cases it is great to automatically convert the response into the objects in your Java data model.</p>
+
+<p>For example, these are the domain classes representing (partially) the Digg search results:</p>
+
+<pre><code>class SearchResult {
+    private int total;
+    private Story[] stories;
+    // ... getters/setters
+}
+
+class Story {
+    private String id;
+    private String title;
+    // ... getters/setters
+}
+</code></pre>
+
+<p>Digg results are offered as JSON, so you only need to add a Maven dependency to include the providers RESTEasy uses to handle JSON:</p>
+
+<pre><code>  &lt;dependency&gt;
+      &lt;groupId&gt;org.jboss.resteasy&lt;/groupId&gt;
+      &lt;artifactId&gt;resteasy-jackson-provider&lt;/artifactId&gt;
+      &lt;version&gt;2.3.1.GA&lt;/version&gt;
+  &lt;/dependency&gt;
+</code></pre>
+
+<p>The resulting Java code remains almost the same:</p>
+
+<pre><code>import org.jboss.resteasy.client.ClientRequest;
+import org.jboss.resteasy.client.ClientResponse;
+
+public class DiggClient {
+    private static final String DIGG_SEARCH_ENDPOINT =
+            &quot;http://services.digg.com/{version}/search.search&quot;;
+
+    public static void main(String[] args) throws Exception {
+        ClientRequest req = new ClientRequest(DIGG_SEARCH_ENDPOINT);
+        req
+            .pathParameter(&quot;version&quot;, &quot;2.0&quot;)
+            .queryParameter(&quot;query&quot;, &quot;health&quot;);
+
+        ClientResponse&lt;SearchResult&gt; res = req.get(SearchResult.class);
+        SearchResult result = res.getEntity();
+        System.out.println(result.getTotal() + &quot; matching stories found&quot;);
+    }
+}
+</code></pre>
+
+<p>Note: you need to annotate your domain Java classes as <code>@JsonIgnoreProperties(ignoreUnknown=true)</code> if the server returns any field that is not present in your domain Java classes.</p>
+
+<h3 id="what-if-you-are-using-your-own-api">What if you are using your own API?</h3>
+
+<p>If you already have developed your JAX-RS resources, I would suggest to use a proxy-based approach. Take a look at the <a href="http://cxf.apache.org/docs/jax-rs-client-api.html#JAX-RSClientAPI-ProxybasedAPI">JAX-RS client factory in Apache CXF</a>, or how to <a href="http://docs.jboss.org/resteasy/docs/2.3.1.GA/userguide/html/RESTEasy_Client_Framework.html#Sharing_interfaces">share interfaces between client and server with RESTEasy</a>. This way you reuse more code and makes your code maintenance easier.</p>
+
+<p>Comments about other alternatives (<a href="http://jersey.java.net/">Jersey</a>, etc) are welcome.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+
+&#183; <a href="http://guidogarcia.net/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Script on Call me Guido</title>
+    <link>http://guidogarcia.net/tags/script/</link>
+    <description>Recent content in Script on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Thu, 03 Nov 2011 07:44:57 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/tags/script/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Scripting for the Java platform</title>
+      <link>http://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</link>
+      <pubDate>Thu, 03 Nov 2011 07:44:57 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</guid>
+      <description>Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
+Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:</description>
+    </item>
+    
+  </channel>
+</rss>

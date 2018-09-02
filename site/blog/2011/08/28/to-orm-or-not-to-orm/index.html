@@ -1,0 +1,96 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+To ORM or not to ORM
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">To ORM or not to ORM</div>
+
+<div class="section" id="content">
+
+<p>In the last days I have had a couple of interesting discussions about wether to include an ORM library (such as Hibernate JPA implementation) in an application is a good idea or not.</p>
+
+<p>In this case, as usual, I think there is not a single best choice for every scenario, so I&rsquo;ll try to list pros (and cons) for each alternative.</p>
+
+<h2 id="use-an-orm-layer">Use an ORM layer</h2>
+
+<pre><code>  * Easy to develop and maintain. You only annotate your domain model classes with standard JPA/JDO annotations that, at the same time, serve as some kind of documentation. So you can write less code, which means more productivity and probably less bugs.
+  * Database independence. You can change your DBMS (i.e. from MySQL to Oracle) and keep you code untouched. Sounds interesting, but I have to admit that I've not seen this need in more than 10 years of professional experience.
+  * State management. Automatic synchronization of the state of your in-memory [domain model](http://martinfowler.com/eaaCatalog/domainModel.html) with a relational database
+</code></pre>
+
+<p>I could say this would be my default choice in a new project without any special requirements.</p>
+
+<h2 id="use-plain-jdbc">Use plain JDBC</h2>
+
+<pre><code>  * Greater degree of control, because you write your own SQL sentences by hand
+  * A shallow learning curve (if you already know SQL)
+  * More efficient because you can only retrieve the data you need and because you (or a DBA) can fine-tune the precise SQL sentences. I don't fully agree with this argument because an ORM layer also includes many other improvements such as caching, lazy loading, etc.
+  * At the end, you also have to write sentences if you use an ORM (i.e. JPQL with JPA)
+</code></pre>
+
+<p>I only recommend this alternative in those few cases where you have extreme performance requirements and/or an experienced DBA in your team.</p>
+
+<h2 id="use-a-mixed-model">Use a mixed model</h2>
+
+<p>Some years ago I used iBatis (now <a href="http://www.mybatis.org/">mybatis</a> as a SQL mapping framework that comes with a great documentation and other niceties such as caching mechanisms, ability to build dynamic queries on the fly, etc.</p>
+
+<p>It was great, but at the end you were forced to maintain a XML file with a bunch of SQL queries and the mappings between your classes and your database structure. With mybatis 3 things seem to have changed: you can stop using an external XML file and use Java annotations instead. They are not standard as far as I know.</p>
+
+<p>I have no experience with it, so I don&rsquo;t really know wether it is a valid alternative or not.</p>
+
+<p><strong>Extra point</strong>: One of my coworkers said &ldquo;don&rsquo;t ever let hibernate to create your database schema&rdquo;.  Literally. Do you have any reason to think it is not a good idea?</p>
+
+<p>The post is open to any contribution.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+
+&#183; <a href="http://guidogarcia.net/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

@@ -1,0 +1,145 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Scripting for the Java platform
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Scripting for the Java platform</div>
+
+<div class="section" id="content">
+
+<p>Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (<a href="http://www.jcp.org/en/jsr/detail?id=223">JSR-223</a> implementation)</p>
+
+<p>Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a>, the JavaScript implementation that ships with Java SE 6:</p>
+
+<pre><code>import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+
+public class TestScript {
+  public static void main(String[] args) throws Exception {
+    ScriptEngineManager mgr = new ScriptEngineManager();
+    ScriptEngine engine = mgr.getEngineByName(&quot;js&quot;);
+
+    String script = &quot;function sum(a, b) {&quot; +
+                    &quot;   var result = a + b;&quot; +
+                    &quot;   return result;&quot; +
+                    &quot;}&quot;;
+    engine.eval(script);
+
+    Invocable invocableEngine = (Invocable) engine;
+    Number result = 
+            (Number) invocableEngine.invokeFunction(&quot;sum&quot;, 2, 3);
+    System.out.println(result); // output = 5.0
+  }
+}
+</code></pre>
+
+<h3 id="reuse-existing-code">Reuse existing code</h3>
+
+<p>I find this &ldquo;trick&rdquo; useful in cases where you want to reuse existing scripting code. In the following example I use the great <a href="http://www.datejs.com/">datejs library</a> to parse dates written in natural language:</p>
+
+<pre><code>import java.io.InputStreamReader;
+import java.io.Reader;
+
+import javax.script.Invocable;
+import javax.script.ScriptEngine;
+import javax.script.ScriptEngineManager;
+import javax.script.ScriptException;
+
+public class DateParser {
+    private final ScriptEngine engine;
+
+    public DateParser() throws ScriptException {
+        ScriptEngineManager mgr = new ScriptEngineManager();
+        engine = mgr.getEngineByName(&quot;js&quot;);
+
+        Reader reader = new InputStreamReader(
+                this.getClass().getResourceAsStream(&quot;/scripts/date.js&quot;));
+        engine.eval(reader);
+        engine.eval(
+            &quot;function parse(value) { &quot; +
+            &quot;    return Date.parse(value).toDateString();&quot; +
+            &quot;};&quot;
+        );
+    }
+
+    public String parse(String naturalLanguageDate)
+            throws ScriptException, NoSuchMethodException {
+        Invocable invocableEngine = (Invocable) engine;
+        return (String) invocableEngine.invokeFunction(&quot;parse&quot;, naturalLanguageDate);
+    }
+
+    public static void main(String[] args) throws Exception {
+        DateParser parser = new DateParser();
+
+        // output = Thu Nov 03 2011
+        System.out.println(parser.parse(&quot;next thursday&quot;)); 
+
+        // output  = Wed Nov 09 2011
+        System.out.println(parser.parse(&quot;tomorrow + 10 days&quot;));
+    }
+}
+</code></pre>
+
+<p>Well, that is all for the proof of concept I was looking for. If you want to read a more complete and deep article about this subject, I recommend <a href="http://download.oracle.com/javase/6/docs/technotes/guides/scripting/programmer_guide/index.html">Java Scripting Programmer&rsquo;s Guide at Oracle</a>.</p>
+
+<h3 id="problems-found">Problems found</h3>
+
+<p>So far, the most problematic point I have found is the conversion from the <code>Object</code> returned by <code>invokeFunction</code> to the appropriate Java types. It is not hard when it is a simple type such as a Number or a String, but it is not so easy when it comes to a more complex type (<code>Array</code>, <code>Date</code>). This is why the <code>parse</code> function in the second example returns a <code>String</code> instead of a <code>Date</code>.</p>
+
+<p>In my first attempt I tried to create a neural network with <a href="http://harthur.github.com/brain/">brain</a>, a javascript supervised machine learning library. It would have been an interesting and even useful piece of code, but I failed miserably, probably because they use code not supported by ECMAScript 1.6.</p>
+
+<p>A little benchmark would also be great, to determine the overhead introduced (if any) when you execute scripting code from Java, and compare it with a external/standalone script engine.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+
+&#183; <a href="http://guidogarcia.net/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

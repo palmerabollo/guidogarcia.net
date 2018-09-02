@@ -1,0 +1,12 @@
+{
+  "name": "guidogarcia",
+  "version": "1.0.0",
+  "description": "My personal blog",
+  "main": "index.js",
+  "scripts": {
+    "build": "hugo -d site",
+    "debug": "hugo server -D"
+  },
+  "keywords": [],
+  "author": "Guido García <https://twitter.com/palmerabollo>"
+}

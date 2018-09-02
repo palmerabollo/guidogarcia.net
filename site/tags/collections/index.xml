@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Collections on Call me Guido</title>
+    <link>http://guidogarcia.net/tags/collections/</link>
+    <description>Recent content in Collections on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sat, 29 Oct 2011 13:37:43 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/tags/collections/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Java : different ways to filter a Collection</title>
+      <link>http://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</link>
+      <pubDate>Sat, 29 Oct 2011 13:37:43 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</guid>
+      <description>Imagine we have a simple Java class:
+ public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE };  And that you have a Collection of Person objects, such as the following one:
+ Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.</description>
+    </item>
+    
+  </channel>
+</rss>

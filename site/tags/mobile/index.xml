@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Mobile on Call me Guido</title>
+    <link>http://guidogarcia.net/tags/mobile/</link>
+    <description>Recent content in Mobile on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Tue, 20 Dec 2011 20:02:30 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/tags/mobile/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>ACRA, reporting crashes in your Android app the easy way</title>
+      <link>http://guidogarcia.net/blog/2011/12/20/acra-reporting-crashes-in-your-android-application-the-easy-way/</link>
+      <pubDate>Tue, 20 Dec 2011 20:02:30 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2011/12/20/acra-reporting-crashes-in-your-android-application-the-easy-way/</guid>
+      <description>ACRA (Application Crash Report for Android) is a extremely helpful Android library that allows your mobile application to send a report to different destinations when it crashes -miserably-.
+It is both powerful/configurable and very easy to use at the same time, allowing:
+ * Different kind of notifications (silent, toast, status bar, etc) * Detailed crash reports (stack traces, device model, system versions) * Many targets (email, shared google spreadsheet, etc)  In my example I have used a shared google document as the target where the notifications are sent, and I have chosen not to show anything to de user when the application crashes (silent mode).</description>
+    </item>
+    
+  </channel>
+</rss>

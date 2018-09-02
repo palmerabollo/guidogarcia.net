@@ -1,0 +1,12 @@
+baseURL = "http://guidogarcia.net/"
+languageCode = "en-us"
+title = "Call me Guido"
+theme = "sam"
+
+[[params.mainMenu]]
+  link = "/posts"
+  text = "Hello. Call me Guido"
+
+[[params.mainMenu]]
+  link = "https://twitter.com/palmerabollo"
+  text = "Twitter"

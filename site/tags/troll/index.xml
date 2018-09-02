@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Troll on Call me Guido</title>
+    <link>http://guidogarcia.net/tags/troll/</link>
+    <description>Recent content in Troll on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Fri, 25 Apr 2014 16:19:37 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/tags/troll/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>How to catch an Internet troll</title>
+      <link>http://guidogarcia.net/blog/2014/04/25/how-to-catch-an-internet-troll/</link>
+      <pubDate>Fri, 25 Apr 2014 16:19:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2014/04/25/how-to-catch-an-internet-troll/</guid>
+      <description>Some weeks ago I carried out a social experiment (dameunverso.com, spanish) that consisted in writing a poem in a collaborative and anonymous way. This means that anyone can add a new verse to the poem without identifying themselves or leaving any metadata (no cookies, no IP address tracking, etc).
+Our first trolls didn&amp;rsquo;t take long to appear, mostly in the form of copyrighted material, spam and offensive contents. Is it possible to automatically classify an anonymous verse as spammy?</description>
+    </item>
+    
+  </channel>
+</rss>

@@ -1,0 +1,120 @@
+<!DOCTYPE html><html><head>
+
+<meta charset="utf-8">
+<meta http-equiv="X-UA-Compatible" content="chrome=1">
+<meta name="HandheldFriendly" content="True">
+<meta name="MobileOptimized" content="320">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="referrer" content="no-referrer">
+
+<meta name="description" content="Call me Sam, a theme for Hugo.">
+
+<meta name="twitter:card" content="summary">
+<meta name="twitter:domain" content="http://guidogarcia.net/">
+
+<meta name="twitter:image" content="http://guidogarcia.net/tn.png">
+<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
+<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
+<meta name="og:type" content="website">
+<meta name="og:url" content="http://guidogarcia.net/">
+<meta name="og:image" itemprop="image primaryImageOfPage" content="http://guidogarcia.net/tn.png">
+
+<link rel="shortcut icon" href="http://guidogarcia.net/sam.ico" id="favicon">
+<link rel="stylesheet" href="http://guidogarcia.net/css/style.css">
+
+<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
+    crossorigin="anonymous"></script>
+
+
+
+
+
+
+
+<title>
+
+Function parameters in Python, Java and Javascript
+
+</title></head><body>
+<div class="wrap">
+<div class="section" id="title">Function parameters in Python, Java and Javascript</div>
+
+<div class="section" id="content">
+
+<p>This is a short post about how these programming languages compare with each other when it comes to declaring functions with optional parameters and default values. Feel free to leave alternatives in other languages in the comments.</p>
+
+<h3 id="python-the-good">Python. The good.</h3>
+
+<p>Python is my favorite. Use your parameters in any order and define their default values as part of the function signature itself.</p>
+
+<pre><code>def foo(arg1, arg2=&quot;default&quot;):
+    print &quot;arg1:&quot;, arg1, &quot;arg2:&quot;, arg2
+</code></pre>
+
+<p>The price to pay is that you can not define two methods with the same name in the same class.</p>
+
+<pre><code>def sum(a, b):
+    return a + b
+
+def sum(a, b, c):
+    return a + b + c
+</code></pre>
+
+<p>I am not a Python expert, but it does not seem such a big deal.</p>
+
+<h3 id="java-the-ugly">Java. The ugly.</h3>
+
+<p>Java is more verbose, but you have strong types and simple refactoring in exchange.</p>
+
+<pre><code>public void foo(String arg1) {
+    foo(arg1, &quot;default&quot;);
+}
+
+public void foo(String arg1, String arg2) {
+    System.out.printf(&quot;arg1: %s arg2: %s&quot;, arg1, arg2);
+}
+</code></pre>
+
+<h3 id="javascript-the-bad">Javascript. The bad.</h3>
+
+<p>Javascript is a little more ugly.</p>
+
+<pre><code>function foo(arg1, arg2) {
+    arg2 = arg2 || 'default';
+    console.log('arg1 %s arg2 %s', arg1, arg2);
+}
+</code></pre>
+
+<p>This is <a href="https://github.com/joyent/node-smartdc/blob/master/lib/cloudapi.js#L223">real code</a> we use in <a href="http://cloud.telefonica.com/">Instant Servers</a>, to have an optional first parameter:</p>
+
+<pre><code>CloudAPI.prototype.getAccount = function (account, callback, noCache) {
+    if (typeof (account) === 'function') {
+        callback = account;
+        account = this.account;
+    }
+    if (!callback || typeof (callback) !== 'function')
+        throw new TypeError('callback (function) required');
+    ...
+}
+</code></pre>
+
+<p>It is pure crap.</p>
+</div>
+
+
+<div class="section bottom-menu"><hr/><p>
+
+
+<a href="/posts">Hello. Call me Guido</a>
+
+
+&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
+
+&#183; <a href="http://guidogarcia.net/"></a></p></div>
+
+
+<div class="section footer"></div>
+</div>
+</body></html>

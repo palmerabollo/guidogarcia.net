@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8" standalone="yes" ?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+  <channel>
+    <title>Cloud on Call me Guido</title>
+    <link>http://guidogarcia.net/categories/cloud/</link>
+    <description>Recent content in Cloud on Call me Guido</description>
+    <generator>Hugo -- gohugo.io</generator>
+    <language>en-us</language>
+    <lastBuildDate>Sun, 18 Oct 2015 19:13:07 +0000</lastBuildDate>
+    
+	<atom:link href="http://guidogarcia.net/categories/cloud/index.xml" rel="self" type="application/rss+xml" />
+    
+    
+    <item>
+      <title>Ansible. Automate everything.</title>
+      <link>http://guidogarcia.net/blog/2015/10/18/ansible-automate-everything/</link>
+      <pubDate>Sun, 18 Oct 2015 19:13:07 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2015/10/18/ansible-automate-everything/</guid>
+      <description>Ansible is an automation tool that works by running tasks (a playbook) against a set of hosts (inventory).
+The first beta of Ansible 2.x is ready, and it comes with modules to automate the management of your openstack infrastructure (other cloud platforms are also available). This is my presentantion for begginers who want to start using Ansible and to stop wasting their time.</description>
+    </item>
+    
+    <item>
+      <title>Cloud is not cheap</title>
+      <link>http://guidogarcia.net/blog/2014/03/18/cloud-is-not-cheap/</link>
+      <pubDate>Tue, 18 Mar 2014 06:56:37 +0000</pubDate>
+      
+      <guid>http://guidogarcia.net/blog/2014/03/18/cloud-is-not-cheap/</guid>
+      <description>There is a myth about cloud computing. Many people think they will save money moving their services to the cloud, but the reality is that the cloud is not cheap.
+Virtualization, one of the core parts of cloud computing, tries to meet the promise of elastic capacity and pay-as-you-go policies. Despite of this promise, the true story is that today we are running virtual machines that don&amp;rsquo;t do much because, most part of the time, our applications are not doing anything.</description>
+    </item>
+    
+  </channel>
+</rss>
