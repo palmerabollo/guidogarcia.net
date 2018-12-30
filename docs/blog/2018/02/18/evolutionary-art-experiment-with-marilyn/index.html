@@ -45,76 +45,82 @@ Evolutionary art experiment with Marilyn
 
 <p>You know I like <a href="http://guidogarcia.net/blog/2014/11/05/evolutionary-computation-%c2%b7-tefcon-2014/">evolutionary algorithms</a>. In the past month I ran a small <strong>art experiment reflecting the impact of brands and the harmful effect of advertisements in modern life</strong>. The idea was to pick a cultural icon and recreate it using corporate logos only.</p>
 
-<p><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/marilyn.jpg" alt="Original image" /></p>
+<p><img src="/images/marilyn.jpg" alt="Original image" /></p>
 
 <p>I started with Marilyn Monroe and a genetic algorithm that combined a set of logos in a <strong>mutation and a crossover</strong> loop. The <em>mutation phase</em> randomly picked some individuals (an individual is a specific combination of logos) and modified them, as nature would do, replacing some logos, resizing or rotating them. The <em>crossover phase</em> chose pairs of individuals and produced a child individual from them.</p>
 
 <p>The first image corresponds to the individual 46, after the algorithm had been running for <strong>15 minutes</strong> on a machine with 32 cores. Marylin wasn&rsquo;t there yet but everything looked good so far.</p>
 
-<p><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/output_individual_46.png" alt="Individual 46" /></p>
+<p><img src="/images/output_individual_46.png" alt="Individual 46" /></p>
 
-<p>After <strong>12 hours</strong>, Marilyn&rsquo;s eye and her eyebrow had already been replaced by an Evernote&rsquo;s elephant and a Facebook logo, as shown in the following image, that belongs to the individual 5449. Her lips seem to be McDonald&rsquo;s Golden Arches. The algorithm was slower than expected, but it looked promising.
-<table align="center" >
-<tbody >
-<tr ></p>
+<p>After <strong>12 hours</strong>, Marilyn&rsquo;s eye and her eyebrow had already been replaced by an Evernote&rsquo;s elephant and a Facebook logo, as shown in the following image, that belongs to the individual 5449. Her lips seem to be McDonald&rsquo;s Golden Arches. The algorithm was slower than expected, but it looked promising.</p>
 
-<p><td ><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/output_individual_5449.png" alt="Individual 5449" /></p>
+<table>
+<thead>
+<tr>
+<th>Individual 5449 (12h)</th>
+<th>Original</th>
+</tr>
+</thead>
 
-<p></td></p>
-
-<p><td ><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/marilyn.jpg" alt="Original image" /></p>
-
-<p></td>
+<tbody>
+<tr>
+<td><img src="/images/output_individual_5449.png" alt="Individual 5449" /></td>
+<td><img src="/images/marilyn.jpg" alt="Original image" /></td>
 </tr>
 </tbody>
 </table>
-Sadly, the fittest individual found after <strong>24 hours </strong>didn&rsquo;t look so good, so I cancelled the experiment. I didn&rsquo;t notice further improvements. The outline of Marilyn is also clear, but the result is way worse than I expected.
-<table align="center" >
-<tbody >
-<tr ></p>
 
-<p><td ><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/output_individual_8463.png" alt="Individual 8463" /></p>
+<p>Sadly, the fittest individual found after <strong>24 hours</strong> didn&rsquo;t look so good, so I cancelled the experiment. I didn&rsquo;t notice further improvements. The outline of Marilyn is also clear, but the result is way worse than I expected.</p>
 
-<p></td></p>
+<table>
+<thead>
+<tr>
+<th>Individual 8463 (24h)</th>
+<th>Original</th>
+</tr>
+</thead>
 
-<p><td ><img src="http://guidogarcia.net/blog/wp-content/uploads/2018/02/marilyn.jpg" alt="Original image" /></p>
-
-<p></td>
+<tbody>
+<tr>
+<td><img src="/images/output_individual_8463.png" alt="Individual 5449" /></td>
+<td><img src="/images/marilyn.jpg" alt="Original image" /></td>
 </tr>
 </tbody>
 </table>
-In hindsight, I wouldn&rsquo;t call the result a success. What do you say?</p>
+
+<p>In hindsight, I wouldn&rsquo;t call the result a success. What do you say?</p>
 
 <h3 id="how-to-run-your-own-experiment">How to run your own experiment</h3>
 
 <p>The good part of genetic algorithms is that you only need to code <em>what</em> you want to achieve and not <em>how</em> to achieve it. That&rsquo;s why the overall algorithm always look the same. In general you only need to <strong>implement the fitness function</strong>, that measures how good a given solution is. There are also different crossover algorithms. In this experiment I used a wheel probability selector, where the fittest individuals are more likely to be chosen for crossover and a <a href="https://en.wikipedia.org/wiki/Crossover_(genetic_algorithm)#Techniques">single point crossover</a> technique.</p>
 
-<pre><code>const population = ... // generate array of random individuals
-population
-    .filter(individual =&gt; individual.fitness &gt; MIN_FITNESS)
-    .then(survivors =&gt; {
-        // always kill the worst 20% individuals
-        return survivors
-            .sort((a, b) =&gt; b.fitness - a.fitness)
-            .slice(0, survivors.length * 0.8);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">const</span> <span style="color:#a6e22e">population</span> <span style="color:#f92672">=</span> ... <span style="color:#75715e">// generate array of random individuals
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">population</span>
+    .<span style="color:#a6e22e">filter</span>(<span style="color:#a6e22e">individual</span> =&gt; <span style="color:#a6e22e">individual</span>.<span style="color:#a6e22e">fitness</span> <span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">MIN_FITNESS</span>)
+    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">survivors</span> =&gt; {
+        <span style="color:#75715e">// always kill the worst 20% individuals
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">survivors</span>
+            .<span style="color:#a6e22e">sort</span>((<span style="color:#a6e22e">a</span>, <span style="color:#a6e22e">b</span>) =&gt; <span style="color:#a6e22e">b</span>.<span style="color:#a6e22e">fitness</span> <span style="color:#f92672">-</span> <span style="color:#a6e22e">a</span>.<span style="color:#a6e22e">fitness</span>)
+            .<span style="color:#a6e22e">slice</span>(<span style="color:#ae81ff">0</span>, <span style="color:#a6e22e">survivors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#ae81ff">0.8</span>);
     })
-    .then(survivors =&gt; {
-        // mutate phase
-        const mutateCount = survivors.length * MUTATE_PROBABILITY;
-        _.times(mutateCount, () =&gt; _.sample(survivors).mutate());
+    .<span style="color:#a6e22e">then</span>(<span style="color:#a6e22e">survivors</span> =&gt; {
+        <span style="color:#75715e">// mutate phase
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">mutateCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">survivors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">MUTATE_PROBABILITY</span>;
+        <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">times</span>(<span style="color:#a6e22e">mutateCount</span>, () =&gt; <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">sample</span>(<span style="color:#a6e22e">survivors</span>).<span style="color:#a6e22e">mutate</span>());
 
-        // crossover phase with wheel selection
-        const crossoverCount = survivors.length * CROSSOVER_PROBABILITY;
-        _.times(crossoverCount, () =&gt; {
-            const parent1 = wheel();
-            const parent2 = wheel();
-            const child = parent1.crossover(parent2);
-            survivors.push(child);
+        <span style="color:#75715e">// crossover phase with wheel selection
+</span><span style="color:#75715e"></span>        <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">crossoverCount</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">survivors</span>.<span style="color:#a6e22e">length</span> <span style="color:#f92672">*</span> <span style="color:#a6e22e">CROSSOVER_PROBABILITY</span>;
+        <span style="color:#a6e22e">_</span>.<span style="color:#a6e22e">times</span>(<span style="color:#a6e22e">crossoverCount</span>, () =&gt; {
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parent1</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">wheel</span>();
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">parent2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">wheel</span>();
+            <span style="color:#66d9ef">const</span> <span style="color:#a6e22e">child</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">parent1</span>.<span style="color:#a6e22e">crossover</span>(<span style="color:#a6e22e">parent2</span>);
+            <span style="color:#a6e22e">survivors</span>.<span style="color:#a6e22e">push</span>(<span style="color:#a6e22e">child</span>);
         });
 
-        return survivors;
+        <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">survivors</span>;
     });
-</code></pre>
+</code></pre></div>
 
 <p>Node.js is not the best language to do cpu-intensive tasks, but I wanted to enjoy coding and I found <a href="https://github.com/oliver-moran/jimp">jimp</a> and <a href="https://github.com/lovell/sharp">sharp</a> very handy to compare and process images. Sharp is powered by <a href="https://github.com/jcupitt/libvips">libvips</a> which makes it really efficient, but it wasn&rsquo;t enough due to the volume of images I needed to combine. Ideas and cpu-time to make the experiment succeed are welcome! Comments are open.</p>
 </div>

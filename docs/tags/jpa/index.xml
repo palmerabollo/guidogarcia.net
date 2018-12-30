@@ -29,7 +29,7 @@ This is not the first time this problem arises. I think this is a the case of a 
       <guid>https://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</guid>
       <description>In the last days I have had a couple of interesting discussions about wether to include an ORM library (such as Hibernate JPA implementation) in an application is a good idea or not.
 In this case, as usual, I think there is not a single best choice for every scenario, so I&amp;rsquo;ll try to list pros (and cons) for each alternative.
-Use an ORM layer  * Easy to develop and maintain.</description>
+Use an ORM layer  Easy to develop and maintain.</description>
     </item>
     
   </channel>

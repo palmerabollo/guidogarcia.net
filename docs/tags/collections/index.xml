@@ -18,8 +18,8 @@
       
       <guid>https://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</guid>
       <description>Imagine we have a simple Java class:
- public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE };  And that you have a Collection of Person objects, such as the following one:
- Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.</description>
+public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE }; And that you have a Collection of Person objects, such as the following one:
+Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.FEMALE); List&amp;lt;Person&amp;gt; people = Arrays.</description>
     </item>
     
   </channel>

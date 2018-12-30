@@ -43,11 +43,10 @@ BigDecimal : detalles que hacen que Java de asco
 
 <div class="section" id="content"><p>Sirva como ejemplo el siguiente fragmento de código, en el que se utiliza la clase <code>BigDecimal</code> que ofrece Java para trabajar con precisión arbitraria en operaciones con números en coma flotante:</p>
 
-<pre><code>BigDecimal num = new BigDecimal(2);
-num = num.add(new BigDecimal(3.2));
-System.out.println(num.toString());
-System.out.println(num.doubleValue());
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">BigDecimal num <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BigDecimal<span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+num <span style="color:#f92672">=</span> num<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span><span style="color:#66d9ef">new</span> BigDecimal<span style="color:#f92672">(</span>3<span style="color:#f92672">.</span><span style="color:#a6e22e">2</span><span style="color:#f92672">));</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num<span style="color:#f92672">.</span><span style="color:#a6e22e">toString</span><span style="color:#f92672">());</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num<span style="color:#f92672">.</span><span style="color:#a6e22e">doubleValue</span><span style="color:#f92672">());</span></code></pre></div>
 
 <p>Para empezar, esta es la salida del programa, que no necesita comentarios:</p>
 
@@ -57,16 +56,14 @@ System.out.println(num.doubleValue());
 
 <p>En Java, salvo el caso del operador &ldquo;+&rdquo; para la concatenación de cadenas, tampoco existe sobrecarga de operadores, por lo que una simple operación como sumar dos números se realiza de forma poco natural:</p>
 
-<pre><code>BigDecimal num1 = new BigDecimal(2);
-BigDecimal num2 = new BigDecimal(2);
-System.out.println(num1 + num2); // error de compilación
-System.out.println(num1.add(num2)); // contra natura
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">BigDecimal num1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BigDecimal<span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+BigDecimal num2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> BigDecimal<span style="color:#f92672">(</span>2<span style="color:#f92672">);</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num1 <span style="color:#f92672">+</span> num2<span style="color:#f92672">);</span> <span style="color:#75715e">// error de compilación
+</span><span style="color:#75715e"></span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num1<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>num2<span style="color:#f92672">));</span> <span style="color:#f92672">//</span> contra natura</code></pre></div>
 
 <p>Y el operador &ldquo;==&rdquo; seguirá comparando objetos en lugar de valores:</p>
 
-<pre><code>System.out.println(num1 == num2); // output = false
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>num1 <span style="color:#f92672">==</span> num2<span style="color:#f92672">);</span> <span style="color:#f92672">//</span> output <span style="color:#f92672">=</span> <span style="color:#66d9ef">false</span></code></pre></div>
 
 <p>Para rematar la faena, el método <code>BigDecimal#equals</code> considera diferentes números con el mismo valor y distinta escala (por ejemplo 2.0 y 2.00 serían diferentes), obligando a utilizar el método <a href="http://download.oracle.com/javase/1,5.0/docs/api/java/math/BigDecimal.html#compareTo(java.math.BigDecimal)"><code>compareTo</code></a> en este caso.</p>
 

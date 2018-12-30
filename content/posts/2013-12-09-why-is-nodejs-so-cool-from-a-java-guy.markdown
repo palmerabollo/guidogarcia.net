@@ -18,33 +18,17 @@ tags:
 
 ### I confess: I am a Java guy
 
-
-
 At least I used to be. Until I meet node.js. I still think the JVM is one of the greatest pieces of technology ever created by man, and I love the Spring Framework, the hundreds of Apache Java libraries or the over-six-hundred-page books about JEE patterns. It is great for big applications that are created by many developers, or applications that are made to last.
-
-![Java](http://guidogarcia.net/blog/wp-content/uploads/2013/12/Stonehenge-K021103.jpg)
-
 
 But many applications today are not made to last. Sometimes you just want to test something fast. Fail fast, fail cheap, keep it simple... the "be lean" mantra, you know.
 
 Moreover, open source has completely changed the way we build applications, moving from developing tons of code in monolithic applications to assembling [small programs](http://mkhadikov.com/2012/02/02/programs-should-be-small.html) that use third-party components as middlewares (nosql databases, queues, caches).
 
-
-
 ### Second confession: I hate(d) Javascipt
-
-
 
 Yes, Internet Explorer 4 made me hate Javascript. So the first time I heard about node.js and server-side Javascript I felt a shiver down my spine. It got worse when I started to play with the unfamiliar [continuation-passing style](http://en.wikipedia.org/wiki/Continuation-passing_style), the asynchronous callback hell did not take long to appear.
 
-![Node is Asynchronous](http://guidogarcia.net/blog/wp-content/uploads/2013/12/nodejsreactions.gif)
-
-
-
-
 ### A simple pattern: function(err, result) {}
-
-
 
 But the absence of rules does not necessarily has to mean chaos. In fact, there is one pattern in node.js: your callbacks will have two arguments; the first argument will be an error object, the second one will be the result. This is your contract with the platform and, more important, with the community. Stick with it and you will be fine.
 

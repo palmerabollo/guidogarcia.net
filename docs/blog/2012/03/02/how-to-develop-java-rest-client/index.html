@@ -60,26 +60,25 @@ How to develop a Java REST client in 3 minutes
 
 <p>And you are now ready to start coding. I think the Java code is self explanatory, so here it goes:</p>
 
-<pre><code>import org.jboss.resteasy.client.ClientRequest;
-import org.jboss.resteasy.client.ClientResponse;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.jboss.resteasy.client.ClientRequest<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.jboss.resteasy.client.ClientResponse<span style="color:#f92672">;</span>
 
-public class DiggClient {
-    private static final String DIGG_SEARCH_ENDPOINT =
-            &quot;http://services.digg.com/{version}/search.search&quot;;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiggClient</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String DIGG_SEARCH_ENDPOINT <span style="color:#f92672">=</span>
+            <span style="color:#e6db74">&#34;http://services.digg.com/{version}/search.search&#34;</span><span style="color:#f92672">;</span>
 
-    public static void main(String[] args) throws Exception {
-        ClientRequest req = new ClientRequest(DIGG_SEARCH_ENDPOINT);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        ClientRequest req <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClientRequest<span style="color:#f92672">(</span>DIGG_SEARCH_ENDPOINT<span style="color:#f92672">);</span>
         req
-            .pathParameter(&quot;version&quot;, &quot;2.0&quot;)
-            .queryParameter(&quot;query&quot;, &quot;health&quot;);
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">pathParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;2.0&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">queryParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;health&#34;</span><span style="color:#f92672">);</span>
 
-        ClientResponse&lt;String&gt; res = req.get(String.class);
-        System.out.println(res.getEntity());
-    }
-}
-</code></pre>
+        ClientResponse<span style="color:#f92672">&lt;</span>String<span style="color:#f92672">&gt;</span> res <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>String<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>res<span style="color:#f92672">.</span><span style="color:#a6e22e">getEntity</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
-<p><strong>Update:</strong> As pointed out by Andy MacKinlay in the comments, ClientRequest is deprecated in RESTEasy 3.x.</p>
+<p><strong>Update:</strong> ClientRequest is deprecated in RESTEasy 3.x.</p>
 
 <h3 id="but-i-do-not-want-to-parse-a-string">But I do not want to parse a String&hellip;</h3>
 
@@ -87,18 +86,17 @@ public class DiggClient {
 
 <p>For example, these are the domain classes representing (partially) the Digg search results:</p>
 
-<pre><code>class SearchResult {
-    private int total;
-    private Story[] stories;
-    // ... getters/setters
-}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">class</span> <span style="color:#a6e22e">SearchResult</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> total<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> Story<span style="color:#f92672">[]</span> stories<span style="color:#f92672">;</span>
+    <span style="color:#75715e">// ... getters/setters
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
 
-class Story {
-    private String id;
-    private String title;
-    // ... getters/setters
-}
-</code></pre>
+<span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Story</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> String id<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">private</span> String title<span style="color:#f92672">;</span>
+    <span style="color:#75715e">// ... getters/setters
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span></code></pre></div>
 
 <p>Digg results are offered as JSON, so you only need to add a Maven dependency to include the providers RESTEasy uses to handle JSON:</p>
 
@@ -111,25 +109,24 @@ class Story {
 
 <p>The resulting Java code remains almost the same:</p>
 
-<pre><code>import org.jboss.resteasy.client.ClientRequest;
-import org.jboss.resteasy.client.ClientResponse;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> org.jboss.resteasy.client.ClientRequest<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> org.jboss.resteasy.client.ClientResponse<span style="color:#f92672">;</span>
 
-public class DiggClient {
-    private static final String DIGG_SEARCH_ENDPOINT =
-            &quot;http://services.digg.com/{version}/search.search&quot;;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DiggClient</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String DIGG_SEARCH_ENDPOINT <span style="color:#f92672">=</span>
+            <span style="color:#e6db74">&#34;http://services.digg.com/{version}/search.search&#34;</span><span style="color:#f92672">;</span>
 
-    public static void main(String[] args) throws Exception {
-        ClientRequest req = new ClientRequest(DIGG_SEARCH_ENDPOINT);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        ClientRequest req <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ClientRequest<span style="color:#f92672">(</span>DIGG_SEARCH_ENDPOINT<span style="color:#f92672">);</span>
         req
-            .pathParameter(&quot;version&quot;, &quot;2.0&quot;)
-            .queryParameter(&quot;query&quot;, &quot;health&quot;);
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">pathParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;version&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;2.0&#34;</span><span style="color:#f92672">)</span>
+            <span style="color:#f92672">.</span><span style="color:#a6e22e">queryParameter</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;query&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;health&#34;</span><span style="color:#f92672">);</span>
 
-        ClientResponse&lt;SearchResult&gt; res = req.get(SearchResult.class);
-        SearchResult result = res.getEntity();
-        System.out.println(result.getTotal() + &quot; matching stories found&quot;);
-    }
-}
-</code></pre>
+        ClientResponse<span style="color:#f92672">&lt;</span>SearchResult<span style="color:#f92672">&gt;</span> res <span style="color:#f92672">=</span> req<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>SearchResult<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">);</span>
+        SearchResult result <span style="color:#f92672">=</span> res<span style="color:#f92672">.</span><span style="color:#a6e22e">getEntity</span><span style="color:#f92672">();</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">.</span><span style="color:#a6e22e">getTotal</span><span style="color:#f92672">()</span> <span style="color:#f92672">+</span> <span style="color:#e6db74">&#34; matching stories found&#34;</span><span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>Note: you need to annotate your domain Java classes as <code>@JsonIgnoreProperties(ignoreUnknown=true)</code> if the server returns any field that is not present in your domain Java classes.</p>
 

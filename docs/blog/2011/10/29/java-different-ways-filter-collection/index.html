@@ -45,67 +45,62 @@ Java : different ways to filter a Collection
 
 <p>Imagine we have a simple Java class:</p>
 
-<pre><code>  public class Person {
-    private int age;
-    private Gender sex;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">Person</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">int</span> age<span style="color:#f92672">;</span>
+  <span style="color:#66d9ef">private</span> Gender sex<span style="color:#f92672">;</span>
 
-    // constructor, getters &amp; setters
-  }
+  <span style="color:#75715e">// constructor, getters &amp; setters
+</span><span style="color:#75715e"></span><span style="color:#f92672">}</span>
 
-  enum Gender { MALE, FEMALE };
-</code></pre>
+<span style="color:#66d9ef">enum</span> Gender <span style="color:#f92672">{</span> MALE<span style="color:#f92672">,</span> FEMALE <span style="color:#f92672">};</span></code></pre></div>
 
 <p>And that you have a <code>Collection</code> of <code>Person</code> objects, such as the following one:</p>
 
-<pre><code>  Person p1 = new Person(35, Gender.MALE);
-  Person p2 = new Person(30, Gender.MALE);
-  Person p3 = new Person(25, Gender.FEMALE);
-  Person p4 = new Person(15, Gender.FEMALE);        
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Person p1 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">(</span>35<span style="color:#f92672">,</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">);</span>
+Person p2 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">(</span>30<span style="color:#f92672">,</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">);</span>
+Person p3 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">(</span>25<span style="color:#f92672">,</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">);</span>
+Person p4 <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Person<span style="color:#f92672">(</span>15<span style="color:#f92672">,</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">FEMALE</span><span style="color:#f92672">);</span>
 
-  List&lt;Person&gt; people = Arrays.asList(p1,p2,p3,p4);
-</code></pre>
+List<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> people <span style="color:#f92672">=</span> Arrays<span style="color:#f92672">.</span><span style="color:#a6e22e">asList</span><span style="color:#f92672">(</span>p1<span style="color:#f92672">,</span>p2<span style="color:#f92672">,</span>p3<span style="color:#f92672">,</span>p4<span style="color:#f92672">);</span></code></pre></div>
 
 <p>How would you create a new <code>Collection</code> containing only men over 21?</p>
 
-<h3 id="use-plain-java-like-real-men-do">Use plain Java, like real men do</h3>
+<h3 id="use-plain-java-like-tough-people-do">Use plain Java, like tough people do</h3>
 
-<pre><code>  List&lt;Person&gt; result = new ArrayList&lt;Person&gt;();
-  for (Person person : people) {
-    if (person.getAge() &gt; 21 &amp;&amp; person.getGender() == Gender.MALE) {
-      result.add(person);
-    }
-  }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">List<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;();</span>
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>Person person <span style="color:#f92672">:</span> people<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>person<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 21 <span style="color:#f92672">&amp;&amp;</span> person<span style="color:#f92672">.</span><span style="color:#a6e22e">getGender</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>person<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span>
 
-  // now result contains the filtered collection
-</code></pre>
+<span style="color:#f92672">//</span> now result contains the filtered collection</code></pre></div>
 
 <h3 id="filtering-by-predicate">Filtering by predicate</h3>
 
 <p>The second option is what <a href="http://commons.apache.org/collections/">Commons Collections</a> and <a href="http://code.google.com/p/guava-libraries/">Guava</a> propose, and that I think should have been part of the Java core at least since Java 5.</p>
 
-<pre><code>  public interface Predicate&lt;T&gt; { boolean apply(T type); }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">interface</span> <span style="color:#a6e22e">Predicate</span><span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>T type<span style="color:#f92672">);</span> <span style="color:#f92672">}</span>
 
-  public static &lt;T&gt; Collection&lt;T&gt; filter(Collection&lt;T&gt; col, Predicate&lt;T&gt; predicate) {
-    Collection&lt;T&gt; result = new ArrayList&lt;T&gt;();
-    for (T element: col) {
-      if (predicate.apply(element)) {
-        result.add(element);
-      }
-    }
-    return result;
-  }
-</code></pre>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> Collection<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> <span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>Collection<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> col<span style="color:#f92672">,</span> Predicate<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> predicate<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+  Collection<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span>T<span style="color:#f92672">&gt;();</span>
+  <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>T element: col<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>predicate<span style="color:#f92672">.</span><span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>element<span style="color:#f92672">))</span> <span style="color:#f92672">{</span>
+      result<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>element<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
+  <span style="color:#66d9ef">return</span> result<span style="color:#f92672">;</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>It remembers me the visitor pattern. With this approach in mind, you can define a set of predicates:</p>
 
-<pre><code>  Predicate&lt;Person&gt; validPersonPredicate = new Predicate&lt;Person&gt;() {
-    public boolean apply(Person person) {
-      return person.getAge() &gt; 21 &amp;&amp; person.getGender() == Gender.MALE;
-    }
-  };
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">Predicate<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> validPersonPredicate <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Predicate<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;()</span> <span style="color:#f92672">{</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">boolean</span> <span style="color:#a6e22e">apply</span><span style="color:#f92672">(</span>Person person<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">return</span> person<span style="color:#f92672">.</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">()</span> <span style="color:#f92672">&gt;</span> 21 <span style="color:#f92672">&amp;&amp;</span> person<span style="color:#f92672">.</span><span style="color:#a6e22e">getGender</span><span style="color:#f92672">()</span> <span style="color:#f92672">==</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
+<span style="color:#f92672">};</span>
 
-  Collection&lt;Person&gt; result = filter(people, validPersonPredicate);
-</code></pre>
+Collection<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> filter<span style="color:#f92672">(</span>people<span style="color:#f92672">,</span> validPersonPredicate<span style="color:#f92672">);</span></code></pre></div>
 
 <p>I find it very similar to Python&rsquo;s <code>filter()</code> function, but more verbose due to Java&rsquo;s nature.</p>
 
@@ -117,17 +112,15 @@ Java : different ways to filter a Collection
 
 <p>Lambda syntax is <a href="http://mail.openjdk.java.net/pipermail/lambda-dev/2011-September/003936.html">already decided</a> (it is similar to C# and Scala) and what I hope is to see something similar to this kind of filtering, method chaining included:</p>
 
-<pre><code>Collection&lt;Person&gt; result = people
-    .filter(p =&gt; { return p.age &gt; 21 })
-    .filter(p =&gt; { return p.gender == Gender.MALE });
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Collection<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> people
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>p <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">age</span> <span style="color:#f92672">&gt;</span> 21 <span style="color:#f92672">})</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">filter</span><span style="color:#f92672">(</span>p <span style="color:#f92672">=&gt;</span> <span style="color:#f92672">{</span> <span style="color:#66d9ef">return</span> p<span style="color:#f92672">.</span><span style="color:#a6e22e">gender</span> <span style="color:#f92672">==</span> Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span> <span style="color:#f92672">});</span></code></pre></div>
 
 <p>If you can not wait and need to start using that kind of syntax today, I recommend the <a href="http://code.google.com/p/lambdaj/">lambdaj library</a>, it is not the same but it is handy in some cases:</p>
 
-<pre><code>Collection&lt;Person&gt; result = with(people).clone()
-    .retain(having(on(Person.class).getAge(), greaterThan(21)))
-    .retain(having(on(Person.class).getGender(), equals(Gender.MALE)));
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    Collection<span style="color:#f92672">&lt;</span>Person<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span> with<span style="color:#f92672">(</span>people<span style="color:#f92672">).</span><span style="color:#a6e22e">clone</span><span style="color:#f92672">()</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">retain</span><span style="color:#f92672">(</span>having<span style="color:#f92672">(</span>on<span style="color:#f92672">(</span>Person<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">getAge</span><span style="color:#f92672">(),</span> greaterThan<span style="color:#f92672">(</span>21<span style="color:#f92672">)))</span>
+        <span style="color:#f92672">.</span><span style="color:#a6e22e">retain</span><span style="color:#f92672">(</span>having<span style="color:#f92672">(</span>on<span style="color:#f92672">(</span>Person<span style="color:#f92672">.</span><span style="color:#a6e22e">class</span><span style="color:#f92672">).</span><span style="color:#a6e22e">getGender</span><span style="color:#f92672">(),</span> equals<span style="color:#f92672">(</span>Gender<span style="color:#f92672">.</span><span style="color:#a6e22e">MALE</span><span style="color:#f92672">)));</span></code></pre></div>
 
 <p>I have not tried the last snippet but you get the idea. Notice you have to call <code>clone()</code> if you want to leave the original collection unchanged.</p>
 

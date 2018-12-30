@@ -45,73 +45,52 @@ Cómo implementar un API REST en Java/JEE
 
 <p>Me pidieron consejo hace unos días sobre este tema.  Personalmente, a día de hoy sólo recomiendo estas opciones, muy parecidas y que se basan en anotar las clases Java:</p>
 
-<pre><code>  * El especificación **[JAX-RS](http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services)**, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras [Jersey](http://jersey.java.net/), [Restlet](http://www.restlet.org/) o [Resteasy]( http://www.jboss.org/resteasy). Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1.
+<ul>
+<li>El especificación <strong><a href="http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services">JAX-RS</a></strong>, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras <a href="http://jersey.java.net/">Jersey</a>, <a href="http://www.restlet.org/">Restlet</a> o <a href="http://www.jboss.org/resteasy">Resteasy</a>. Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1.</li>
+</ul>
 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@Path</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/product/{id}&#34;</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductResource</span> <span style="color:#f92672">{</span>
+        <span style="color:#a6e22e">@GET</span>
+        <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathParam</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;id&#34;</span><span style="color:#f92672">)</span> String id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            <span style="color:#66d9ef">return</span> <span style="color:#f92672">...;</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span></code></pre></div>
 
+<ul>
+<li><strong><a href="http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html">Spring MVC</a></strong>. Imagino que acabará convergiendo con JAX-RS ya que no tiene demasiado sentido mantener sus propias anotaciones. Yo he sido bastante fan de Spring, al que pronto dedicaré una serie de artículos completos. Fui reacio un tiempo por la documentación oficial, excesivamente dura para un novato, pero siempre han ido un paso por delante, son más ágiles que las JSR, que en ocasiones acaban pariendo clones de Spring (por ejemplo el <a href="www.jcp.org/en/jsr/detail?id=330">JSR 330</a> para la inyección de dependencias).</li>
+</ul>
 
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@Controller</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductResource</span> <span style="color:#f92672">{</span>
+    <span style="color:#a6e22e">@RequestMapping</span><span style="color:#f92672">(</span>value<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;/product/{id}&#34;</span><span style="color:#f92672">,</span> method<span style="color:#f92672">=</span>RequestMethod<span style="color:#f92672">.</span><span style="color:#a6e22e">GET</span><span style="color:#f92672">)</span>
+    <span style="color:#66d9ef">public</span> Product <span style="color:#a6e22e">get</span><span style="color:#f92672">(</span><span style="color:#a6e22e">@PathVariable</span> <span style="color:#66d9ef">int</span> id<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">...;</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
+<ul>
+<li>Para proyectos muy simples en los que no se quiera incluir ninguna dependencia, la esperada especificación de <strong>Servlets 3.0</strong>/<a href="http://jcp.org/en/jsr/detail?id=315">JSR 315</a> (también de serie en JEE6 e implementada en Tomcat 7, Jetty 7, Glassfish 3, etc) incluye la anotación @WebServlet.  No la he utilizado nunca para estos fines, pero con algo más de esfuerzo de desarrollo en el procesamiento de las peticiones, podría valer.</li>
+</ul>
 
-
-
-@Path(&quot;/product/{id}&quot;)
-public class ProductResource {
-    @GET
-    public String get(@PathParam(&quot;id&quot;) String id) {
-        return ...;
-    }
-}
-
-
-
-
-
-
-
-
-
-  * **[Spring MVC](http://static.springsource.org/spring/docs/3.0.x/spring-framework-reference/html/mvc.html)**. Imagino que acabará convergiendo con JAX-RS ya que no tiene demasiado sentido mantener sus propias anotaciones. Yo he sido bastante fan de Spring, al que pronto dedicaré una serie de artículos completos. Fui reacio un tiempo por la documentación oficial, excesivamente dura para un novato, pero siempre han ido un paso por delante, son más ágiles que las JSR, que en ocasiones acaban pariendo clones de Spring (por ejemplo el [JSR 330](www.jcp.org/en/jsr/detail?id=330) para la inyección de dependencias).
-
-
-
-
-@Controller
-public class ProductResource {
-    @RequestMapping(value=&quot;/product/{id}&quot;, method=RequestMethod.GET)
-    public Product get(@PathVariable int id) {
-        return ...;
-    }
-}
-
-
-
-
-
-
-
-
-  * Para proyectos muy simples en los que no se quiera incluir ninguna dependencia, la esperada especificación de **Servlets 3.0**/[JSR 315](http://jcp.org/en/jsr/detail?id=315) (también de serie en JEE6 e implementada en Tomcat 7, Jetty 7, Glassfish 3, etc) incluye la anotación @WebServlet.  No la he utilizado nunca para estos fines, pero con algo más de esfuerzo de desarrollo en el procesamiento de las peticiones, podría valer.
-
-
-
-
-@WebServlet(urlPatterns={&quot;/product/*&quot;}
-public class ProductResource extends HttpServlet {
-    public void service(ServletRequest req, ServletResponse res)
-            throws IOException, ServletException {
-        // Esta parte sería más fea
-        // Parsear la URL para extraer parámetros...
-    }
-}
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#a6e22e">@WebServlet</span><span style="color:#f92672">(</span>urlPatterns<span style="color:#f92672">={</span><span style="color:#e6db74">&#34;/product/*&#34;</span><span style="color:#f92672">}</span>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">ProductResource</span> <span style="color:#66d9ef">extends</span> HttpServlet <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">service</span><span style="color:#f92672">(</span>ServletRequest req<span style="color:#f92672">,</span> ServletResponse res<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throws</span> IOException<span style="color:#f92672">,</span> ServletException <span style="color:#f92672">{</span>
+        <span style="color:#75715e">// Esta parte sería más fea
+</span><span style="color:#75715e"></span>        <span style="color:#75715e">// Parsear la URL para extraer parámetros...
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <h2 id="mi-consejo">Mi consejo</h2>
 
 <p>Es difícil decantarse porque las diferencias acaban siendo sutiles. Dejo algunas consideraciones que se podrían tener en cuenta:</p>
 
-<pre><code>  * Spring mola. Si ya utilizáis o conocéis Spring, usad Spring MVC, corre en un simple Tomcat sin más. Podréis aprovechar otras de sus deliciosas ventajas (inyección de dependencias, validaciones, etc).
-  * Si ya usáis un servidor de aplicaciones JEE6 (p.e. JBoss) usad JAX-RS. Si estáis usando Netbeans también es un punto a favor de JAX-RS porque viene bien integrado.
-  * Si no queréis utilizar un servidor de aplicaciones JEE6, usad Spring. Si queréis hacer algo simple (p.e. un piloto o una aplicación que va a recibir poca carga), utilizad Restlet que tiene una [extensión para JAX-RS](http://wiki.restlet.org/docs_2.1/13-restlet/28-restlet/57-restlet.html)  y corre como una aplicación Java, sin necesidad de ningún tipo de servidor web o de aplicaciones.
-</code></pre>
+<ul>
+<li>Spring mola. Si ya utilizáis o conocéis Spring, usad Spring MVC, corre en un simple Tomcat sin más. Podréis aprovechar otras de sus deliciosas ventajas (inyección de dependencias, validaciones, etc).</li>
+<li>Si ya usáis un servidor de aplicaciones JEE6 (p.e. JBoss) usad JAX-RS. Si estáis usando Netbeans también es un punto a favor de JAX-RS porque viene bien integrado.</li>
+<li>Si no queréis utilizar un servidor de aplicaciones JEE6, usad Spring. Si queréis hacer algo simple (p.e. un piloto o una aplicación que va a recibir poca carga), utilizad Restlet que tiene una <a href="http://wiki.restlet.org/docs_2.1/13-restlet/28-restlet/57-restlet.html">extensión para JAX-RS</a>  y corre como una aplicación Java, sin necesidad de ningún tipo de servidor web o de aplicaciones.</li>
+</ul>
 
 <p>Espero vuestros comentarios, aunque sea para contar lo fácil que sería todo esto con Ruby on Rails.</p>
 

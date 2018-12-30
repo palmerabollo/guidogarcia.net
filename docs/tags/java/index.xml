@@ -29,7 +29,7 @@ Our first trolls didn&amp;rsquo;t take long to appear, mostly in the form of cop
       <guid>https://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</guid>
       <description>This is a short post about how these programming languages compare with each other when it comes to declaring functions with optional parameters and default values. Feel free to leave alternatives in other languages in the comments.
 Python. The good. Python is my favorite. Use your parameters in any order and define their default values as part of the function signature itself.
-def foo(arg1, arg2=&amp;quot;default&amp;quot;): print &amp;quot;arg1:&amp;quot;, arg1, &amp;quot;arg2:&amp;quot;, arg2  The price to pay is that you can not define two methods with the same name in the same class.</description>
+def foo(arg1, arg2=&amp;#34;default&amp;#34;): print &amp;#34;arg1:&amp;#34;, arg1, &amp;#34;arg2:&amp;#34;, arg2 The price to pay is that you can not define two methods with the same name in the same class.</description>
     </item>
     
     <item>
@@ -90,7 +90,7 @@ This is not the first time this problem arises. I think this is a the case of a 
       <guid>https://guidogarcia.net/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</guid>
       <description>Gephi is a really cool open-source (GPL) project for visualizing and analyzing network graphs.
 Getting started If you want to start using Gephi you have two choices:
- * The blue pill, a simple **GUI**, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. * The red pill, the **[Gephi Toolkit](http://wiki.gephi.org/index.php/Toolkit_portal)**. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
+ The blue pill, a simple GUI, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. The red pill, the Gephi Toolkit. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
     </item>
     
     <item>
@@ -101,7 +101,7 @@ Getting started If you want to start using Gephi you have two choices:
       <guid>https://guidogarcia.net/blog/2011/12/20/acra-reporting-crashes-in-your-android-application-the-easy-way/</guid>
       <description>ACRA (Application Crash Report for Android) is a extremely helpful Android library that allows your mobile application to send a report to different destinations when it crashes -miserably-.
 It is both powerful/configurable and very easy to use at the same time, allowing:
- * Different kind of notifications (silent, toast, status bar, etc) * Detailed crash reports (stack traces, device model, system versions) * Many targets (email, shared google spreadsheet, etc)  In my example I have used a shared google document as the target where the notifications are sent, and I have chosen not to show anything to de user when the application crashes (silent mode).</description>
+ Different kind of notifications (silent, toast, status bar, etc) Detailed crash reports (stack traces, device model, system versions) Many targets (email, shared google spreadsheet, etc)  In my example I have used a shared google document as the target where the notifications are sent, and I have chosen not to show anything to de user when the application crashes (silent mode).</description>
     </item>
     
     <item>
@@ -112,7 +112,7 @@ It is both powerful/configurable and very easy to use at the same time, allowing
       <guid>https://guidogarcia.net/blog/2011/12/05/getting-started-with-spring-roo/</guid>
       <description>For those who are not familiar with it, Spring Roo is an open source tool that provides rapid application development of Java applications, using standard Java technologies underneath.
 Last week I gave a presentation (slides) about how to start using Spring Roo to some co-workers in Telefónica Digital. I have recorded a video with captions for those who couldn&amp;rsquo;t attend (use fullscreen mode and 720p).
-The video does not cover some interesting aspects about Spring such as Spring Data (I will write a post about it), or how to completely remove Spring Roo from your project (right button &amp;gt; Refactor &amp;gt; Push In and that is all).</description>
+ The video does not cover some interesting aspects about Spring such as Spring Data (I will write a post about it), or how to completely remove Spring Roo from your project (right button &amp;gt; Refactor &amp;gt; Push In and that is all).</description>
     </item>
     
     <item>
@@ -132,8 +132,8 @@ Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supp
       
       <guid>https://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</guid>
       <description>Imagine we have a simple Java class:
- public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE };  And that you have a Collection of Person objects, such as the following one:
- Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.</description>
+public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE }; And that you have a Collection of Person objects, such as the following one:
+Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.FEMALE); List&amp;lt;Person&amp;gt; people = Arrays.</description>
     </item>
     
     <item>
@@ -143,7 +143,7 @@ Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supp
       
       <guid>https://guidogarcia.net/blog/2011/08/15/bigdecimal-detalle-que-hacen-que-java-de-asco/</guid>
       <description>Sirva como ejemplo el siguiente fragmento de código, en el que se utiliza la clase BigDecimal que ofrece Java para trabajar con precisión arbitraria en operaciones con números en coma flotante:
-BigDecimal num = new BigDecimal(2); num = num.add(new BigDecimal(3.2)); System.out.println(num.toString()); System.out.println(num.doubleValue());  Para empezar, esta es la salida del programa, que no necesita comentarios:
+BigDecimal num = new BigDecimal(2); num = num.add(new BigDecimal(3.2)); System.out.println(num.toString()); System.out.println(num.doubleValue()); Para empezar, esta es la salida del programa, que no necesita comentarios:
 5.20000000000000017763568394002504646778106689453125 5.2  En Java, salvo el caso del operador &amp;ldquo;+&amp;rdquo; para la concatenación de cadenas, tampoco existe sobrecarga de operadores, por lo que una simple operación como sumar dos números se realiza de forma poco natural:</description>
     </item>
     
@@ -154,7 +154,7 @@ BigDecimal num = new BigDecimal(2); num = num.add(new BigDecimal(3.2)); System.o
       
       <guid>https://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</guid>
       <description>Me pidieron consejo hace unos días sobre este tema. Personalmente, a día de hoy sólo recomiendo estas opciones, muy parecidas y que se basan en anotar las clases Java:
- * El especificación **[JAX-RS](http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services)**, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras [Jersey](http://jersey.java.net/), [Restlet](http://www.restlet.org/) o [Resteasy]( http://www.jboss.org/resteasy). Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1. @Path(&amp;quot;/product/{id}&amp;quot;) public class ProductResource { @GET public String get(@PathParam(&amp;quot;id&amp;quot;) String id) { return .</description>
+ El especificación JAX-RS, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras Jersey, Restlet o Resteasy. Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1.  @Path(&amp;#34;/product/{id}&amp;#34;) public class ProductResource { @GET public String get(@PathParam(&amp;#34;id&amp;#34;) String id) { return .</description>
     </item>
     
   </channel>

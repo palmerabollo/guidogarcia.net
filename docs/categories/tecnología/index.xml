@@ -27,7 +27,8 @@ I started with Marilyn Monroe and a genetic algorithm that combined a set of log
       <pubDate>Wed, 13 Jul 2016 21:20:13 +0000</pubDate>
       
       <guid>https://guidogarcia.net/blog/2016/07/13/road-serverless-computing/</guid>
-      <description>This is my presentation about serverless computing for the TEFcon 2016.</description>
+      <description>This is my presentation about serverless computing for the TEFcon 2016.
+ </description>
     </item>
     
     <item>
@@ -37,7 +38,8 @@ I started with Marilyn Monroe and a genetic algorithm that combined a set of log
       
       <guid>https://guidogarcia.net/blog/2015/10/18/ansible-automate-everything/</guid>
       <description>Ansible is an automation tool that works by running tasks (a playbook) against a set of hosts (inventory).
-The first beta of Ansible 2.x is ready, and it comes with modules to automate the management of your openstack infrastructure (other cloud platforms are also available). This is my presentantion for begginers who want to start using Ansible and to stop wasting their time.</description>
+The first beta of Ansible 2.x is ready, and it comes with modules to automate the management of your openstack infrastructure (other cloud platforms are also available). This is my presentantion for begginers who want to start using Ansible and to stop wasting their time.
+ </description>
     </item>
     
     <item>
@@ -58,7 +60,7 @@ I think the time to start caring only about services -not machines- has come. Co
       
       <guid>https://guidogarcia.net/blog/2015/01/15/moving-average-with-baconjs/</guid>
       <description>Bacon is a small functional reactive programming lib for JavaScript. Sometimes it is easier to handle data as a stream and react to changes in the stream instead of processing individual events. In the example below (nodejs), a simple moving average.
-var Bacon = require(&#39;baconjs&#39;) function avg(array) { var sum = array.reduce(function(a, b) { return a + b; }, 0); return sum / array.length; } var bus = new Bacon.Bus(); bus.</description>
+var Bacon = require(&amp;#39;baconjs&amp;#39;) function avg(array) { var sum = array.reduce(function(a, b) { return a + b; }, 0); return sum / array.length; } var bus = new Bacon.Bus(); bus.</description>
     </item>
     
     <item>
@@ -68,7 +70,7 @@ var Bacon = require(&#39;baconjs&#39;) function avg(array) { var sum = array.red
       
       <guid>https://guidogarcia.net/blog/2014/11/05/evolutionary-computation-%c2%b7-tefcon-2014/</guid>
       <description>This is my presentation (spanish) about evolutionary computation for the TEFcon 2014. It was a talk about how we code and how genetic algorithms and genetic programming might help us. Because &amp;ldquo;programming should be more about the what and less about the how&amp;rdquo;.
-Edit: I&amp;rsquo;ve pushed the Java code for the queens problem using genetic algorithms to github.</description>
+ Edit: I&amp;rsquo;ve pushed the Java code for the queens problem using genetic algorithms to github.</description>
     </item>
     
     <item>
@@ -77,8 +79,9 @@ Edit: I&amp;rsquo;ve pushed the Java code for the queens problem using genetic a
       <pubDate>Mon, 25 Aug 2014 08:16:56 +0000</pubDate>
       
       <guid>https://guidogarcia.net/blog/2014/08/25/dtrace-para-flipar-pepinillos/</guid>
-      <description>This is my presentation (spanish) about DTrace, a tracing framework created by Sun that is really cool. It is available on &amp;ldquo;Solaris&amp;rdquo; systems, but also on OSX, BSD, and some Linux ports.
-It is a really powerful tool once you get used to it.</description>
+      <description>This is my presentation (spanish) about DTrace, a tracing framework created by Sun that is really cool. It is available on &amp;ldquo;Solaris&amp;rdquo; systems, but also on MacOS, BSD, and some Linux ports.
+It is a really powerful tool once you get used to it.
+ </description>
     </item>
     
     <item>
@@ -98,7 +101,7 @@ Our first trolls didn&amp;rsquo;t take long to appear, mostly in the form of cop
       
       <guid>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
       <description>This is a pattern I found in pkgcloud to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.
-var providers = [ &#39;amazon&#39;, &#39;azure&#39;, ..., &#39;joyent&#39; ]; ... // // Setup all providers as lazy-loaded getters // providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&#39;./pkgcloud/&#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
+var providers = [ &amp;#39;amazon&amp;#39;, &amp;#39;azure&amp;#39;, ..., &amp;#39;joyent&amp;#39; ]; ... //  // Setup all providers as lazy-loaded getters  //  providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&amp;#39;./pkgcloud/&amp;#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
     </item>
     
     <item>
@@ -118,7 +121,6 @@ Virtualization, one of the core parts of cloud computing, tries to meet the prom
       
       <guid>https://guidogarcia.net/blog/2014/01/23/the-long-tail/</guid>
       <description>This blog is two years old, and I&amp;rsquo;d like to share how its &amp;gt;50K visits are distributed.
-
 One single post drives 40% of the traffic to the blog. At the bottom, 70% of its posts represent 4% of the traffic.
 In my opinion, the most popular ones are not the best ones. They are about very specific technical subjects, containing keywords in the title and in the URL slug. Google does the rest.</description>
     </item>
@@ -140,7 +142,7 @@ There are things that matter more than the technology stack you choose. In this 
       
       <guid>https://guidogarcia.net/blog/2014/01/02/a-rest-configuration-server/</guid>
       <description>I have built a simple configuration server to expose your app&amp;rsquo;s configuration as a REST service. Its name is rest-confidence (github). In this post I will try to explain its basics and three use cases where it could be useful:
- 1. To configure distributed services. 2. As a foundation for A/B testing. 3. As a simple service directory.  Install and run a basic rest-confidence configuration server The first step is installing the configuration server:</description>
+ To configure distributed services. As a foundation for A/B testing. As a simple service directory.  Install and run a basic rest-confidence configuration server The first step is installing the configuration server:</description>
     </item>
     
     <item>
@@ -170,7 +172,7 @@ Diffusion of responsibility Diffusion of responsibility is a sociopsychological 
       
       <guid>https://guidogarcia.net/blog/2013/03/01/playing-with-meteor-framewor/</guid>
       <description>I have been playing around with meteor, an open-source platform for building web apps. The result is a 200 LOC game ladder with a live demo.
-The platform is built on top of nodejs, what is great. In my opinion, it is not yet ready for production environments, but I am really impressed with how fast you can create simple web applications with live page updates, automatic data synchronization and many other niceties I have never seen before in any other web framework.</description>
+The platform is built on top of nodejs, what is great. In my opinion, it is not ready for production environments yet, but I am really impressed with how fast you can create simple web applications with live page updates, automatic data synchronization and many other niceties I have never seen before in any other web framework.</description>
     </item>
     
     <item>
@@ -242,7 +244,7 @@ This is not the first time this problem arises. I think this is a the case of a 
       <guid>https://guidogarcia.net/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</guid>
       <description>Gephi is a really cool open-source (GPL) project for visualizing and analyzing network graphs.
 Getting started If you want to start using Gephi you have two choices:
- * The blue pill, a simple **GUI**, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. * The red pill, the **[Gephi Toolkit](http://wiki.gephi.org/index.php/Toolkit_portal)**. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
+ The blue pill, a simple GUI, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. The red pill, the Gephi Toolkit. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
     </item>
     
     <item>
@@ -253,7 +255,7 @@ Getting started If you want to start using Gephi you have two choices:
       <guid>https://guidogarcia.net/blog/2011/12/20/acra-reporting-crashes-in-your-android-application-the-easy-way/</guid>
       <description>ACRA (Application Crash Report for Android) is a extremely helpful Android library that allows your mobile application to send a report to different destinations when it crashes -miserably-.
 It is both powerful/configurable and very easy to use at the same time, allowing:
- * Different kind of notifications (silent, toast, status bar, etc) * Detailed crash reports (stack traces, device model, system versions) * Many targets (email, shared google spreadsheet, etc)  In my example I have used a shared google document as the target where the notifications are sent, and I have chosen not to show anything to de user when the application crashes (silent mode).</description>
+ Different kind of notifications (silent, toast, status bar, etc) Detailed crash reports (stack traces, device model, system versions) Many targets (email, shared google spreadsheet, etc)  In my example I have used a shared google document as the target where the notifications are sent, and I have chosen not to show anything to de user when the application crashes (silent mode).</description>
     </item>
     
     <item>
@@ -264,7 +266,7 @@ It is both powerful/configurable and very easy to use at the same time, allowing
       <guid>https://guidogarcia.net/blog/2011/12/05/getting-started-with-spring-roo/</guid>
       <description>For those who are not familiar with it, Spring Roo is an open source tool that provides rapid application development of Java applications, using standard Java technologies underneath.
 Last week I gave a presentation (slides) about how to start using Spring Roo to some co-workers in Telefónica Digital. I have recorded a video with captions for those who couldn&amp;rsquo;t attend (use fullscreen mode and 720p).
-The video does not cover some interesting aspects about Spring such as Spring Data (I will write a post about it), or how to completely remove Spring Roo from your project (right button &amp;gt; Refactor &amp;gt; Push In and that is all).</description>
+ The video does not cover some interesting aspects about Spring such as Spring Data (I will write a post about it), or how to completely remove Spring Roo from your project (right button &amp;gt; Refactor &amp;gt; Push In and that is all).</description>
     </item>
     
     <item>
@@ -284,8 +286,8 @@ Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supp
       
       <guid>https://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</guid>
       <description>Imagine we have a simple Java class:
- public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE };  And that you have a Collection of Person objects, such as the following one:
- Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.</description>
+public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE }; And that you have a Collection of Person objects, such as the following one:
+Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.FEMALE); List&amp;lt;Person&amp;gt; people = Arrays.</description>
     </item>
     
     <item>
@@ -326,7 +328,7 @@ You only have to deploy your application (using a very simple toolkit) and Googl
       <guid>https://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</guid>
       <description>In the last days I have had a couple of interesting discussions about wether to include an ORM library (such as Hibernate JPA implementation) in an application is a good idea or not.
 In this case, as usual, I think there is not a single best choice for every scenario, so I&amp;rsquo;ll try to list pros (and cons) for each alternative.
-Use an ORM layer  * Easy to develop and maintain.</description>
+Use an ORM layer  Easy to develop and maintain.</description>
     </item>
     
     <item>

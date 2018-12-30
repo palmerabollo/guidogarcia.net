@@ -45,10 +45,11 @@ Give your configuration some REST
 
 <p>I have built a simple <strong>configuration server</strong> to expose your app&rsquo;s configuration as a REST service. Its name is <strong>rest-confidence</strong> (<a href="https://github.com/palmerabollo/rest-confidence">github</a>). In this post I will try to explain its basics and three use cases where it could be useful:</p>
 
-<pre><code>  1. To configure distributed services.
-  2. As a foundation for A/B testing.
-  3. As a simple service directory.
-</code></pre>
+<ol>
+<li>To configure distributed services.</li>
+<li>As a foundation for A/B testing.</li>
+<li>As a simple service directory.</li>
+</ol>
 
 <h3 id="install-and-run-a-basic-rest-confidence-configuration-server">Install and run a basic rest-confidence configuration server</h3>
 
@@ -61,24 +62,23 @@ npm install
 
 <p>After that, you are ready to edit your <em><code>config.json</code></em> configuration file. For example:</p>
 
-<pre><code>{
-  &quot;mongodb&quot;: {
-    &quot;host&quot;: &quot;localhost&quot;,
-    &quot;user&quot;: &quot;root&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;mongodb&#34;</span>: {
+    <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;localhost&#34;</span>,
+    <span style="color:#f92672">&#34;user&#34;</span>: <span style="color:#e6db74">&#34;root&#34;</span>
   },
-  &quot;redis&quot;: {
-    &quot;host&quot;: &quot;redis-server&quot;,
-    &quot;port&quot;: 6379
+  <span style="color:#f92672">&#34;redis&#34;</span>: {
+    <span style="color:#f92672">&#34;host&#34;</span>: <span style="color:#e6db74">&#34;redis-server&#34;</span>,
+    <span style="color:#f92672">&#34;port&#34;</span>: <span style="color:#ae81ff">6379</span>
   },
-  &quot;logging&quot;: {
-    &quot;appender&quot;: {
-      &quot;type&quot;: &quot;file&quot;,
-      &quot;filename&quot;: &quot;log_file.log&quot;,
-      &quot;maxSize&quot;: 10240
+  <span style="color:#f92672">&#34;logging&#34;</span>: {
+    <span style="color:#f92672">&#34;appender&#34;</span>: {
+      <span style="color:#f92672">&#34;type&#34;</span>: <span style="color:#e6db74">&#34;file&#34;</span>,
+      <span style="color:#f92672">&#34;filename&#34;</span>: <span style="color:#e6db74">&#34;log_file.log&#34;</span>,
+      <span style="color:#f92672">&#34;maxSize&#34;</span>: <span style="color:#ae81ff">10240</span>
     }
   }
-}
-</code></pre>
+}</code></pre></div>
 
 <p>Launch the configuration server (<code>npm start</code>) and you are done. You are now ready to start retrieving the values associated with any key, in a <strong>hierarchical way</strong>:</p>
 
@@ -96,9 +96,6 @@ npm install
 
 <p>In my last post I wrote about <a href="http://guidogarcia.net/blog/2013/12/09/why-is-nodejs-so-cool-from-a-java-guy/">why I like nodejs</a>, a great platform for building <a href="http://yobriefca.se/blog/2013/04/28/micro-service-architecture/">micro-service-based architectures</a>. However, these kind of architectures also come with their own drawbacks. One of them is that they are <strong>more difficult to deploy and configure</strong>.</p>
 
-<p>[caption id=&ldquo;attachment_736&rdquo; align=&ldquo;aligncenter&rdquo; width=&ldquo;500&rdquo;]<img src="http://guidogarcia.net/blog/wp-content/uploads/2013/12/micro-service-architecture.png" alt="Micro Service Architecture" />
-<em>Micro Service Architecture. Image courtesy of <a href="http://yobriefca.se/">James Hughes</a></em>[/caption]</p>
-
 <p>With a centralized configuration server such as rest-confidence everything becomes easier. Instead of configuring hundreds of settings on each component, you only need to configure the URL of your configuration server. Your service will go there to look up any configuration property it needs.</p>
 
 <h3 id="use-case-2-a-b-testing">Use case #2: A/B testing</h3>
@@ -107,16 +104,15 @@ npm install
 
 <p>As a simplistic example, imagine you want to test an alternative color for your blue sign-up button, and check how it affects the conversion rate. You can define a <code>$filter</code> with a <code>$range</code> limit in your configuration:</p>
 
-<pre><code>{
-  &quot;color&quot;: {
-    &quot;$filter&quot;: &quot;random&quot;,
-    &quot;$range&quot;: [
-      { &quot;limit&quot;: 10, &quot;value&quot;: &quot;red&quot; }
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;color&#34;</span>: {
+    <span style="color:#f92672">&#34;$filter&#34;</span>: <span style="color:#e6db74">&#34;random&#34;</span>,
+    <span style="color:#f92672">&#34;$range&#34;</span>: [
+      { <span style="color:#f92672">&#34;limit&#34;</span>: <span style="color:#ae81ff">10</span>, <span style="color:#f92672">&#34;value&#34;</span>: <span style="color:#e6db74">&#34;red&#34;</span> }
     ],
-    &quot;$default&quot;: &quot;blue&quot;
+    <span style="color:#f92672">&#34;$default&#34;</span>: <span style="color:#e6db74">&#34;blue&#34;</span>
   }
-}
-</code></pre>
+}</code></pre></div>
 
 <p>So when you retrieve the &ldquo;color&rdquo; property value using a random filtering criteria, you&rsquo;ll get different colors depending on the ranges.</p>
 
@@ -134,23 +130,22 @@ npm install
 
 <p>You can use <a href="https://github.com/palmerabollo/rest-confidence">rest-confidence</a> as a simple <strong>service directory</strong>,  that is, a centralized server that facilitates dynamic location of other services&rsquo; endpoints, based on different criteria.</p>
 
-<pre><code>{
-  &quot;myservice&quot;: {
-    &quot;$filter&quot;: &quot;env&quot;,
-    &quot;production&quot;: {
-      &quot;url&quot;: {
-        &quot;$filter&quot;: &quot;country&quot;,
-        &quot;ES&quot;: &quot;http://myservice-production.es&quot;,
-        &quot;UK&quot;: &quot;http://myservice-production.co.uk&quot;,
-        &quot;$default&quot;: &quot;http://myservice-production.co.uk&quot;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-json" data-lang="json">{
+  <span style="color:#f92672">&#34;myservice&#34;</span>: {
+    <span style="color:#f92672">&#34;$filter&#34;</span>: <span style="color:#e6db74">&#34;env&#34;</span>,
+    <span style="color:#f92672">&#34;production&#34;</span>: {
+      <span style="color:#f92672">&#34;url&#34;</span>: {
+        <span style="color:#f92672">&#34;$filter&#34;</span>: <span style="color:#e6db74">&#34;country&#34;</span>,
+        <span style="color:#f92672">&#34;ES&#34;</span>: <span style="color:#e6db74">&#34;http://myservice-production.es&#34;</span>,
+        <span style="color:#f92672">&#34;UK&#34;</span>: <span style="color:#e6db74">&#34;http://myservice-production.co.uk&#34;</span>,
+        <span style="color:#f92672">&#34;$default&#34;</span>: <span style="color:#e6db74">&#34;http://myservice-production.co.uk&#34;</span>
       },
     },
-    &quot;development&quot;: {
-      &quot;url&quot;: &quot;http://myservice-production.com&quot; 
+    <span style="color:#f92672">&#34;development&#34;</span>: {
+      <span style="color:#f92672">&#34;url&#34;</span>: <span style="color:#e6db74">&#34;http://myservice-production.com&#34;</span>
     }
   }
-}
-</code></pre>
+}</code></pre></div>
 
 <p>With some criteria applied (for example, env=production and country=ES) you will get the proper service endpoint, or any other information you need:</p>
 

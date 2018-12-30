@@ -49,18 +49,16 @@ Function parameters in Python, Java and Javascript
 
 <p>Python is my favorite. Use your parameters in any order and define their default values as part of the function signature itself.</p>
 
-<pre><code>def foo(arg1, arg2=&quot;default&quot;):
-    print &quot;arg1:&quot;, arg1, &quot;arg2:&quot;, arg2
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">foo</span>(arg1, arg2<span style="color:#f92672">=</span><span style="color:#e6db74">&#34;default&#34;</span>):
+    <span style="color:#66d9ef">print</span> <span style="color:#e6db74">&#34;arg1:&#34;</span>, arg1, <span style="color:#e6db74">&#34;arg2:&#34;</span>, arg2</code></pre></div>
 
 <p>The price to pay is that you can not define two methods with the same name in the same class.</p>
 
-<pre><code>def sum(a, b):
-    return a + b
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-python" data-lang="python"><span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(a, b):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b
 
-def sum(a, b, c):
-    return a + b + c
-</code></pre>
+<span style="color:#66d9ef">def</span> <span style="color:#a6e22e">sum</span>(a, b, c):
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">+</span> b <span style="color:#f92672">+</span> c</code></pre></div>
 
 <p>I am not a Python expert, but it does not seem such a big deal.</p>
 
@@ -68,37 +66,36 @@ def sum(a, b, c):
 
 <p>Java is more verbose, but you have strong types and simple refactoring in exchange.</p>
 
-<pre><code>public void foo(String arg1) {
-    foo(arg1, &quot;default&quot;);
-}
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span><span style="color:#f92672">(</span>String arg1<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    foo<span style="color:#f92672">(</span>arg1<span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;default&#34;</span><span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 
-public void foo(String arg1, String arg2) {
-    System.out.printf(&quot;arg1: %s arg2: %s&quot;, arg1, arg2);
-}
-</code></pre>
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">foo</span><span style="color:#f92672">(</span>String arg1<span style="color:#f92672">,</span> String arg2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;arg1: %s arg2: %s&#34;</span><span style="color:#f92672">,</span> arg1<span style="color:#f92672">,</span> arg2<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <h3 id="javascript-the-bad">Javascript. The bad.</h3>
 
-<p>Javascript is a little more ugly.</p>
+<p>Javascript is a bit more ugly.</p>
 
-<pre><code>function foo(arg1, arg2) {
-    arg2 = arg2 || 'default';
-    console.log('arg1 %s arg2 %s', arg1, arg2);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">foo</span>(<span style="color:#a6e22e">arg1</span>, <span style="color:#a6e22e">arg2</span>) {
+    <span style="color:#a6e22e">arg2</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">arg2</span> <span style="color:#f92672">||</span> <span style="color:#e6db74">&#39;default&#39;</span>;
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">log</span>(<span style="color:#e6db74">&#39;arg1 %s arg2 %s&#39;</span>, <span style="color:#a6e22e">arg1</span>, <span style="color:#a6e22e">arg2</span>);
 }
-</code></pre>
+</code></pre></div>
 
-<p>This is <a href="https://github.com/joyent/node-smartdc/blob/master/lib/cloudapi.js#L223">real code</a> we use in <a href="http://cloud.telefonica.com/">Instant Servers</a>, to have an optional first parameter:</p>
+<p>This is <a href="https://github.com/joyent/node-smartdc/blob/master/lib/cloudapi.js#L223">real code</a> we use in Instant Servers, to have an optional first parameter:</p>
 
-<pre><code>CloudAPI.prototype.getAccount = function (account, callback, noCache) {
-    if (typeof (account) === 'function') {
-        callback = account;
-        account = this.account;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#a6e22e">CloudAPI</span>.<span style="color:#a6e22e">prototype</span>.<span style="color:#a6e22e">getAccount</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">account</span>, <span style="color:#a6e22e">callback</span>, <span style="color:#a6e22e">noCache</span>) {
+    <span style="color:#66d9ef">if</span> (<span style="color:#66d9ef">typeof</span> (<span style="color:#a6e22e">account</span>) <span style="color:#f92672">===</span> <span style="color:#e6db74">&#39;function&#39;</span>) {
+        <span style="color:#a6e22e">callback</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">account</span>;
+        <span style="color:#a6e22e">account</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">account</span>;
     }
-    if (!callback || typeof (callback) !== 'function')
-        throw new TypeError('callback (function) required');
+    <span style="color:#66d9ef">if</span> (<span style="color:#f92672">!</span><span style="color:#a6e22e">callback</span> <span style="color:#f92672">||</span> <span style="color:#66d9ef">typeof</span> (<span style="color:#a6e22e">callback</span>) <span style="color:#f92672">!==</span> <span style="color:#e6db74">&#39;function&#39;</span>)
+        <span style="color:#66d9ef">throw</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">TypeError</span>(<span style="color:#e6db74">&#39;callback (function) required&#39;</span>);
     ...
 }
-</code></pre>
+</code></pre></div>
 
 <p>It is pure crap.</p>
 </div>

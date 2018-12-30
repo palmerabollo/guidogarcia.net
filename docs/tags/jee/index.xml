@@ -18,7 +18,7 @@
       
       <guid>https://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</guid>
       <description>Me pidieron consejo hace unos días sobre este tema. Personalmente, a día de hoy sólo recomiendo estas opciones, muy parecidas y que se basan en anotar las clases Java:
- * El especificación **[JAX-RS](http://en.wikipedia.org/wiki/Java_API_for_RESTful_Web_Services)**, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras [Jersey](http://jersey.java.net/), [Restlet](http://www.restlet.org/) o [Resteasy]( http://www.jboss.org/resteasy). Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1. @Path(&amp;quot;/product/{id}&amp;quot;) public class ProductResource { @GET public String get(@PathParam(&amp;quot;id&amp;quot;) String id) { return .</description>
+ El especificación JAX-RS, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras Jersey, Restlet o Resteasy. Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1.  @Path(&amp;#34;/product/{id}&amp;#34;) public class ProductResource { @GET public String get(@PathParam(&amp;#34;id&amp;#34;) String id) { return .</description>
     </item>
     
   </channel>

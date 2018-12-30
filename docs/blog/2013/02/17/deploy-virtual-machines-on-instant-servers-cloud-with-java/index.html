@@ -45,16 +45,16 @@ Deploy virtual machines on Instant Servers cloud with Java
 
 <p><a href="http://cloud.telefonica.com/instantservers/">Instant Servers</a> is the infrastructure as a service (IaaS) system I have been working on during the last months in Telefónica Digital.</p>
 
-<p>The service offers a <a href="https://api-eu-mad-1.instantservers.telefonica.com/docs/">public REST API</a> (Cloud API) that is super simple to use. However, in this post I will show you how to manage your infrastructure using a Java client, without dealing with HTTP requests.</p>
+<p>The service offers a public REST API (Cloud API) that is super simple to use. However, in this post I will show you how to manage your infrastructure using a Java client, without dealing with HTTP requests.</p>
 
 <h3 id="build-the-cloud-api-client">Build the Cloud API client</h3>
 
-<p>Man does not live by nodejs alone. There is an <a href="https://github.com/telefonicaid/instantservers.git">instantservers project at github</a> you can easily clone and compile (pull requests are also welcome). In the future it will be published as a proper maven artifact, so you can skip this point.
-<code>
-git clone https://github.com/telefonicaid/instantservers.git
+<p>Man does not live by nodejs alone. There is an <a href="https://github.com/telefonicaid/instantservers.git">instantservers project at github</a> you can easily clone and compile (pull requests are also welcome). In the future it will be published as a proper maven artifact, so you can skip this point.</p>
+
+<pre><code>git clone https://github.com/telefonicaid/instantservers.git
 cd ./instantservers/instantservers-api-client
 mvn install
-</code></p>
+</code></pre>
 
 <p>That will generate an instantservers-api-client-1.0.0.M1.jar library you can use in your own applications.</p>
 
@@ -64,29 +64,28 @@ mvn install
 
 <p>Let&rsquo;s code speak.</p>
 
-<pre><code>package net.guidogarcia;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">package</span> net.guidogarcia<span style="color:#f92672">;</span>
 
-import com.tdigital.instantservers.model.cloud.Machine;
+<span style="color:#f92672">import</span> com.tdigital.instantservers.model.cloud.Machine<span style="color:#f92672">;</span>
 
-public class InstantServersExample {
-    // there are several datacenters, I use Madrid &quot;eu-mad&quot; in this example
-    private static final String CLOUDAPI_URL =
-            &quot;https://api-eu-mad-1.instantservers.telefonica.com&quot;;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">InstantServersExample</span> <span style="color:#f92672">{</span>
+    <span style="color:#75715e">// there are several datacenters, I use Madrid &#34;eu-mad&#34; in this example
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> String CLOUDAPI_URL <span style="color:#f92672">=</span>
+            <span style="color:#e6db74">&#34;https://api-eu-mad-1.instantservers.telefonica.com&#34;</span><span style="color:#f92672">;</span>
 
-    public static void main(String[] args) throws Exception {
-        CloudAPIClient client =
-                new CloudAPIClient(&quot;username&quot;, &quot;password&quot;, CLOUDAPI_URL);
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        CloudAPIClient client <span style="color:#f92672">=</span>
+                <span style="color:#66d9ef">new</span> CloudAPIClient<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;username&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;password&#34;</span><span style="color:#f92672">,</span> CLOUDAPI_URL<span style="color:#f92672">);</span>
 
-        Machine machine = new Machine();
-        machine.setName(&quot;smallmachine&quot;);
-        machine.setPackage(&quot;g1_standard_1cpu_512mb&quot;);
-        machine.setDataset(&quot;sdc:sdc:smartos64:1.6.3&quot;);
+        Machine machine <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Machine<span style="color:#f92672">();</span>
+        machine<span style="color:#f92672">.</span><span style="color:#a6e22e">setName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;smallmachine&#34;</span><span style="color:#f92672">);</span>
+        machine<span style="color:#f92672">.</span><span style="color:#a6e22e">setPackage</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;g1_standard_1cpu_512mb&#34;</span><span style="color:#f92672">);</span>
+        machine<span style="color:#f92672">.</span><span style="color:#a6e22e">setDataset</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sdc:sdc:smartos64:1.6.3&#34;</span><span style="color:#f92672">);</span>
 
-        Machine deployed = client.createMachine(machine);
-        System.out.printf(&quot;Machine id is %s&quot;, deployed.getId());
-    }
-}
-</code></pre>
+        Machine deployed <span style="color:#f92672">=</span> client<span style="color:#f92672">.</span><span style="color:#a6e22e">createMachine</span><span style="color:#f92672">(</span>machine<span style="color:#f92672">);</span>
+        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Machine id is %s&#34;</span><span style="color:#f92672">,</span> deployed<span style="color:#f92672">.</span><span style="color:#a6e22e">getId</span><span style="color:#f92672">());</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>You will notice that virtual machines are up and running in a matter of seconds. This is due to the fact that the virtualization is based on rock solid <a href="http://en.wikipedia.org/wiki/Solaris_Containers">Solaris zones</a>.</p>
 

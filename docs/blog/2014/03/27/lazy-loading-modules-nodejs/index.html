@@ -43,23 +43,23 @@ Lazy loading of modules in nodejs
 
 <div class="section" id="content"><p>This is a pattern I found in <a href="https://github.com/pkgcloud/pkgcloud/blob/master/lib/pkgcloud.js#L93">pkgcloud</a> to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.</p>
 
-<pre><code>var providers = [ 'amazon', 'azure', ..., 'joyent' ];
-...
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js">  <span style="color:#66d9ef">var</span> <span style="color:#a6e22e">providers</span> <span style="color:#f92672">=</span> [ <span style="color:#e6db74">&#39;amazon&#39;</span>, <span style="color:#e6db74">&#39;azure&#39;</span>, ..., <span style="color:#e6db74">&#39;joyent&#39;</span> ];
+  ...
 
-//
-// Setup all providers as lazy-loaded getters
-//
-providers.forEach(function (provider) {
-  pkgcloud.providers.__defineGetter__(provider, function () {
-    return require('./pkgcloud/' + provider);
+  <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">// Setup all providers as lazy-loaded getters
+</span><span style="color:#75715e"></span>  <span style="color:#75715e">//
+</span><span style="color:#75715e"></span>  <span style="color:#a6e22e">providers</span>.<span style="color:#a6e22e">forEach</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">provider</span>) {
+    <span style="color:#a6e22e">pkgcloud</span>.<span style="color:#a6e22e">providers</span>.<span style="color:#a6e22e">__defineGetter__</span>(<span style="color:#a6e22e">provider</span>, <span style="color:#66d9ef">function</span> () {
+      <span style="color:#66d9ef">return</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;./pkgcloud/&#39;</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">provider</span>);
+    });
   });
-});
-</code></pre>
+</code></pre></div>
 
 <p>It basically defines a getter, so modules won&rsquo;t be loaded until you do:</p>
 
-<pre><code>var provider = pkgcloud.providers.amazon;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">provider</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">pkgcloud</span>.<span style="color:#a6e22e">providers</span>.<span style="color:#a6e22e">amazon</span>;
+</code></pre></div>
 
 <p>It might be useful in applications where you have different adapters (&ldquo;providers&rdquo; in the example above) offering different implementations of the same API, and you want to let the user choose which one to use at runtime. This is a common requirement in cloud environments but it could be applicable to other scenarios as well (e.g. choose a payment gateway).</p>
 

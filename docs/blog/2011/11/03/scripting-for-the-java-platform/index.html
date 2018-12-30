@@ -47,75 +47,73 @@ Scripting for the Java platform
 
 <p>Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a>, the JavaScript implementation that ships with Java SE 6:</p>
 
-<pre><code>import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javax.script.Invocable<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javax.script.ScriptEngine<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javax.script.ScriptEngineManager<span style="color:#f92672">;</span>
 
-public class TestScript {
-  public static void main(String[] args) throws Exception {
-    ScriptEngineManager mgr = new ScriptEngineManager();
-    ScriptEngine engine = mgr.getEngineByName(&quot;js&quot;);
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestScript</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+    ScriptEngineManager mgr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ScriptEngineManager<span style="color:#f92672">();</span>
+    ScriptEngine engine <span style="color:#f92672">=</span> mgr<span style="color:#f92672">.</span><span style="color:#a6e22e">getEngineByName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;js&#34;</span><span style="color:#f92672">);</span>
 
-    String script = &quot;function sum(a, b) {&quot; +
-                    &quot;   var result = a + b;&quot; +
-                    &quot;   return result;&quot; +
-                    &quot;}&quot;;
-    engine.eval(script);
+    String script <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;function sum(a, b) {&#34;</span> <span style="color:#f92672">+</span>
+                    <span style="color:#e6db74">&#34;   var result = a + b;&#34;</span> <span style="color:#f92672">+</span>
+                    <span style="color:#e6db74">&#34;   return result;&#34;</span> <span style="color:#f92672">+</span>
+                    <span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">;</span>
+    engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>script<span style="color:#f92672">);</span>
 
-    Invocable invocableEngine = (Invocable) engine;
-    Number result = 
-            (Number) invocableEngine.invokeFunction(&quot;sum&quot;, 2, 3);
-    System.out.println(result); // output = 5.0
-  }
-}
-</code></pre>
+    Invocable invocableEngine <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Invocable<span style="color:#f92672">)</span> engine<span style="color:#f92672">;</span>
+    Number result <span style="color:#f92672">=</span>
+            <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> invocableEngine<span style="color:#f92672">.</span><span style="color:#a6e22e">invokeFunction</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sum&#34;</span><span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
+    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span> <span style="color:#75715e">// output = 5.0
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <h3 id="reuse-existing-code">Reuse existing code</h3>
 
 <p>I find this &ldquo;trick&rdquo; useful in cases where you want to reuse existing scripting code. In the following example I use the great <a href="http://www.datejs.com/">datejs library</a> to parse dates written in natural language:</p>
 
-<pre><code>import java.io.InputStreamReader;
-import java.io.Reader;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.InputStreamReader<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.io.Reader<span style="color:#f92672">;</span>
 
-import javax.script.Invocable;
-import javax.script.ScriptEngine;
-import javax.script.ScriptEngineManager;
-import javax.script.ScriptException;
+<span style="color:#f92672">import</span> javax.script.Invocable<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javax.script.ScriptEngine<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javax.script.ScriptEngineManager<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> javax.script.ScriptException<span style="color:#f92672">;</span>
 
-public class DateParser {
-    private final ScriptEngine engine;
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DateParser</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ScriptEngine engine<span style="color:#f92672">;</span>
 
-    public DateParser() throws ScriptException {
-        ScriptEngineManager mgr = new ScriptEngineManager();
-        engine = mgr.getEngineByName(&quot;js&quot;);
+    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DateParser</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> ScriptException <span style="color:#f92672">{</span>
+        ScriptEngineManager mgr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ScriptEngineManager<span style="color:#f92672">();</span>
+        engine <span style="color:#f92672">=</span> mgr<span style="color:#f92672">.</span><span style="color:#a6e22e">getEngineByName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;js&#34;</span><span style="color:#f92672">);</span>
 
-        Reader reader = new InputStreamReader(
-                this.getClass().getResourceAsStream(&quot;/scripts/date.js&quot;));
-        engine.eval(reader);
-        engine.eval(
-            &quot;function parse(value) { &quot; +
-            &quot;    return Date.parse(value).toDateString();&quot; +
-            &quot;};&quot;
-        );
-    }
+        Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>
+                <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/scripts/date.js&#34;</span><span style="color:#f92672">));</span>
+        engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>reader<span style="color:#f92672">);</span>
+        engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>
+            <span style="color:#e6db74">&#34;function parse(value) { &#34;</span> <span style="color:#f92672">+</span>
+            <span style="color:#e6db74">&#34;    return Date.parse(value).toDateString();&#34;</span> <span style="color:#f92672">+</span>
+            <span style="color:#e6db74">&#34;};&#34;</span>
+        <span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
 
-    public String parse(String naturalLanguageDate)
-            throws ScriptException, NoSuchMethodException {
-        Invocable invocableEngine = (Invocable) engine;
-        return (String) invocableEngine.invokeFunction(&quot;parse&quot;, naturalLanguageDate);
-    }
+    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>String naturalLanguageDate<span style="color:#f92672">)</span>
+            <span style="color:#66d9ef">throws</span> ScriptException<span style="color:#f92672">,</span> NoSuchMethodException <span style="color:#f92672">{</span>
+        Invocable invocableEngine <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Invocable<span style="color:#f92672">)</span> engine<span style="color:#f92672">;</span>
+        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span> invocableEngine<span style="color:#f92672">.</span><span style="color:#a6e22e">invokeFunction</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;parse&#34;</span><span style="color:#f92672">,</span> naturalLanguageDate<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
 
-    public static void main(String[] args) throws Exception {
-        DateParser parser = new DateParser();
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
+        DateParser parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DateParser<span style="color:#f92672">();</span>
 
-        // output = Thu Nov 03 2011
-        System.out.println(parser.parse(&quot;next thursday&quot;)); 
+        <span style="color:#75715e">// output = Thu Nov 03 2011
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;next thursday&#34;</span><span style="color:#f92672">));</span>
 
-        // output  = Wed Nov 09 2011
-        System.out.println(parser.parse(&quot;tomorrow + 10 days&quot;));
-    }
-}
-</code></pre>
+        <span style="color:#75715e">// output  = Wed Nov 09 2011
+</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tomorrow + 10 days&#34;</span><span style="color:#f92672">));</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>Well, that is all for the proof of concept I was looking for. If you want to read a more complete and deep article about this subject, I recommend <a href="http://download.oracle.com/javase/6/docs/technotes/guides/scripting/programmer_guide/index.html">Java Scripting Programmer&rsquo;s Guide at Oracle</a>.</p>
 

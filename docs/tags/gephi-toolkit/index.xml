@@ -19,7 +19,7 @@
       <guid>https://guidogarcia.net/blog/2012/01/21/graph-yourtwitter-network-with-gephi/</guid>
       <description>Gephi is a really cool open-source (GPL) project for visualizing and analyzing network graphs.
 Getting started If you want to start using Gephi you have two choices:
- * The blue pill, a simple **GUI**, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. * The red pill, the **[Gephi Toolkit](http://wiki.gephi.org/index.php/Toolkit_portal)**. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
+ The blue pill, a simple GUI, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends. The red pill, the Gephi Toolkit. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs.</description>
     </item>
     
   </channel>

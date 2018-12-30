@@ -81,80 +81,79 @@ Macro-averaged F=0.7428
 
 <h3 id="annex-i-java-code">Annex I. Java Code</h3>
 
-<pre><code>String[] CATEGORIES = { &quot;spam&quot;, &quot;love&quot; };
-int NGRAM_SIZE = 6;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">String<span style="color:#f92672">[]</span> CATEGORIES <span style="color:#f92672">=</span> <span style="color:#f92672">{</span> <span style="color:#e6db74">&#34;spam&#34;</span><span style="color:#f92672">,</span> <span style="color:#e6db74">&#34;love&#34;</span> <span style="color:#f92672">};</span>
+<span style="color:#66d9ef">int</span> NGRAM_SIZE <span style="color:#f92672">=</span> 6<span style="color:#f92672">;</span>
 
-String textSpamTraining =
-        &quot;Ola ke Ase\n&quot; +
-        &quot;censurator\n&quot; +
-        &quot;...&quot;;
+String textSpamTraining <span style="color:#f92672">=</span>
+        <span style="color:#e6db74">&#34;Ola ke Ase\n&#34;</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">&#34;censurator\n&#34;</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">&#34;...&#34;</span><span style="color:#f92672">;</span>
 
-String textLoveTraining =
-        &quot;Me ahogo en un suspiro,\n&quot; +
-        &quot;miro tus ojos de cristal\n&quot; +
-        &quot;...&quot;;
+String textLoveTraining <span style="color:#f92672">=</span>
+        <span style="color:#e6db74">&#34;Me ahogo en un suspiro,\n&#34;</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">&#34;miro tus ojos de cristal\n&#34;</span> <span style="color:#f92672">+</span>
+        <span style="color:#e6db74">&#34;...&#34;</span><span style="color:#f92672">;</span>
 
-String[] textSpamCrossValidation = {
-        &quot;os va a censurar&quot;,
-        &quot;esto es una mierda&quot;,
-        &quot;...&quot;
-};
+String<span style="color:#f92672">[]</span> textSpamCrossValidation <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;os va a censurar&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;esto es una mierda&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;...&#34;</span>
+<span style="color:#f92672">};</span>
 
-String[] textLoveCrossValidation = {
-        &quot;el experimento ha revelado&quot;,
-        &quot;que el gran poeta no era orador&quot;,
-        &quot;y al no resultar como esperado&quot;,
-        &quot;se ha tornado en vil censor&quot;,
-        &quot;...&quot;
-};
+String<span style="color:#f92672">[]</span> textLoveCrossValidation <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+        <span style="color:#e6db74">&#34;el experimento ha revelado&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;que el gran poeta no era orador&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;y al no resultar como esperado&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;se ha tornado en vil censor&#34;</span><span style="color:#f92672">,</span>
+        <span style="color:#e6db74">&#34;...&#34;</span>
+<span style="color:#f92672">};</span>
 
-// FIRST STEP - learn
-DynamicLMClassifier&lt;NGramProcessLM&gt; classifier =
-        DynamicLMClassifier.createNGramProcess(CATEGORIES, NGRAM_SIZE);
+<span style="color:#75715e">// FIRST STEP - learn
+</span><span style="color:#75715e"></span>DynamicLMClassifier<span style="color:#f92672">&lt;</span>NGramProcessLM<span style="color:#f92672">&gt;</span> classifier <span style="color:#f92672">=</span>
+        DynamicLMClassifier<span style="color:#f92672">.</span><span style="color:#a6e22e">createNGramProcess</span><span style="color:#f92672">(</span>CATEGORIES<span style="color:#f92672">,</span> NGRAM_SIZE<span style="color:#f92672">);</span>
 
-{
-    Classification classification = new Classification(&quot;spam&quot;);
-    Classified&lt;CharSequence&gt; classified =
-        new Classified&lt;CharSequence&gt;(textSpamTraining, classification);
-    classifier.handle(classified);
-}
+<span style="color:#f92672">{</span>
+    Classification classification <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Classification<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;spam&#34;</span><span style="color:#f92672">);</span>
+    Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> classified <span style="color:#f92672">=</span>
+        <span style="color:#66d9ef">new</span> Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;(</span>textSpamTraining<span style="color:#f92672">,</span> classification<span style="color:#f92672">);</span>
+    classifier<span style="color:#f92672">.</span><span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>classified<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 
-{
-    Classification classification = new Classification(&quot;love&quot;);
-    Classified&lt;CharSequence&gt; classified =
-        new Classified&lt;CharSequence&gt;(textLoveTraining, classification);
-    classifier.handle(classified);
-}
+<span style="color:#f92672">{</span>
+    Classification classification <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Classification<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;love&#34;</span><span style="color:#f92672">);</span>
+    Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> classified <span style="color:#f92672">=</span>
+        <span style="color:#66d9ef">new</span> Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;(</span>textLoveTraining<span style="color:#f92672">,</span> classification<span style="color:#f92672">);</span>
+    classifier<span style="color:#f92672">.</span><span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>classified<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 
-// SECOND STEP - compile
-JointClassifier&lt;CharSequence&gt; compiledClassifier =
-                (JointClassifier&lt;CharSequence&gt;) 
-                        AbstractExternalizable.compile(classifier);
+<span style="color:#75715e">// SECOND STEP - compile
+</span><span style="color:#75715e"></span>JointClassifier<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> compiledClassifier <span style="color:#f92672">=</span>
+                <span style="color:#f92672">(</span>JointClassifier<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;)</span>
+                        AbstractExternalizable<span style="color:#f92672">.</span><span style="color:#a6e22e">compile</span><span style="color:#f92672">(</span>classifier<span style="color:#f92672">);</span>
 
-JointClassifierEvaluator&lt;CharSequence&gt; evaluator =
-        new JointClassifierEvaluator&lt;CharSequence&gt;(
-                compiledClassifier, CATEGORIES, true);
+JointClassifierEvaluator<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> evaluator <span style="color:#f92672">=</span>
+        <span style="color:#66d9ef">new</span> JointClassifierEvaluator<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;(</span>
+                compiledClassifier<span style="color:#f92672">,</span> CATEGORIES<span style="color:#f92672">,</span> <span style="color:#66d9ef">true</span><span style="color:#f92672">);</span>
 
-// THIRD STEP - cross-validate
-for (String textSpamItem: textSpamCrossValidation) {
-    Classification classification = new Classification(&quot;spam&quot;);
-    Classified&lt;CharSequence&gt; classified =
-        new Classified&lt;CharSequence&gt;(textSpamItem, classification);
-    evaluator.handle(classified);
-}
+<span style="color:#75715e">// THIRD STEP - cross-validate
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String textSpamItem: textSpamCrossValidation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Classification classification <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Classification<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;spam&#34;</span><span style="color:#f92672">);</span>
+    Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> classified <span style="color:#f92672">=</span>
+        <span style="color:#66d9ef">new</span> Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;(</span>textSpamItem<span style="color:#f92672">,</span> classification<span style="color:#f92672">);</span>
+    evaluator<span style="color:#f92672">.</span><span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>classified<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 
-for (String textLoveItem: textLoveValidation) {
-    Classification classification = new Classification(&quot;love&quot;);
-    Classified&lt;CharSequence&gt; classified =
-        new Classified&lt;CharSequence&gt;(textLoveItem, classification);
-    evaluator.handle(classified);
-}
+<span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span>String textLoveItem: textLoveValidation<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Classification classification <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Classification<span style="color:#f92672">(</span><span style="color:#e6db74">&#34;love&#34;</span><span style="color:#f92672">);</span>
+    Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;</span> classified <span style="color:#f92672">=</span>
+        <span style="color:#66d9ef">new</span> Classified<span style="color:#f92672">&lt;</span>CharSequence<span style="color:#f92672">&gt;(</span>textLoveItem<span style="color:#f92672">,</span> classification<span style="color:#f92672">);</span>
+    evaluator<span style="color:#f92672">.</span><span style="color:#a6e22e">handle</span><span style="color:#f92672">(</span>classified<span style="color:#f92672">);</span>
+<span style="color:#f92672">}</span>
 
-ConfusionMatrix matrix = evaluator.confusionMatrix();
-System.out.println(&quot;Total Accuracy: &quot; + matrix.totalAccuracy());
+ConfusionMatrix matrix <span style="color:#f92672">=</span> evaluator<span style="color:#f92672">.</span><span style="color:#a6e22e">confusionMatrix</span><span style="color:#f92672">();</span>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Total Accuracy: &#34;</span> <span style="color:#f92672">+</span> matrix<span style="color:#f92672">.</span><span style="color:#a6e22e">totalAccuracy</span><span style="color:#f92672">());</span>
 
-System.out.println(evaluator);
-</code></pre>
+System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>evaluator<span style="color:#f92672">);</span></code></pre></div>
 </div>
 
 

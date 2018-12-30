@@ -18,7 +18,7 @@
       
       <guid>https://guidogarcia.net/blog/2014/03/27/lazy-loading-modules-nodejs/</guid>
       <description>This is a pattern I found in pkgcloud to lazy-load nodejs modules. That is, to defer their loading until a module is actually needed.
-var providers = [ &#39;amazon&#39;, &#39;azure&#39;, ..., &#39;joyent&#39; ]; ... // // Setup all providers as lazy-loaded getters // providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&#39;./pkgcloud/&#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
+var providers = [ &amp;#39;amazon&amp;#39;, &amp;#39;azure&amp;#39;, ..., &amp;#39;joyent&amp;#39; ]; ... //  // Setup all providers as lazy-loaded getters  //  providers.forEach(function (provider) { pkgcloud.providers.__defineGetter__(provider, function () { return require(&amp;#39;./pkgcloud/&amp;#39; + provider); }); });  It basically defines a getter, so modules won&amp;rsquo;t be loaded until you do:</description>
     </item>
     
     <item>

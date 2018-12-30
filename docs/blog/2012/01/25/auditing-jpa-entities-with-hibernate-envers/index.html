@@ -47,9 +47,10 @@ Auditing JPA entities with Hibernate Envers
 
 <p>This is not the first time this problem arises. I think this is a the case of a <a href="http://en.wikipedia.org/wiki/Cross-cutting_concern">cross-cutting concern</a>, that fits well into the <a href="http://en.wikipedia.org/wiki/Aspect-oriented_programming">aspect-oriented programming</a> area. I have seen this very same problem in many different projects I have worked on, always solved with one variant of these two approches:</p>
 
-<pre><code>  * Use a database trigger, that fires with every change in the entities you need to track.
-  * Manage it programmatically, a painful solution that contaminates your code.
-</code></pre>
+<ul>
+<li>Use a database trigger, that fires with every change in the entities you need to track.</li>
+<li>Manage it programmatically, a painful solution that contaminates your code.</li>
+</ul>
 
 <h3 id="hibernate-envers-to-the-rescue">Hibernate Envers to the rescue</h3>
 
@@ -57,22 +58,20 @@ Auditing JPA entities with Hibernate Envers
 
 <p>The <a href="http://www.jboss.org/envers">Envers project</a> is now a <a href="http://hibernate.org/">Hibernate</a> core module (since 3.5+), so it is really easy to include it in your projects. As promised, you only need to annotate your entities:</p>
 
-<pre><code>@Entity
-@Audited
-public class MyEntity {
-   ...
-}
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">    <span style="color:#a6e22e">@Entity</span>
+    <span style="color:#a6e22e">@Audited</span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">MyEntity</span> <span style="color:#f92672">{</span>
+       <span style="color:#f92672">...</span>
+    <span style="color:#f92672">}</span></code></pre></div>
 
 <p>If you are using Hibernate Hibernate 3.x, add the following properties to your <strong>persistence.xml</strong>, to configure the listeners that need to be called when a persistence related event is fired:</p>
 
-<pre><code>&lt;property name=&quot;hibernate.ejb.event.post-insert&quot; value=&quot;org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-&lt;property name=&quot;hibernate.ejb.event.post-update&quot; value=&quot;org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-&lt;property name=&quot;hibernate.ejb.event.post-delete&quot; value=&quot;org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-&lt;property name=&quot;hibernate.ejb.event.pre-collection-update&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-&lt;property name=&quot;hibernate.ejb.event.pre-collection-remove&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-&lt;property name=&quot;hibernate.ejb.event.post-collection-recreate&quot; value=&quot;org.hibernate.envers.event.AuditEventListener&quot; /&gt;
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.post-insert&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.ejb.event.EJB3PostInsertEventListener,org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.post-update&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.ejb.event.EJB3PostUpdateEventListener,org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.post-delete&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.ejb.event.EJB3PostDeleteEventListener,org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.pre-collection-update&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.pre-collection-remove&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span>
+<span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.ejb.event.post-collection-recreate&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;org.hibernate.envers.event.AuditEventListener&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 
 <p>And last, if you are using Maven, include it as a dependency in your pom.xml (the <a href="http://planet.jboss.org/view/post.seam?post=envers_bundled_with_jboss_as_7_0_2">dependency scope is &ldquo;provided&rdquo; if you use JBoss AS 7.0.2</a>):</p>
 
@@ -91,8 +90,7 @@ public class MyEntity {
 
 <p>Hibernate Envers is so simple that the only improvement I can think about is to see it standardized as part of the next version of JPA, and to include a single configuration property covering 90% of the cases (or even better, discover if the entities are marked as auditable at runtime):</p>
 
-<pre><code>&lt;property name=&quot;hibernate.auditable&quot; value=&quot;true&quot; /&gt; 
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-xml" data-lang="xml"><span style="color:#f92672">&lt;property</span> <span style="color:#a6e22e">name=</span><span style="color:#e6db74">&#34;hibernate.auditable&#34;</span> <span style="color:#a6e22e">value=</span><span style="color:#e6db74">&#34;true&#34;</span> <span style="color:#f92672">/&gt;</span></code></pre></div>
 
 <p>Any comment is welcome.</p>
 

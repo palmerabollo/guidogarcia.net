@@ -59,123 +59,122 @@ My experience in the 2nd Tuenti Programming Challenge
 
 <p>Here it is (<a href="https://gist.github.com/gists/2623553/download">download</a>). I do not know how many participants chose Java to solve the problems. What I have seen so far are solutions in Python (<a href="https://github.com/robermorales/Tuenti-Challenge2012-solutions/tree/master/robermorales">here</a>, <a href="https://github.com/TheOm3ga/SolucionesTuenti2012">here</a>) that seem more compact and PHP (<a href="https://github.com/ricardclau/tuenti-contest/tree/master/2012">here</a>). It is a pity that the official ranking does not show the execution times :)</p>
 
-<pre><code>/**
- * Crazy Croupier - 2nd Tuenti Challenge - 12
- * 
- * Example:
- * Number of cards: N = 10
- * Number of cards in the first set: L = 3
- * Cards: 10 1 4 2 8 5 6 7 3 9
- * 
- * First set: 10 1 4
- * Second set: 2 8 5 6 7 3 9
- * 
- * Shuffled set: 4 9 1 3 10 7 6 5 8 2
- */
-public static void main(String[] args) {
-  Scanner scanner = new Scanner(System.in);
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#75715e">/**
+</span><span style="color:#75715e">    * Crazy Croupier - 2nd Tuenti Challenge - 12
+</span><span style="color:#75715e">    *
+</span><span style="color:#75715e">    * Example:
+</span><span style="color:#75715e">    * Number of cards: N = 10
+</span><span style="color:#75715e">    * Number of cards in the first set: L = 3
+</span><span style="color:#75715e">    * Cards: 10 1 4 2 8 5 6 7 3 9
+</span><span style="color:#75715e">    *
+</span><span style="color:#75715e">    * First set: 10 1 4
+</span><span style="color:#75715e">    * Second set: 2 8 5 6 7 3 9
+</span><span style="color:#75715e">    *
+</span><span style="color:#75715e">    * Shuffled set: 4 9 1 3 10 7 6 5 8 2
+</span><span style="color:#75715e">    */</span>
+  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    Scanner scanner <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
 
-  // read number of cases
-  int cases = Integer.parseInt(scanner.nextLine());
+    <span style="color:#75715e">// read number of cases
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> cases <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>scanner<span style="color:#f92672">.</span><span style="color:#a6e22e">nextLine</span><span style="color:#f92672">());</span>
 
-  for (int i=1; i&lt;=cases; i++) {
-    // read N L, for example 10 6
-    String line = scanner.nextLine();
-    String[] arguments = line.split(&quot; &quot;);
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>1<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;=</span>cases<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      <span style="color:#75715e">// read N L, for example 10 6
+</span><span style="color:#75715e"></span>      String line <span style="color:#f92672">=</span> scanner<span style="color:#f92672">.</span><span style="color:#a6e22e">nextLine</span><span style="color:#f92672">();</span>
+      String<span style="color:#f92672">[]</span> arguments <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
 
-    // N = cards in the deck
-    int N = Integer.parseInt(arguments[0]);
+      <span style="color:#75715e">// N = cards in the deck
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>0<span style="color:#f92672">]);</span>
 
-    // L cards in the first bunch (where to cut the deck)
-    int L = Integer.parseInt(arguments[1]);
+      <span style="color:#75715e">// L cards in the first bunch (where to cut the deck)
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> L <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>1<span style="color:#f92672">]);</span>
 
-    long result = processCase(N, L);
-    System.out.printf(&quot;Case #%d: %d\n&quot;, i, result);
-  }
-}
+      <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> processCase<span style="color:#f92672">(</span>N<span style="color:#f92672">,</span> L<span style="color:#f92672">);</span>
+      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Case #%d: %d\n&#34;</span><span style="color:#f92672">,</span> i<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
 
-/**
- * Returns the number of shuffles required to return the deck
- * to its original order.
- * The algorithm will calculate the number of iterations that
- * each individual card need to come back to its position. The
- * solution will be the least common multiple (lcm) of the
- * individual results.
- */
-private static long processCase(int n, int cut) {
-  int[] deck = new int[n]; // first deck shuffling result
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">    * Returns the number of shuffles required to return the deck
+</span><span style="color:#75715e">    * to its original order.
+</span><span style="color:#75715e">    * The algorithm will calculate the number of iterations that
+</span><span style="color:#75715e">    * each individual card need to come back to its position. The
+</span><span style="color:#75715e">    * solution will be the least common multiple (lcm) of the
+</span><span style="color:#75715e">    * individual results.
+</span><span style="color:#75715e">    */</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">processCase</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cut<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> deck <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">];</span> <span style="color:#75715e">// first deck shuffling result
+</span><span style="color:#75715e"></span>
+    shuffleDeck<span style="color:#f92672">(</span>n<span style="color:#f92672">,</span> cut<span style="color:#f92672">,</span> deck<span style="color:#f92672">);</span>
 
-  shuffleDeck(n, cut, deck);
+    <span style="color:#75715e">// cache source -&gt; target positions for O(1) access
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> permutations <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;();</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>deck<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      permutations<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>deck<span style="color:#f92672">[</span>i<span style="color:#f92672">],</span> i<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
 
-  // cache source -&gt; target positions for O(1) access
-  final Map&lt;Integer, Integer&gt; permutations = new HashMap&lt;Integer, Integer&gt;();
-  for (int i=0; i&lt;deck.length; i++) {
-    permutations.put(deck[i], i+1);
-  }
+    <span style="color:#75715e">// cache to avoid multiple lcd calculations of the same num, O(1) access
+</span><span style="color:#75715e"></span>    Set<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;</span> calculatedLcm <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;();</span>
+    <span style="color:#66d9ef">long</span> lcm <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>deck<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">long</span> numberPermutations <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> <span style="color:#75715e">// we already did the first shuffling
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> currentPosition <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span>1<span style="color:#f92672">;</span>
 
-  // cache to avoid multiple lcd calculations of the same num, O(1) access
-  Set&lt;Long&gt; calculatedLcm = new HashSet&lt;Long&gt;();
-  long lcm = 0;
-  for (int i=0; i&lt;deck.length; i++) {
-    long numberPermutations = 1; // we already did the first shuffling
-    int currentPosition = i+1;
+      <span style="color:#75715e">// still no at the original position
+</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>currentPosition <span style="color:#f92672">!=</span> deck<span style="color:#f92672">[</span>i<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
+        numberPermutations<span style="color:#f92672">++;</span>
+        currentPosition <span style="color:#f92672">=</span> permutations<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>currentPosition<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
 
-    // still no at the original position
-    while (currentPosition != deck[i]) {
-      numberPermutations++;
-      currentPosition = permutations.get(currentPosition);
-    }
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>calculatedLcm<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>numberPermutations<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+        lcm <span style="color:#f92672">=</span> lcm<span style="color:#f92672">(</span>lcm<span style="color:#f92672">,</span> numberPermutations<span style="color:#f92672">);</span>
+        calculatedLcm<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>numberPermutations<span style="color:#f92672">);</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
 
-    if (calculatedLcm.contains(numberPermutations) == false) {
-      lcm = lcm(lcm, numberPermutations);
-      calculatedLcm.add(numberPermutations);
-    }
-  }
+    <span style="color:#66d9ef">return</span> lcm<span style="color:#f92672">;</span>
+  <span style="color:#f92672">}</span>
 
-  return lcm;
-}
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">    * Shuffles the deck one time according to the algorithm.
+</span><span style="color:#75715e">    */</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">shuffleDeck</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cut<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> deck<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>cut<span style="color:#f92672">,</span> n<span style="color:#f92672">-</span>cut<span style="color:#f92672">);</span> <span style="color:#75715e">// number of cards shuffled
+</span><span style="color:#75715e"></span>
+    <span style="color:#75715e">// shuffle two bunch of cards
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>min<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> cut <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span>   <span style="color:#75715e">// 1st bunch
+</span><span style="color:#75715e"></span>      deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">// 2nd bunch
+</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
 
-/**
- * Shuffles the deck one time according to the algorithm.
- */
-private static void shuffleDeck(int n, int cut, int[] deck) {
-  int min = Math.min(cut, n-cut); // number of cards shuffled
+    <span style="color:#75715e">// put the rest of the cards in proper order, at the end
+</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">-</span> 2 <span style="color:#f92672">*</span> min<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>cut <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">/</span> 2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// first bunch is bigger
+</span><span style="color:#75715e"></span>        deck<span style="color:#f92672">[</span>n <span style="color:#f92672">-</span> 1 <span style="color:#f92672">-</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// second bunch is bigger or equal
+</span><span style="color:#75715e"></span>        deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> min <span style="color:#f92672">+</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> min <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span>
+      <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+  <span style="color:#f92672">}</span>
 
-  // shuffle two bunch of cards
-  for (int i=0; i&lt;min; i++) {
-    deck[2 * i] = cut - i;   // 1st bunch
-    deck[2 * i + 1] = n - i; // 2nd bunch
-  }
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">    * Least common multiple. Probably a more efficient approach can be
+</span><span style="color:#75715e">    * found but it is good enough.
+</span><span style="color:#75715e">    */</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">lcm</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>a <span style="color:#f92672">==</span> 0 <span style="color:#f92672">||</span> b <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+      <span style="color:#66d9ef">return</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
+    <span style="color:#f92672">}</span>
+    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">*</span> b <span style="color:#f92672">/</span> gcd<span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span>
 
-  // put the rest of the cards in proper order, at the end
-  for (int i=0; i&lt;n - 2 * min; i++) {
-    if (cut &gt;= n / 2) { // first bunch is bigger
-      deck[n - 1 - i] = i + 1;
-    } else { // second bunch is bigger or equal
-      deck[2 * min + i] = n - min - i;
-    }
-  }
-}
-
-/**
- * Least common multiple. Probably a more efficient approach can be
- * found but it is good enough.
- */
-private static long lcm(long a, long b) {
-  if (a == 0 || b == 0) {
-    return Math.max(a, b);
-  }
-  return a * b / gcd(a, b);
-}
-
-/**
- * Greatest common divisor, see also {@link BigInteger#gcd(BigInteger)}
- */
-private static long gcd(long a, long b) {
-  long mod = a % b;
-  return mod == 0 ? b : gcd(b, mod);
-}
-</code></pre>
+  <span style="color:#75715e">/**
+</span><span style="color:#75715e">    * Greatest common divisor, see also {@link BigInteger#gcd(BigInteger)}
+</span><span style="color:#75715e">    */</span>
+  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">gcd</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">long</span> mod <span style="color:#f92672">=</span> a <span style="color:#f92672">%</span> b<span style="color:#f92672">;</span>
+    <span style="color:#66d9ef">return</span> mod <span style="color:#f92672">==</span> 0 <span style="color:#f92672">?</span> b <span style="color:#f92672">:</span> gcd<span style="color:#f92672">(</span>b<span style="color:#f92672">,</span> mod<span style="color:#f92672">);</span>
+  <span style="color:#f92672">}</span></code></pre></div>
 
 <p>What do you think about it?</p>
 

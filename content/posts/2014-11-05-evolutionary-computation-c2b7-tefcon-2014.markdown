@@ -16,6 +16,6 @@ tags:
 
 This is my presentation (spanish) about [evolutionary computation](https://en.wikipedia.org/wiki/Evolutionary_computation) for the TEFcon 2014. It was a talk about how we code and how genetic algorithms and genetic programming might help us. Because "programming should be more about the what and less about the how".
 
-
+<iframe src="//slides.com/guidogarcia/algoritmos-geneticos/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>
 
 Edit: I've pushed the Java code for the [queens problem using genetic algorithms](https://github.com/palmerabollo/genetic-queens) to github.

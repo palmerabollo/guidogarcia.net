@@ -56,37 +56,36 @@ Ann   = { 200, 230, 150, 220, 210 }
 
 <p>We can use <a href="http://commons.apache.org/math/">Apache Commons Math</a> to perform some statistical tests. It is an interesting Java library, not really focused on statistics, but pretty easy to use and that luckily contains ANOVA.</p>
 
-<pre><code>import java.util.ArrayList;
-import java.util.List;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.util.ArrayList<span style="color:#f92672">;</span>
+<span style="color:#f92672">import</span> java.util.List<span style="color:#f92672">;</span>
 
-import org.apache.commons.math.*;
+<span style="color:#f92672">import</span> org.apache.commons.math.*<span style="color:#f92672">;</span>
 
-public class FraudDetector {
-    private static final double SIGNIFICANCE_LEVEL = 0.001; // 99.9%
+<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">FraudDetector</span> <span style="color:#f92672">{</span>
+    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">final</span> <span style="color:#66d9ef">double</span> SIGNIFICANCE_LEVEL <span style="color:#f92672">=</span> 0<span style="color:#f92672">.</span><span style="color:#a6e22e">001</span><span style="color:#f92672">;</span> <span style="color:#75715e">// 99.9%
+</span><span style="color:#75715e"></span>
+    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> MathException <span style="color:#f92672">{</span>
+        <span style="color:#66d9ef">double</span><span style="color:#f92672">[][]</span> observations <span style="color:#f92672">=</span> <span style="color:#f92672">{</span>
+            <span style="color:#f92672">{</span> 150<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 200<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 180<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 230<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 220<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 250<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 230<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 300<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span> <span style="color:#f92672">},</span>
+            <span style="color:#f92672">{</span> 200<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 240<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 220<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 250<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 210<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 190<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 240<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span> <span style="color:#f92672">},</span>
+            <span style="color:#f92672">{</span> 100<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 130<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 150<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 180<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 140<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 200<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 110<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 120<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span> <span style="color:#f92672">},</span>
+            <span style="color:#f92672">{</span> 200<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 230<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 150<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 220<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span><span style="color:#f92672">,</span> 210<span style="color:#f92672">.</span><span style="color:#a6e22e">0</span> <span style="color:#f92672">}</span>
+        <span style="color:#f92672">};</span>
 
-    public static void main(String[] args) throws MathException {
-        double[][] observations = {
-           { 150.0, 200.0, 180.0, 230.0, 220.0, 250.0, 230.0, 300.0 },
-           { 200.0, 240.0, 220.0, 250.0, 210.0, 190.0, 240.0 },
-           { 100.0, 130.0, 150.0, 180.0, 140.0, 200.0, 110.0, 120.0 },
-           { 200.0, 230.0, 150.0, 220.0, 210.0 }
-        };
+        <span style="color:#66d9ef">final</span> List<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">[]&gt;</span> classes <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ArrayList<span style="color:#f92672">&lt;</span><span style="color:#66d9ef">double</span><span style="color:#f92672">[]&gt;();</span>
+        <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>observations<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
+            classes<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>observations<span style="color:#f92672">[</span>i<span style="color:#f92672">]);</span>
+        <span style="color:#f92672">}</span>
 
-        final List&lt;double[]&gt; classes = new ArrayList&lt;double[]&gt;();
-        for (int i=0; i&lt;observations.length; i++) {
-            classes.add(observations[i]);
-        }
+        OneWayAnova anova <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> OneWayAnovaImpl<span style="color:#f92672">();</span>
+        <span style="color:#66d9ef">boolean</span> rejectNullHypothesis <span style="color:#f92672">=</span>
+                    anova<span style="color:#f92672">.</span><span style="color:#a6e22e">anovaTest</span><span style="color:#f92672">(</span>classes<span style="color:#f92672">,</span> SIGNIFICANCE_LEVEL<span style="color:#f92672">);</span>
 
-        OneWayAnova anova = new OneWayAnovaImpl();
-        boolean rejectNullHypothesis =
-                    anova.anovaTest(classes, SIGNIFICANCE_LEVEL);
-
-        if (rejectNullHypothesis) {
-            System.out.println(&quot;Significant differences were found&quot;);
-        }
-    }
-}
-</code></pre>
+        <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>rejectNullHypothesis<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
+            System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Significant differences were found&#34;</span><span style="color:#f92672">);</span>
+        <span style="color:#f92672">}</span>
+    <span style="color:#f92672">}</span>
+<span style="color:#f92672">}</span></code></pre></div>
 
 <p>The <a href="http://stackoverflow.com/questions/2326399/efficient-algorithm-for-detecting-different-elements-in-a-collection">question I asked in stackoverflow</a> includes some discussion and additional information about how to determine the rare cases.</p>
 

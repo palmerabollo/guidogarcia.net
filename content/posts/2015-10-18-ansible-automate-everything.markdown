@@ -15,4 +15,4 @@ categories:
 
 The first beta of Ansible 2.x is ready, and it comes with modules to automate the management of your openstack infrastructure (other cloud platforms are also available). This is my presentantion for begginers who want to start using Ansible and to stop wasting their time.
 
-
+<iframe src="//slides.com/guidogarcia/ansible-2-0/embed" width="576" height="420" scrolling="no" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe>

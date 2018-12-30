@@ -19,7 +19,7 @@
       <guid>https://guidogarcia.net/blog/2014/01/18/function-parameters-python-java-javascript/</guid>
       <description>This is a short post about how these programming languages compare with each other when it comes to declaring functions with optional parameters and default values. Feel free to leave alternatives in other languages in the comments.
 Python. The good. Python is my favorite. Use your parameters in any order and define their default values as part of the function signature itself.
-def foo(arg1, arg2=&amp;quot;default&amp;quot;): print &amp;quot;arg1:&amp;quot;, arg1, &amp;quot;arg2:&amp;quot;, arg2  The price to pay is that you can not define two methods with the same name in the same class.</description>
+def foo(arg1, arg2=&amp;#34;default&amp;#34;): print &amp;#34;arg1:&amp;#34;, arg1, &amp;#34;arg2:&amp;#34;, arg2 The price to pay is that you can not define two methods with the same name in the same class.</description>
     </item>
     
   </channel>

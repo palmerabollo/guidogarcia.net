@@ -49,12 +49,12 @@ Node.js running on my Raspberry Pi. A benchmark.
 
 <p>See how nice it looks. I am more of a software guy, so the first thing I did was to install <strong>node.js</strong> (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.</p>
 
-<pre><code>var http = require('http');
-http.createServer(function (req, res) {
-  res.writeHead(200);
-  res.end(); 
-}).listen(1337);
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
+<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>);
+    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>();
+}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">1337</span>);
+</code></pre></div>
 
 <h3 id="the-benchmark">The benchmark</h3>
 
@@ -65,8 +65,7 @@ http.createServer(function (req, res) {
 <pre><code>ab -n 5120 -c &lt;concurrency&gt; http://192.168.1.36:1337/
 </code></pre>
 
-<p><a href="http://guidogarcia.net/blog/wp-content/uploads/2012/09/raspberry_concurrency.png"><img src="http://guidogarcia.net/blog/wp-content/uploads/2012/09/raspberry_concurrency-300x282.png" alt="raspberry benchmark results" />
-</a></p>
+<p><img src="/images/raspberry_concurrency.png" alt="raspberry benchmark results" /></p>
 
 <p>Additional information: Each concurrency level has been executed three times from my laptop and using a wifi connection; the graph shows the average value. The Raspberry Pi was running the Raspbian “wheezy” image (<a href="http://www.raspberrypi.org/downloads">downloads</a>).</p>
 

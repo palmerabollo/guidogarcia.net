@@ -49,9 +49,10 @@ Graph your Twitter network with Gephi
 
 <p>If you want to start using Gephi you have two choices:</p>
 
-<pre><code>  * The blue pill, a simple **GUI**, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends.
-  * The red pill, the **[Gephi Toolkit](http://wiki.gephi.org/index.php/Toolkit_portal)**. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs. That is what we need.
-</code></pre>
+<ul>
+<li>The blue pill, a simple <strong>GUI</strong>, pretty easy to use, that offers many network metrics, statistical algorithms (clustering, etc) to analyze your own graphs. The story ends.</li>
+<li>The red pill, the <strong><a href="http://wiki.gephi.org/index.php/Toolkit_portal">Gephi Toolkit</a></strong>. The toolkit is a standard Java library that can be integrated with your own code if you need to analyze graphs. That is what we need.</li>
+</ul>
 
 <p>Both of them are really modular, and can also be extended with big variety of available <a href="https://gephi.org/plugins/">plugins</a>, contributed by third party developers.</p>
 
@@ -61,28 +62,27 @@ Graph your Twitter network with Gephi
 
 <p>For example, obtaining the list of followers of a given user is something as simple as:</p>
 
-<pre><code>TwitterTemplate twitter = new TwitterTemplate();
-List&lt;TwitterProfile&gt; result =
-        twitter.friendOperations().getFollowers(&quot;palmerabollo&quot;);
-</code></pre>
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">TwitterTemplate twitter <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> TwitterTemplate<span style="color:#f92672">();</span>
+List<span style="color:#f92672">&lt;</span>TwitterProfile<span style="color:#f92672">&gt;</span> result <span style="color:#f92672">=</span>
+		twitter<span style="color:#f92672">.</span><span style="color:#a6e22e">friendOperations</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getFollowers</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;palmerabollo&#34;</span><span style="color:#f92672">);</span></code></pre></div>
 
-<p>The bad news is that the API is <a href="https://dev.twitter.com/docs/rate-limiting">rate limited</a> to 150 requests/hour, and you can increase it if you use OAuth to authenticate your requests. This limit is too low (I think Twitter is trying to protect their data from being extracted) and forced me to introduce a basic cache layer (just a Map) to save some requests. The cache is coupled with the application code, it could be certainly improved.</p>
+<p>The bad news is that the API is <a href="https://dev.twitter.com/docs/rate-limiting">rate limited</a> to 150 requests/hour, and you can increase it if you use OAuth to authenticate your requests. This limit is too low (I think Twitter is trying to protect their data from being extracted) and forced me to introduce a basic cache layer (just a <code>Map</code>) to save some requests. The cache is coupled with the application code, it could be certainly improved.</p>
 
 <h3 id="final-result">Final result</h3>
 
 <p>You can find the <a href="https://github.com/palmerabollo/test-twitter-graph">code at github</a>. Remember that this is a proof of concept, so it can be improved a lot. I am waiting for your pull requests.</p>
 
-<p><a href="http://guidogarcia.net/blog/wp-content/uploads/2012/01/gephi_twitter.png"><img src="http://guidogarcia.net/blog/wp-content/uploads/2012/01/gephi_twitter-300x247.png" alt="" />
-</a></p>
+<p><img src="/images/gephi_twitter-300x247.png" alt="Gephi Twitter" /></p>
 
 <h3 id="lessons-learned-and-future-work">Lessons learned and future work</h3>
 
-<pre><code>  * Twitter API is very restrictive. A cache tries to solve this problem but it is still not possible to retrieve the deepest levels of your network. It would be fun to use a NOSQL graph database such as [neo4j](http://neo4j.org/), that even has a [Gephi plugin](https://gephi.org/plugins/neo4j-graph-database-support/) available, to store the data. [This question](http://forum.gephi.org/viewtopic.php?t=1606) I asked in the Gephi Forum is a good starting point if you are interested on it.
-  * Gephi Toolkit and its plugins are not available from a Maven repository, so I included them as system libraries in my [pom.xml](https://github.com/palmerabollo/test-twitter-graph/blob/master/pom.xml). This is the first time I do it, and it is probably a bad practice. I would like to hear your opinion about this.
-  * Gephi is a really interesting and powerful project, but the documentation and examples could be improved.
-  * It would be very interesting to play with other Gephi advanced features such as filtering, clustering. For example, to detect &quot;communities&quot; or to detect the most influential nodes in your network.
-  * Spring Social simplifies your life, offering a common interface to work with different social networks, saving you the pain and hassle of dealing with every different API out there.
-</code></pre>
+<ul>
+<li>Twitter API is very restrictive. A cache tries to solve this problem but it is still not possible to retrieve the deepest levels of your network. It would be fun to use a NOSQL graph database such as <a href="http://neo4j.org/">neo4j</a>, that even has a <a href="https://gephi.org/plugins/neo4j-graph-database-support/">Gephi plugin</a> available, to store the data. <a href="http://forum.gephi.org/viewtopic.php?t=1606">This question</a> I asked in the Gephi Forum is a good starting point if you are interested on it.</li>
+<li>Gephi Toolkit and its plugins are not available from a Maven repository, so I included them as system libraries in my <a href="https://github.com/palmerabollo/test-twitter-graph/blob/master/pom.xml">pom.xml</a>. This is the first time I do it, and it is probably a bad practice. I would like to hear your opinion about this.</li>
+<li>Gephi is a really interesting and powerful project, but the documentation and examples could be improved.</li>
+<li>It would be very interesting to play with other Gephi advanced features such as filtering, clustering. For example, to detect &ldquo;communities&rdquo; or to detect the most influential nodes in your network.</li>
+<li>Spring Social simplifies your life, offering a common interface to work with different social networks, saving you the pain and hassle of dealing with every different API out there.</li>
+</ul>
 
 <p>By the way, if anyone else is interested in offering this service through a web interface, please let me know.</p>
 </div>

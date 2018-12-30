@@ -59,31 +59,31 @@ My first Javascript robotics simulator (and II)
 
 <p>I also tried to learn how to adopt <a href="http://en.wikipedia.org/wiki/Test-driven_development">TDD</a> practices in Javascript. I finally did a proof of concept with the <code>console</code> object. This is an example:</p>
 
-<pre><code>// Code to be tested
-function Vector2(x, y) {
-    this.x = x;
-    this.y = y;
+<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#75715e">// Code to be tested
+</span><span style="color:#75715e"></span><span style="color:#66d9ef">function</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span>) {
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">x</span>;
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">y</span>;
 
-    this.plus = function(vector) {
-        return new Vector2(x + vector.x, y + vector.y);
+    <span style="color:#66d9ef">this</span>.<span style="color:#a6e22e">plus</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">function</span>(<span style="color:#a6e22e">vector</span>) {
+        <span style="color:#66d9ef">return</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#a6e22e">x</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vector</span>.<span style="color:#a6e22e">x</span>, <span style="color:#a6e22e">y</span> <span style="color:#f92672">+</span> <span style="color:#a6e22e">vector</span>.<span style="color:#a6e22e">y</span>);
     };
 }
 
-// Tests
-console.group(&quot;Coordenates are set&quot;);
-    v = new Vector2(3, 2);
-    console.assert(v.x === 3, &quot;x coordinate is not set&quot;);
-    console.assert(v.y === 2, &quot;y coordinate is not set&quot;);
-console.groupEnd();
+<span style="color:#75715e">// Tests
+</span><span style="color:#75715e"></span><span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">group</span>(<span style="color:#e6db74">&#34;Coordenates are set&#34;</span>);
+    <span style="color:#a6e22e">v</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;x coordinate is not set&#34;</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">v</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;y coordinate is not set&#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">groupEnd</span>();
 
-console.group(&quot;Sum two vectors&quot;);
-    v1 = new Vector2(3, 2);
-    v2 = new Vector2(5, 7);
-    res = v2.plus(v1);
-    console.assert(res.x === 5 + 3, &quot;added x coordinate is wrong&quot;);
-    console.assert(res.y === 7 + 2, &quot;added y coordinate is wrong&quot;);
-console.groupEnd();
-</code></pre>
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">group</span>(<span style="color:#e6db74">&#34;Sum two vectors&#34;</span>);
+    <span style="color:#a6e22e">v1</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">3</span>, <span style="color:#ae81ff">2</span>);
+    <span style="color:#a6e22e">v2</span> <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#a6e22e">Vector2</span>(<span style="color:#ae81ff">5</span>, <span style="color:#ae81ff">7</span>);
+    <span style="color:#a6e22e">res</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">v2</span>.<span style="color:#a6e22e">plus</span>(<span style="color:#a6e22e">v1</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">x</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">5</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">3</span>, <span style="color:#e6db74">&#34;added x coordinate is wrong&#34;</span>);
+    <span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">assert</span>(<span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">y</span> <span style="color:#f92672">===</span> <span style="color:#ae81ff">7</span> <span style="color:#f92672">+</span> <span style="color:#ae81ff">2</span>, <span style="color:#e6db74">&#34;added y coordinate is wrong&#34;</span>);
+<span style="color:#a6e22e">console</span>.<span style="color:#a6e22e">groupEnd</span>();
+</code></pre></div>
 
 <p>It is probably the easiest way to write a unit test in Javascript, but it is very limited as well. The second point to be done is to try a complete testing framework such as <a href="http://docs.jquery.com/Qunit">QUnit</a> or <a href="http://pivotal.github.com/jasmine/">Jasmine</a>, as recommended by <a href="http://twitter.com/fuzzyalej">Alejandro</a>.</p>
 
@@ -95,10 +95,11 @@ console.groupEnd();
 
 <h2 id="other-lines-of-work">Other lines of work</h2>
 
-<pre><code>  * Fix existing bugs when obstacles are present.
-  * Compare the ORCA algorithm with other ones, specially those related with [genetic algorithms](http://en.wikipedia.org/wiki/Genetic_algorithm). Apply this kind of algorithms to model human behaviour, more effective placement of emergency exits in buildings, etc.
-  * Integrate this algorithm into a piece of hardware, such as an Arduino board. I can also think about several Roomba robots sweeping my floor in less time without collisions.
-</code></pre>
+<ul>
+<li>Fix existing bugs when obstacles are present.</li>
+<li>Compare the ORCA algorithm with other ones, specially those related with <a href="http://en.wikipedia.org/wiki/Genetic_algorithm">genetic algorithms</a>. Apply this kind of algorithms to model human behaviour, more effective placement of emergency exits in buildings, etc.</li>
+<li>Integrate this algorithm into a piece of hardware, such as an Arduino board. I can also think about several Roomba robots sweeping my floor in less time without collisions.</li>
+</ul>
 </div>
 
 
