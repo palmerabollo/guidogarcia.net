@@ -70,7 +70,7 @@ enableEmoji = false
     url = "posts/"
     weight = 10
 
-  [[menu.main]]
-    name = "My bot"
-    url = "http://bot.guidogarcia.net/"
-    weight = 20
+#  [[menu.main]]
+#    name = "My bot"
+#    url = "http://bot.guidogarcia.net/"
+#    weight = 20
