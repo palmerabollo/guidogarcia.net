@@ -1,16 +1,74 @@
 baseURL = "https://guidogarcia.net"
 languageCode = "en-us"
+defaultContentLanguage = "en"
 title = "Call me Guido"
-theme = "sam"
+theme = "hermit"
 
-[[params.mainMenu]]
-  link = "/posts"
-  text = "Hello. Call me Guido"
+# enableGitInfo = true
+pygmentsCodefences  = true
+pygmentsUseClasses  = true
+# hasCJKLanguage = false
+rssLimit = 20
+copyright = "Copyright Guido García · All rights reserved"
+enableEmoji = false
+# googleAnalytics = "UA-123-45"
+# disqusShortname = "yourdiscussshortname"
 
-[[params.mainMenu]]
-  link = "https://twitter.com/palmerabollo"
-  text = "Twitter"
+[author]
+  name = "Guido García"
 
-[[params.mainMenu]]
-  link = "http://bot.guidogarcia.net/"
-  text = "My bot (alpha)"
+[blackfriday]
+  # hrefTargetBlank = true
+  # noreferrerLinks = true
+  # nofollowLinks = true
+
+[taxonomies]
+  tag = "blog"
+  # Categories are disabled by default.
+
+[params]
+  dateform        = "Jan 2, 2006"
+  dateformShort   = "Jan 2"
+  dateformNum     = "2006-01-02"
+  dateformNumTime = "2006-01-02 15:04 -0700"
+
+  # Metadata mostly used in document's head
+  description = "Guido García. Personal page."
+  # images = [""]
+  themeColor = "#494f5c"
+
+  homeSubtitle = ""
+  footerCopyright = ' · All rights reserved'
+  # bgImg = ""  # Homepage background-image URL
+
+  # Prefix of link to the git commit detail page. GitInfo must be enabled.
+  # gitUrl = "https://github.com/username/repository/commit/"
+
+  # Toggling this option needs to rebuild SCSS, requires Hugo extended version
+  justifyContent = false  # Set "text-align: justify" to `.content`.
+
+  # customCSS = ["css/foo.css", "css/bar.css"]
+
+  [[params.social]]
+    name = "twitter"
+    url = "https://twitter.com/palmerabollo"
+
+  [[params.social]]
+    name = "github"
+    url = "https://github.com/palmerabollo"
+
+  [[params.social]]
+    name = "linkedin"
+    url = "https://www.linkedin.com/in/guidogarcia/"
+
+[menu]
+
+  [[menu.main]]
+    name = "Blog"
+    url = "posts/"
+    weight = 10
+
+  [[menu.main]]
+    name = "My bot"
+    url = "http://bot.guidogarcia.net/"
+    weight = 20
