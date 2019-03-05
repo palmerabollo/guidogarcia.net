@@ -6,6 +6,7 @@
     <description>Recent content in Software on Call me Guido</description>
     <generator>Hugo -- gohugo.io</generator>
     <language>en-us</language>
+    <copyright>Copyright Guido García · All rights reserved</copyright>
     <lastBuildDate>Sun, 18 Oct 2015 19:13:07 +0000</lastBuildDate>
     
 	<atom:link href="https://guidogarcia.net/categories/software/index.xml" rel="self" type="application/rss+xml" />
@@ -215,69 +216,6 @@ Last week I gave a presentation (slides) about how to start using Spring Roo to 
       <guid>https://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/</guid>
       <description>Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
 Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:</description>
-    </item>
-    
-    <item>
-      <title>Java : different ways to filter a Collection</title>
-      <link>https://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</link>
-      <pubDate>Sat, 29 Oct 2011 13:37:43 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/10/29/java-different-ways-filter-collection/</guid>
-      <description>Imagine we have a simple Java class:
-public class Person { private int age; private Gender sex; // constructor, getters &amp;amp; setters } enum Gender { MALE, FEMALE }; And that you have a Collection of Person objects, such as the following one:
-Person p1 = new Person(35, Gender.MALE); Person p2 = new Person(30, Gender.MALE); Person p3 = new Person(25, Gender.FEMALE); Person p4 = new Person(15, Gender.FEMALE); List&amp;lt;Person&amp;gt; people = Arrays.</description>
-    </item>
-    
-    <item>
-      <title>My first Javascript robotics simulator (and II)</title>
-      <link>https://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</link>
-      <pubDate>Sun, 18 Sep 2011 17:03:47 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/09/18/first-javascript-simulator-ii/</guid>
-      <description>A week ago I wrote a post about a Javascript robotics simulator. As an experimental project, I took the opportunity to try different technologies: HTML5, Javascript and Git. In this post I am going to write about what I have learnt with this project from a technical point of view, and what the future lines of work could be.
-HTML5 I learnt how the new slider input works, and how to use a canvas to display graphical information into a web browser.</description>
-    </item>
-    
-    <item>
-      <title>My first Javascript robotics simulator (I)</title>
-      <link>https://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</link>
-      <pubDate>Mon, 12 Sep 2011 23:02:22 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/09/13/first-javascript-robotics-simulator/</guid>
-      <description>I must admit I have always been fascinated about robotics, especially about how a swarm of robots can cooperate, following a set of simple rules that lead to complex emergent behaviours, like those you can see in the exciting motion of a flock of birds.
-Whereas I have some elctronics background, the bad news is that I am a software developer at heart. This is why I find a big obstacle when it comes to the hardware layer.</description>
-    </item>
-    
-    <item>
-      <title>To ORM or not to ORM</title>
-      <link>https://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</link>
-      <pubDate>Sun, 28 Aug 2011 18:01:35 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/08/28/to-orm-or-not-to-orm/</guid>
-      <description>In the last days I have had a couple of interesting discussions about wether to include an ORM library (such as Hibernate JPA implementation) in an application is a good idea or not.
-In this case, as usual, I think there is not a single best choice for every scenario, so I&amp;rsquo;ll try to list pros (and cons) for each alternative.
-Use an ORM layer  Easy to develop and maintain.</description>
-    </item>
-    
-    <item>
-      <title>BigDecimal : detalles que hacen que Java de asco</title>
-      <link>https://guidogarcia.net/blog/2011/08/15/bigdecimal-detalle-que-hacen-que-java-de-asco/</link>
-      <pubDate>Mon, 15 Aug 2011 18:31:34 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/08/15/bigdecimal-detalle-que-hacen-que-java-de-asco/</guid>
-      <description>Sirva como ejemplo el siguiente fragmento de código, en el que se utiliza la clase BigDecimal que ofrece Java para trabajar con precisión arbitraria en operaciones con números en coma flotante:
-BigDecimal num = new BigDecimal(2); num = num.add(new BigDecimal(3.2)); System.out.println(num.toString()); System.out.println(num.doubleValue()); Para empezar, esta es la salida del programa, que no necesita comentarios:
-5.20000000000000017763568394002504646778106689453125 5.2  En Java, salvo el caso del operador &amp;ldquo;+&amp;rdquo; para la concatenación de cadenas, tampoco existe sobrecarga de operadores, por lo que una simple operación como sumar dos números se realiza de forma poco natural:</description>
-    </item>
-    
-    <item>
-      <title>Cómo implementar un API REST en Java/JEE</title>
-      <link>https://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</link>
-      <pubDate>Sun, 31 Jul 2011 22:42:53 +0000</pubDate>
-      
-      <guid>https://guidogarcia.net/blog/2011/07/31/como-implementar-un-api-rest-en-java-jee/</guid>
-      <description>Me pidieron consejo hace unos días sobre este tema. Personalmente, a día de hoy sólo recomiendo estas opciones, muy parecidas y que se basan en anotar las clases Java:
- El especificación JAX-RS, incluida de serie en Java EE 6. Hay varias implementaciones, entre otras Jersey, Restlet o Resteasy. Esta última es la que utiliza JBoss y que he utilizado sin problemas también con JBoss 5.1.  @Path(&amp;#34;/product/{id}&amp;#34;) public class ProductResource { @GET public String get(@PathParam(&amp;#34;id&amp;#34;) String id) { return .</description>
     </item>
     
   </channel>

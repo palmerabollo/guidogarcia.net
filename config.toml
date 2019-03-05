@@ -24,8 +24,9 @@ enableEmoji = false
   # nofollowLinks = true
 
 [taxonomies]
-  tag = "blog"
-  # Categories are disabled by default.
+  tag = "tags"
+  category = "categories"
+  series = "series"
 
 [params]
   dateform        = "Jan 2, 2006"
