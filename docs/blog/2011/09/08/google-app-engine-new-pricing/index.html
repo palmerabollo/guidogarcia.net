@@ -1,49 +1,80 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
 
-<meta name="description" content="Call me Sam, a theme for Hugo.">
+<meta itemprop="name" content="Google App Engine: Disturbances in the Force">
+<meta itemprop="description" content="A New Hope. The pay as you go promise. I&rsquo;ve been a big fan of Google App Engine (GAE) since it first appeared back in 2008. For those of you who don&rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.
+You only have to deploy your application (using a very simple toolkit) and Google takes care of launching new application instances when necessary.">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://guidogarcia.net">
 
-<meta name="twitter:image" content="https://guidogarcia.net/tn.png">
-<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
-<meta name="og:type" content="website">
-<meta name="og:url" content="https://guidogarcia.net">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://guidogarcia.net/tn.png">
-
-<link rel="shortcut icon" href="https://guidogarcia.net/sam.ico" id="favicon">
-<link rel="stylesheet" href="https://guidogarcia.net/css/style.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+<meta itemprop="datePublished" content="2011-09-08T22:37:16&#43;00:00" />
+<meta itemprop="dateModified" content="2011-09-08T22:37:16&#43;00:00" />
+<meta itemprop="wordCount" content="451">
 
 
 
+<meta itemprop="keywords" content="cloud,gae,google,paas," />
+<meta property="og:title" content="Google App Engine: Disturbances in the Force" />
+<meta property="og:description" content="A New Hope. The pay as you go promise. I&rsquo;ve been a big fan of Google App Engine (GAE) since it first appeared back in 2008. For those of you who don&rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.
+You only have to deploy your application (using a very simple toolkit) and Google takes care of launching new application instances when necessary." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guidogarcia.net/blog/2011/09/08/google-app-engine-new-pricing/" /><meta property="article:published_time" content="2011-09-08T22:37:16&#43;00:00"/>
+<meta property="article:modified_time" content="2011-09-08T22:37:16&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Google App Engine: Disturbances in the Force"/>
+<meta name="twitter:description" content="A New Hope. The pay as you go promise. I&rsquo;ve been a big fan of Google App Engine (GAE) since it first appeared back in 2008. For those of you who don&rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.
+You only have to deploy your application (using a very simple toolkit) and Google takes care of launching new application instances when necessary."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Google App Engine: Disturbances in the Force</title>
+	<link rel="stylesheet" href="https://guidogarcia.net/css/style.min.c693329ce3bac2503f88115a4011a284a06d53e30f484562a37664dc4c5f0a74.css" integrity="sha256-xpMynOO6wlA/iBFaQBGihKBtU+MPSEVio3Zk3ExfCnQ=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://guidogarcia.net">Call me Guido</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://guidogarcia.net/posts/">Blog</a>
+					<a href="http://bot.guidogarcia.net/">My bot</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/palmerabollo" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/palmerabollo" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/guidogarcia/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://guidogarcia.net/posts/">Blog</a></li>
+			<li><a href="http://bot.guidogarcia.net/">My bot</a></li>
+		</ul>
+	</div>
 
 
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Google App Engine: Disturbances in the Force</h1>
+		<div class="content">
+			
 
-
-<title>
-
-Google App Engine: Disturbances in the Force
-
-</title></head><body>
-<div class="wrap">
-<div class="section" id="title">Google App Engine: Disturbances in the Force</div>
-
-<div class="section" id="content">
-
-<h3 id="a-new-hope-the-pay-as-you-go-promise">A New Hope. The pay as you go promise.</h3>
+<h3 id="a-new-hope-the-pay-as-you-go-promise">A New Hope. The pay as you go promise.<a href="#a-new-hope-the-pay-as-you-go-promise" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>I&rsquo;ve been a big fan of <a href="http://appspot.com">Google App Engine</a> (GAE) since it first appeared back in 2008. For those of you who don&rsquo;t know what am I talking about, GAE is a Platform as a Service (PaaS) cloud computing platform provided by Google where you can deploy your Python, Java and Go web applications.</p>
 
@@ -53,7 +84,7 @@ Google App Engine: Disturbances in the Force
 
 <p>One of the most appealing features is that GAE offers a real <strong>pay-as-you-go model</strong> because you pay for the computational resources you use (not for running instances), even with reasonably free quotas.</p>
 
-<h3 id="the-empire-strikes-back">The Empire Strikes Back</h3>
+<h3 id="the-empire-strikes-back">The Empire Strikes Back<a href="#the-empire-strikes-back" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>Yes, GAE is free up to a certain level of used resources. This makes it a perfect fit for personal projects or small projects that plan to grow (i.e. startups). In fact we use GAE in Gather Estudios to offer a <a href="http://precision.gatherestudios.es/">software as a service survey manager</a>, where GAE capacity to handle bursting has proven itself to work great.</p>
 
@@ -61,24 +92,23 @@ Google App Engine: Disturbances in the Force
 
 <p>Google, this is not serious. This time you are setting a very dangerous precedent, I&rsquo;ve learned a valuable lesson and I am definitely going to start looking into other <strong>alternatives</strong> such as <a href="http://www.cloudfoundry.com/">CloudFoundry</a>, <a href="https://openshift.redhat.com">Openshift</a> or <a href="http://aws.amazon.com/elasticbeanstalk/">Amazon Elastic Beanstalk</a> or even Heroku.</p>
 
-<h3 id="my-advice-to-google">My advice to Google</h3>
+<h3 id="my-advice-to-google">My advice to Google<a href="#my-advice-to-google" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>Don&rsquo;t screw with developers. You&rsquo;ll regret.</p>
-</div>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://guidogarcia.net">Guido García</a> · All rights reserved</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://guidogarcia.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-<div class="section bottom-menu"><hr/><p>
+	<script src="https://guidogarcia.net/js/main.min.8f39f24808e9d0a9b02da58c2d2838da859dc0b7bdfadbdb1883aae8b6adacfe.js" integrity="sha256-jznySAjp0KmwLaWMLSg42oWdwLe9+tvbGIOq6LatrP4="></script>
 
+</body>
 
-<a href="/posts">Hello. Call me Guido</a>
-
-
-&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
-&#183; <a href="http://bot.guidogarcia.net/">My bot (alpha)</a>
-
-&#183; <a href="https://guidogarcia.net"></a></p></div>
-
-
-<div class="section footer"></div>
-</div>
-</body></html>
+</html>

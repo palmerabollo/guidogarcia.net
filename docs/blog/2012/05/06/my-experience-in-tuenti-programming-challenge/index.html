@@ -1,53 +1,84 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
 
-<meta name="description" content="Call me Sam, a theme for Hugo.">
+<meta itemprop="name" content="My experience in the 2nd Tuenti Programming Challenge">
+<meta itemprop="description" content="This week I have been participating in the 2nd edition of the Tuenti Programming Challenge. I felt a little rusty on my return to top-level competition, but despite I started the competition three days late, I was able to reach level 14 (stats). Not so bad.
+The problems I prefer are those with an obvious brute force solution, but that can take advantage of a particular algorithm or data structure.">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://guidogarcia.net">
 
-<meta name="twitter:image" content="https://guidogarcia.net/tn.png">
-<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
-<meta name="og:type" content="website">
-<meta name="og:url" content="https://guidogarcia.net">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://guidogarcia.net/tn.png">
-
-<link rel="shortcut icon" href="https://guidogarcia.net/sam.ico" id="favicon">
-<link rel="stylesheet" href="https://guidogarcia.net/css/style.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+<meta itemprop="datePublished" content="2012-05-06T18:29:45&#43;00:00" />
+<meta itemprop="dateModified" content="2012-05-06T18:29:45&#43;00:00" />
+<meta itemprop="wordCount" content="907">
 
 
 
+<meta itemprop="keywords" content="contest,tuenti," />
+<meta property="og:title" content="My experience in the 2nd Tuenti Programming Challenge" />
+<meta property="og:description" content="This week I have been participating in the 2nd edition of the Tuenti Programming Challenge. I felt a little rusty on my return to top-level competition, but despite I started the competition three days late, I was able to reach level 14 (stats). Not so bad.
+The problems I prefer are those with an obvious brute force solution, but that can take advantage of a particular algorithm or data structure." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guidogarcia.net/blog/2012/05/06/my-experience-in-tuenti-programming-challenge/" /><meta property="article:published_time" content="2012-05-06T18:29:45&#43;00:00"/>
+<meta property="article:modified_time" content="2012-05-06T18:29:45&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="My experience in the 2nd Tuenti Programming Challenge"/>
+<meta name="twitter:description" content="This week I have been participating in the 2nd edition of the Tuenti Programming Challenge. I felt a little rusty on my return to top-level competition, but despite I started the competition three days late, I was able to reach level 14 (stats). Not so bad.
+The problems I prefer are those with an obvious brute force solution, but that can take advantage of a particular algorithm or data structure."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>My experience in the 2nd Tuenti Programming Challenge</title>
+	<link rel="stylesheet" href="https://guidogarcia.net/css/style.min.c693329ce3bac2503f88115a4011a284a06d53e30f484562a37664dc4c5f0a74.css" integrity="sha256-xpMynOO6wlA/iBFaQBGihKBtU+MPSEVio3Zk3ExfCnQ=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://guidogarcia.net">Call me Guido</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://guidogarcia.net/posts/">Blog</a>
+					<a href="http://bot.guidogarcia.net/">My bot</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/palmerabollo" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/palmerabollo" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/guidogarcia/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://guidogarcia.net/posts/">Blog</a></li>
+			<li><a href="http://bot.guidogarcia.net/">My bot</a></li>
+		</ul>
+	</div>
 
 
-
-
-<title>
-
-My experience in the 2nd Tuenti Programming Challenge
-
-</title></head><body>
-<div class="wrap">
-<div class="section" id="title">My experience in the 2nd Tuenti Programming Challenge</div>
-
-<div class="section" id="content">
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>My experience in the 2nd Tuenti Programming Challenge</h1>
+		<div class="content">
+			
 
 <p>This week I have been participating in the 2nd edition of the <a href="https://contest.tuenti.net/">Tuenti Programming Challenge</a>. I felt a little rusty on my return to top-level competition, but despite I started the competition three days late, I was able to reach level 14 (<a href="https://contest.tuenti.net/Stats">stats</a>). Not so bad.</p>
 
 <p>The problems I prefer are those with an obvious brute force solution, but that can take advantage of a particular algorithm or data structure. Most of the problems in this edition belong to this category except, perhaps, the <a href="https://contest.tuenti.net/Questions?id=12">challenge 12</a> which I did not like because I found it too much tricky.</p>
 
-<h3 id="the-crazy-croupier">The crazy croupier</h3>
+<h3 id="the-crazy-croupier">The crazy croupier<a href="#the-crazy-croupier" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>The challenge I enjoyed the most was the number 13, <a href="https://contest.tuenti.net/Questions?id=13">the crazy croupier</a>. It is kind of a classical problem with minor variations, where you have to determine how many shuffles you need in a deck of N cards in order to come back to the original position if you cut it at the position L.</p>
 
@@ -55,147 +86,146 @@ My experience in the 2nd Tuenti Programming Challenge
 
 <p>The second approach is to <strong>convert it to a permutations problem</strong>. Once you know  where the card 1..N is located after the first shuffle, you can determine the number of shuffles each individual card needs to come back to its location. The least common multiple of the individual results is the total number of shuffles needed.</p>
 
-<h3 id="show-me-the-code">Show me the code</h3>
+<h3 id="show-me-the-code">Show me the code<a href="#show-me-the-code" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>Here it is (<a href="https://gist.github.com/gists/2623553/download">download</a>). I do not know how many participants chose Java to solve the problems. What I have seen so far are solutions in Python (<a href="https://github.com/robermorales/Tuenti-Challenge2012-solutions/tree/master/robermorales">here</a>, <a href="https://github.com/TheOm3ga/SolucionesTuenti2012">here</a>) that seem more compact and PHP (<a href="https://github.com/ricardclau/tuenti-contest/tree/master/2012">here</a>). It is a pity that the official ranking does not show the execution times :)</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java">  <span style="color:#75715e">/**
-</span><span style="color:#75715e">    * Crazy Croupier - 2nd Tuenti Challenge - 12
-</span><span style="color:#75715e">    *
-</span><span style="color:#75715e">    * Example:
-</span><span style="color:#75715e">    * Number of cards: N = 10
-</span><span style="color:#75715e">    * Number of cards in the first set: L = 3
-</span><span style="color:#75715e">    * Cards: 10 1 4 2 8 5 6 7 3 9
-</span><span style="color:#75715e">    *
-</span><span style="color:#75715e">    * First set: 10 1 4
-</span><span style="color:#75715e">    * Second set: 2 8 5 6 7 3 9
-</span><span style="color:#75715e">    *
-</span><span style="color:#75715e">    * Shuffled set: 4 9 1 3 10 7 6 5 8 2
-</span><span style="color:#75715e">    */</span>
-  <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    Scanner scanner <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> Scanner<span style="color:#f92672">(</span>System<span style="color:#f92672">.</span><span style="color:#a6e22e">in</span><span style="color:#f92672">);</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java">  <span class="cm">/**
+</span><span class="cm">    * Crazy Croupier - 2nd Tuenti Challenge - 12
+</span><span class="cm">    *
+</span><span class="cm">    * Example:
+</span><span class="cm">    * Number of cards: N = 10
+</span><span class="cm">    * Number of cards in the first set: L = 3
+</span><span class="cm">    * Cards: 10 1 4 2 8 5 6 7 3 9
+</span><span class="cm">    *
+</span><span class="cm">    * First set: 10 1 4
+</span><span class="cm">    * Second set: 2 8 5 6 7 3 9
+</span><span class="cm">    *
+</span><span class="cm">    * Shuffled set: 4 9 1 3 10 7 6 5 8 2
+</span><span class="cm">    */</span>
+  <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="o">{</span>
+    <span class="n">Scanner</span> <span class="n">scanner</span> <span class="o">=</span> <span class="k">new</span> <span class="n">Scanner</span><span class="o">(</span><span class="n">System</span><span class="o">.</span><span class="na">in</span><span class="o">);</span>
 
-    <span style="color:#75715e">// read number of cases
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">int</span> cases <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>scanner<span style="color:#f92672">.</span><span style="color:#a6e22e">nextLine</span><span style="color:#f92672">());</span>
+    <span class="c1">// read number of cases
+</span><span class="c1"></span>    <span class="kt">int</span> <span class="n">cases</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">());</span>
 
-    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>1<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;=</span>cases<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-      <span style="color:#75715e">// read N L, for example 10 6
-</span><span style="color:#75715e"></span>      String line <span style="color:#f92672">=</span> scanner<span style="color:#f92672">.</span><span style="color:#a6e22e">nextLine</span><span style="color:#f92672">();</span>
-      String<span style="color:#f92672">[]</span> arguments <span style="color:#f92672">=</span> line<span style="color:#f92672">.</span><span style="color:#a6e22e">split</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34; &#34;</span><span style="color:#f92672">);</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">1</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;=</span><span class="n">cases</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="c1">// read N L, for example 10 6
+</span><span class="c1"></span>      <span class="n">String</span> <span class="n">line</span> <span class="o">=</span> <span class="n">scanner</span><span class="o">.</span><span class="na">nextLine</span><span class="o">();</span>
+      <span class="n">String</span><span class="o">[]</span> <span class="n">arguments</span> <span class="o">=</span> <span class="n">line</span><span class="o">.</span><span class="na">split</span><span class="o">(</span><span class="s">&#34; &#34;</span><span class="o">);</span>
 
-      <span style="color:#75715e">// N = cards in the deck
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> N <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>0<span style="color:#f92672">]);</span>
+      <span class="c1">// N = cards in the deck
+</span><span class="c1"></span>      <span class="kt">int</span> <span class="n">N</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">arguments</span><span class="o">[</span><span class="n">0</span><span class="o">]);</span>
 
-      <span style="color:#75715e">// L cards in the first bunch (where to cut the deck)
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> L <span style="color:#f92672">=</span> Integer<span style="color:#f92672">.</span><span style="color:#a6e22e">parseInt</span><span style="color:#f92672">(</span>arguments<span style="color:#f92672">[</span>1<span style="color:#f92672">]);</span>
+      <span class="c1">// L cards in the first bunch (where to cut the deck)
+</span><span class="c1"></span>      <span class="kt">int</span> <span class="n">L</span> <span class="o">=</span> <span class="n">Integer</span><span class="o">.</span><span class="na">parseInt</span><span class="o">(</span><span class="n">arguments</span><span class="o">[</span><span class="n">1</span><span class="o">]);</span>
 
-      <span style="color:#66d9ef">long</span> result <span style="color:#f92672">=</span> processCase<span style="color:#f92672">(</span>N<span style="color:#f92672">,</span> L<span style="color:#f92672">);</span>
-      System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">printf</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;Case #%d: %d\n&#34;</span><span style="color:#f92672">,</span> i<span style="color:#f92672">,</span> result<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
+      <span class="kt">long</span> <span class="n">result</span> <span class="o">=</span> <span class="n">processCase</span><span class="o">(</span><span class="n">N</span><span class="o">,</span> <span class="n">L</span><span class="o">);</span>
+      <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">printf</span><span class="o">(</span><span class="s">&#34;Case #%d: %d\n&#34;</span><span class="o">,</span> <span class="n">i</span><span class="o">,</span> <span class="n">result</span><span class="o">);</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
 
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">    * Returns the number of shuffles required to return the deck
-</span><span style="color:#75715e">    * to its original order.
-</span><span style="color:#75715e">    * The algorithm will calculate the number of iterations that
-</span><span style="color:#75715e">    * each individual card need to come back to its position. The
-</span><span style="color:#75715e">    * solution will be the least common multiple (lcm) of the
-</span><span style="color:#75715e">    * individual results.
-</span><span style="color:#75715e">    */</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">processCase</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cut<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> deck <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[</span>n<span style="color:#f92672">];</span> <span style="color:#75715e">// first deck shuffling result
-</span><span style="color:#75715e"></span>
-    shuffleDeck<span style="color:#f92672">(</span>n<span style="color:#f92672">,</span> cut<span style="color:#f92672">,</span> deck<span style="color:#f92672">);</span>
+  <span class="cm">/**
+</span><span class="cm">    * Returns the number of shuffles required to return the deck
+</span><span class="cm">    * to its original order.
+</span><span class="cm">    * The algorithm will calculate the number of iterations that
+</span><span class="cm">    * each individual card need to come back to its position. The
+</span><span class="cm">    * solution will be the least common multiple (lcm) of the
+</span><span class="cm">    * individual results.
+</span><span class="cm">    */</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">processCase</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">cut</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span><span class="o">[]</span> <span class="n">deck</span> <span class="o">=</span> <span class="k">new</span> <span class="kt">int</span><span class="o">[</span><span class="n">n</span><span class="o">];</span> <span class="c1">// first deck shuffling result
+</span><span class="c1"></span>
+    <span class="n">shuffleDeck</span><span class="o">(</span><span class="n">n</span><span class="o">,</span> <span class="n">cut</span><span class="o">,</span> <span class="n">deck</span><span class="o">);</span>
 
-    <span style="color:#75715e">// cache source -&gt; target positions for O(1) access
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">final</span> Map<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;</span> permutations <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashMap<span style="color:#f92672">&lt;</span>Integer<span style="color:#f92672">,</span> Integer<span style="color:#f92672">&gt;();</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>deck<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-      permutations<span style="color:#f92672">.</span><span style="color:#a6e22e">put</span><span style="color:#f92672">(</span>deck<span style="color:#f92672">[</span>i<span style="color:#f92672">],</span> i<span style="color:#f92672">+</span>1<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
+    <span class="c1">// cache source -&gt; target positions for O(1) access
+</span><span class="c1"></span>    <span class="kd">final</span> <span class="n">Map</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;</span> <span class="n">permutations</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashMap</span><span class="o">&lt;</span><span class="n">Integer</span><span class="o">,</span> <span class="n">Integer</span><span class="o">&gt;();</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">deck</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">permutations</span><span class="o">.</span><span class="na">put</span><span class="o">(</span><span class="n">deck</span><span class="o">[</span><span class="n">i</span><span class="o">],</span> <span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    <span style="color:#75715e">// cache to avoid multiple lcd calculations of the same num, O(1) access
-</span><span style="color:#75715e"></span>    Set<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;</span> calculatedLcm <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> HashSet<span style="color:#f92672">&lt;</span>Long<span style="color:#f92672">&gt;();</span>
-    <span style="color:#66d9ef">long</span> lcm <span style="color:#f92672">=</span> 0<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>deck<span style="color:#f92672">.</span><span style="color:#a6e22e">length</span><span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">long</span> numberPermutations <span style="color:#f92672">=</span> 1<span style="color:#f92672">;</span> <span style="color:#75715e">// we already did the first shuffling
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">int</span> currentPosition <span style="color:#f92672">=</span> i<span style="color:#f92672">+</span>1<span style="color:#f92672">;</span>
+    <span class="c1">// cache to avoid multiple lcd calculations of the same num, O(1) access
+</span><span class="c1"></span>    <span class="n">Set</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;</span> <span class="n">calculatedLcm</span> <span class="o">=</span> <span class="k">new</span> <span class="n">HashSet</span><span class="o">&lt;</span><span class="n">Long</span><span class="o">&gt;();</span>
+    <span class="kt">long</span> <span class="n">lcm</span> <span class="o">=</span> <span class="n">0</span><span class="o">;</span>
+    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">deck</span><span class="o">.</span><span class="na">length</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="kt">long</span> <span class="n">numberPermutations</span> <span class="o">=</span> <span class="n">1</span><span class="o">;</span> <span class="c1">// we already did the first shuffling
+</span><span class="c1"></span>      <span class="kt">int</span> <span class="n">currentPosition</span> <span class="o">=</span> <span class="n">i</span><span class="o">+</span><span class="n">1</span><span class="o">;</span>
 
-      <span style="color:#75715e">// still no at the original position
-</span><span style="color:#75715e"></span>      <span style="color:#66d9ef">while</span> <span style="color:#f92672">(</span>currentPosition <span style="color:#f92672">!=</span> deck<span style="color:#f92672">[</span>i<span style="color:#f92672">])</span> <span style="color:#f92672">{</span>
-        numberPermutations<span style="color:#f92672">++;</span>
-        currentPosition <span style="color:#f92672">=</span> permutations<span style="color:#f92672">.</span><span style="color:#a6e22e">get</span><span style="color:#f92672">(</span>currentPosition<span style="color:#f92672">);</span>
-      <span style="color:#f92672">}</span>
+      <span class="c1">// still no at the original position
+</span><span class="c1"></span>      <span class="k">while</span> <span class="o">(</span><span class="n">currentPosition</span> <span class="o">!=</span> <span class="n">deck</span><span class="o">[</span><span class="n">i</span><span class="o">])</span> <span class="o">{</span>
+        <span class="n">numberPermutations</span><span class="o">++;</span>
+        <span class="n">currentPosition</span> <span class="o">=</span> <span class="n">permutations</span><span class="o">.</span><span class="na">get</span><span class="o">(</span><span class="n">currentPosition</span><span class="o">);</span>
+      <span class="o">}</span>
 
-      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>calculatedLcm<span style="color:#f92672">.</span><span style="color:#a6e22e">contains</span><span style="color:#f92672">(</span>numberPermutations<span style="color:#f92672">)</span> <span style="color:#f92672">==</span> <span style="color:#66d9ef">false</span><span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-        lcm <span style="color:#f92672">=</span> lcm<span style="color:#f92672">(</span>lcm<span style="color:#f92672">,</span> numberPermutations<span style="color:#f92672">);</span>
-        calculatedLcm<span style="color:#f92672">.</span><span style="color:#a6e22e">add</span><span style="color:#f92672">(</span>numberPermutations<span style="color:#f92672">);</span>
-      <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">calculatedLcm</span><span class="o">.</span><span class="na">contains</span><span class="o">(</span><span class="n">numberPermutations</span><span class="o">)</span> <span class="o">==</span> <span class="kc">false</span><span class="o">)</span> <span class="o">{</span>
+        <span class="n">lcm</span> <span class="o">=</span> <span class="n">lcm</span><span class="o">(</span><span class="n">lcm</span><span class="o">,</span> <span class="n">numberPermutations</span><span class="o">);</span>
+        <span class="n">calculatedLcm</span><span class="o">.</span><span class="na">add</span><span class="o">(</span><span class="n">numberPermutations</span><span class="o">);</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
 
-    <span style="color:#66d9ef">return</span> lcm<span style="color:#f92672">;</span>
-  <span style="color:#f92672">}</span>
+    <span class="k">return</span> <span class="n">lcm</span><span class="o">;</span>
+  <span class="o">}</span>
 
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">    * Shuffles the deck one time according to the algorithm.
-</span><span style="color:#75715e">    */</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">shuffleDeck</span><span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> n<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span> cut<span style="color:#f92672">,</span> <span style="color:#66d9ef">int</span><span style="color:#f92672">[]</span> deck<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">int</span> min <span style="color:#f92672">=</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">min</span><span style="color:#f92672">(</span>cut<span style="color:#f92672">,</span> n<span style="color:#f92672">-</span>cut<span style="color:#f92672">);</span> <span style="color:#75715e">// number of cards shuffled
-</span><span style="color:#75715e"></span>
-    <span style="color:#75715e">// shuffle two bunch of cards
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>min<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-      deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> cut <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span>   <span style="color:#75715e">// 1st bunch
-</span><span style="color:#75715e"></span>      deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span> <span style="color:#75715e">// 2nd bunch
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
+  <span class="cm">/**
+</span><span class="cm">    * Shuffles the deck one time according to the algorithm.
+</span><span class="cm">    */</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">shuffleDeck</span><span class="o">(</span><span class="kt">int</span> <span class="n">n</span><span class="o">,</span> <span class="kt">int</span> <span class="n">cut</span><span class="o">,</span> <span class="kt">int</span><span class="o">[]</span> <span class="n">deck</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">int</span> <span class="n">min</span> <span class="o">=</span> <span class="n">Math</span><span class="o">.</span><span class="na">min</span><span class="o">(</span><span class="n">cut</span><span class="o">,</span> <span class="n">n</span><span class="o">-</span><span class="n">cut</span><span class="o">);</span> <span class="c1">// number of cards shuffled
+</span><span class="c1"></span>
+    <span class="c1">// shuffle two bunch of cards
+</span><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">min</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="n">deck</span><span class="o">[</span><span class="n">2</span> <span class="o">*</span> <span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">cut</span> <span class="o">-</span> <span class="n">i</span><span class="o">;</span>   <span class="c1">// 1st bunch
+</span><span class="c1"></span>      <span class="n">deck</span><span class="o">[</span><span class="n">2</span> <span class="o">*</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">]</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">i</span><span class="o">;</span> <span class="c1">// 2nd bunch
+</span><span class="c1"></span>    <span class="o">}</span>
 
-    <span style="color:#75715e">// put the rest of the cards in proper order, at the end
-</span><span style="color:#75715e"></span>    <span style="color:#66d9ef">for</span> <span style="color:#f92672">(</span><span style="color:#66d9ef">int</span> i<span style="color:#f92672">=</span>0<span style="color:#f92672">;</span> i<span style="color:#f92672">&lt;</span>n <span style="color:#f92672">-</span> 2 <span style="color:#f92672">*</span> min<span style="color:#f92672">;</span> i<span style="color:#f92672">++)</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>cut <span style="color:#f92672">&gt;=</span> n <span style="color:#f92672">/</span> 2<span style="color:#f92672">)</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// first bunch is bigger
-</span><span style="color:#75715e"></span>        deck<span style="color:#f92672">[</span>n <span style="color:#f92672">-</span> 1 <span style="color:#f92672">-</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> i <span style="color:#f92672">+</span> 1<span style="color:#f92672">;</span>
-      <span style="color:#f92672">}</span> <span style="color:#66d9ef">else</span> <span style="color:#f92672">{</span> <span style="color:#75715e">// second bunch is bigger or equal
-</span><span style="color:#75715e"></span>        deck<span style="color:#f92672">[</span>2 <span style="color:#f92672">*</span> min <span style="color:#f92672">+</span> i<span style="color:#f92672">]</span> <span style="color:#f92672">=</span> n <span style="color:#f92672">-</span> min <span style="color:#f92672">-</span> i<span style="color:#f92672">;</span>
-      <span style="color:#f92672">}</span>
-    <span style="color:#f92672">}</span>
-  <span style="color:#f92672">}</span>
+    <span class="c1">// put the rest of the cards in proper order, at the end
+</span><span class="c1"></span>    <span class="k">for</span> <span class="o">(</span><span class="kt">int</span> <span class="n">i</span><span class="o">=</span><span class="n">0</span><span class="o">;</span> <span class="n">i</span><span class="o">&lt;</span><span class="n">n</span> <span class="o">-</span> <span class="n">2</span> <span class="o">*</span> <span class="n">min</span><span class="o">;</span> <span class="n">i</span><span class="o">++)</span> <span class="o">{</span>
+      <span class="k">if</span> <span class="o">(</span><span class="n">cut</span> <span class="o">&gt;=</span> <span class="n">n</span> <span class="o">/</span> <span class="n">2</span><span class="o">)</span> <span class="o">{</span> <span class="c1">// first bunch is bigger
+</span><span class="c1"></span>        <span class="n">deck</span><span class="o">[</span><span class="n">n</span> <span class="o">-</span> <span class="n">1</span> <span class="o">-</span> <span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">i</span> <span class="o">+</span> <span class="n">1</span><span class="o">;</span>
+      <span class="o">}</span> <span class="k">else</span> <span class="o">{</span> <span class="c1">// second bunch is bigger or equal
+</span><span class="c1"></span>        <span class="n">deck</span><span class="o">[</span><span class="n">2</span> <span class="o">*</span> <span class="n">min</span> <span class="o">+</span> <span class="n">i</span><span class="o">]</span> <span class="o">=</span> <span class="n">n</span> <span class="o">-</span> <span class="n">min</span> <span class="o">-</span> <span class="n">i</span><span class="o">;</span>
+      <span class="o">}</span>
+    <span class="o">}</span>
+  <span class="o">}</span>
 
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">    * Least common multiple. Probably a more efficient approach can be
-</span><span style="color:#75715e">    * found but it is good enough.
-</span><span style="color:#75715e">    */</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">lcm</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">if</span> <span style="color:#f92672">(</span>a <span style="color:#f92672">==</span> 0 <span style="color:#f92672">||</span> b <span style="color:#f92672">==</span> 0<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-      <span style="color:#66d9ef">return</span> Math<span style="color:#f92672">.</span><span style="color:#a6e22e">max</span><span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
-    <span style="color:#66d9ef">return</span> a <span style="color:#f92672">*</span> b <span style="color:#f92672">/</span> gcd<span style="color:#f92672">(</span>a<span style="color:#f92672">,</span> b<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span>
+  <span class="cm">/**
+</span><span class="cm">    * Least common multiple. Probably a more efficient approach can be
+</span><span class="cm">    * found but it is good enough.
+</span><span class="cm">    */</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">lcm</span><span class="o">(</span><span class="kt">long</span> <span class="n">a</span><span class="o">,</span> <span class="kt">long</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="k">if</span> <span class="o">(</span><span class="n">a</span> <span class="o">==</span> <span class="n">0</span> <span class="o">||</span> <span class="n">b</span> <span class="o">==</span> <span class="n">0</span><span class="o">)</span> <span class="o">{</span>
+      <span class="k">return</span> <span class="n">Math</span><span class="o">.</span><span class="na">max</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+    <span class="o">}</span>
+    <span class="k">return</span> <span class="n">a</span> <span class="o">*</span> <span class="n">b</span> <span class="o">/</span> <span class="n">gcd</span><span class="o">(</span><span class="n">a</span><span class="o">,</span> <span class="n">b</span><span class="o">);</span>
+  <span class="o">}</span>
 
-  <span style="color:#75715e">/**
-</span><span style="color:#75715e">    * Greatest common divisor, see also {@link BigInteger#gcd(BigInteger)}
-</span><span style="color:#75715e">    */</span>
-  <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">long</span> <span style="color:#a6e22e">gcd</span><span style="color:#f92672">(</span><span style="color:#66d9ef">long</span> a<span style="color:#f92672">,</span> <span style="color:#66d9ef">long</span> b<span style="color:#f92672">)</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">long</span> mod <span style="color:#f92672">=</span> a <span style="color:#f92672">%</span> b<span style="color:#f92672">;</span>
-    <span style="color:#66d9ef">return</span> mod <span style="color:#f92672">==</span> 0 <span style="color:#f92672">?</span> b <span style="color:#f92672">:</span> gcd<span style="color:#f92672">(</span>b<span style="color:#f92672">,</span> mod<span style="color:#f92672">);</span>
-  <span style="color:#f92672">}</span></code></pre></div>
+  <span class="cm">/**
+</span><span class="cm">    * Greatest common divisor, see also {@link BigInteger#gcd(BigInteger)}
+</span><span class="cm">    */</span>
+  <span class="kd">private</span> <span class="kd">static</span> <span class="kt">long</span> <span class="nf">gcd</span><span class="o">(</span><span class="kt">long</span> <span class="n">a</span><span class="o">,</span> <span class="kt">long</span> <span class="n">b</span><span class="o">)</span> <span class="o">{</span>
+    <span class="kt">long</span> <span class="n">mod</span> <span class="o">=</span> <span class="n">a</span> <span class="o">%</span> <span class="n">b</span><span class="o">;</span>
+    <span class="k">return</span> <span class="n">mod</span> <span class="o">==</span> <span class="n">0</span> <span class="o">?</span> <span class="n">b</span> <span class="o">:</span> <span class="n">gcd</span><span class="o">(</span><span class="n">b</span><span class="o">,</span> <span class="n">mod</span><span class="o">);</span>
+  <span class="o">}</span></code></pre></div>
 
 <p>What do you think about it?</p>
 
-<h3 id="talent-is-out-there">Talent is out there</h3>
+<h3 id="talent-is-out-there">Talent is out there<a href="#talent-is-out-there" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>I like these competitions (Google Code Jam, ACM ICPC, etc) a lot and I think it is a great (and cheap) opportunity for technological companies to attract and recruit talent. There are a lot of great coders hidden out there.</p>
-</div>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://guidogarcia.net">Guido García</a> · All rights reserved</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://guidogarcia.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-<div class="section bottom-menu"><hr/><p>
+	<script src="https://guidogarcia.net/js/main.min.8f39f24808e9d0a9b02da58c2d2838da859dc0b7bdfadbdb1883aae8b6adacfe.js" integrity="sha256-jznySAjp0KmwLaWMLSg42oWdwLe9+tvbGIOq6LatrP4="></script>
 
+</body>
 
-<a href="/posts">Hello. Call me Guido</a>
-
-
-&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
-&#183; <a href="http://bot.guidogarcia.net/">My bot (alpha)</a>
-
-&#183; <a href="https://guidogarcia.net"></a></p></div>
-
-
-<div class="section footer"></div>
-</div>
-</body></html>
+</html>

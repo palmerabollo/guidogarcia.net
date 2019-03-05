@@ -1,144 +1,174 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
 
-<meta name="description" content="Call me Sam, a theme for Hugo.">
+<meta itemprop="name" content="Scripting for the Java platform">
+<meta itemprop="description" content="Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
+Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://guidogarcia.net">
 
-<meta name="twitter:image" content="https://guidogarcia.net/tn.png">
-<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
-<meta name="og:type" content="website">
-<meta name="og:url" content="https://guidogarcia.net">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://guidogarcia.net/tn.png">
-
-<link rel="shortcut icon" href="https://guidogarcia.net/sam.ico" id="favicon">
-<link rel="stylesheet" href="https://guidogarcia.net/css/style.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+<meta itemprop="datePublished" content="2011-11-03T07:44:57&#43;00:00" />
+<meta itemprop="dateModified" content="2011-11-03T07:44:57&#43;00:00" />
+<meta itemprop="wordCount" content="464">
 
 
 
+<meta itemprop="keywords" content="java,javascript,script," />
+<meta property="og:title" content="Scripting for the Java platform" />
+<meta property="og:description" content="Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
+Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:" />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guidogarcia.net/blog/2011/11/03/scripting-for-the-java-platform/" /><meta property="article:published_time" content="2011-11-03T07:44:57&#43;00:00"/>
+<meta property="article:modified_time" content="2011-11-03T07:44:57&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Scripting for the Java platform"/>
+<meta name="twitter:description" content="Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (JSR-223 implementation)
+Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using Mozilla Rhino, the JavaScript implementation that ships with Java SE 6:"/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Scripting for the Java platform</title>
+	<link rel="stylesheet" href="https://guidogarcia.net/css/style.min.c693329ce3bac2503f88115a4011a284a06d53e30f484562a37664dc4c5f0a74.css" integrity="sha256-xpMynOO6wlA/iBFaQBGihKBtU+MPSEVio3Zk3ExfCnQ=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://guidogarcia.net">Call me Guido</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://guidogarcia.net/posts/">Blog</a>
+					<a href="http://bot.guidogarcia.net/">My bot</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/palmerabollo" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/palmerabollo" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/guidogarcia/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://guidogarcia.net/posts/">Blog</a></li>
+			<li><a href="http://bot.guidogarcia.net/">My bot</a></li>
+		</ul>
+	</div>
 
 
-
-
-<title>
-
-Scripting for the Java platform
-
-</title></head><body>
-<div class="wrap">
-<div class="section" id="title">Scripting for the Java platform</div>
-
-<div class="section" id="content">
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Scripting for the Java platform</h1>
+		<div class="content">
+			
 
 <p>Despite many developers do not know it, since Java SE 6 it is really easy to integrate Java and some scripting languages through a standard Java Scripting API (<a href="http://www.jcp.org/en/jsr/detail?id=223">JSR-223</a> implementation)</p>
 
 <p>Currently, both AppleScript (2.2.1) and ECMAScript (1.6) script engines are supported by default, at least on my machine. In the following example I invoke a Javascript function from Java, using <a href="http://www.mozilla.org/rhino/">Mozilla Rhino</a>, the JavaScript implementation that ships with Java SE 6:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> javax.script.Invocable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.script.ScriptEngine<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.script.ScriptEngineManager<span style="color:#f92672">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">javax.script.Invocable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngine</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngineManager</span><span class="o">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">TestScript</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-    ScriptEngineManager mgr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ScriptEngineManager<span style="color:#f92672">();</span>
-    ScriptEngine engine <span style="color:#f92672">=</span> mgr<span style="color:#f92672">.</span><span style="color:#a6e22e">getEngineByName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;js&#34;</span><span style="color:#f92672">);</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">TestScript</span> <span class="o">{</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+    <span class="n">ScriptEngineManager</span> <span class="n">mgr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScriptEngineManager</span><span class="o">();</span>
+    <span class="n">ScriptEngine</span> <span class="n">engine</span> <span class="o">=</span> <span class="n">mgr</span><span class="o">.</span><span class="na">getEngineByName</span><span class="o">(</span><span class="s">&#34;js&#34;</span><span class="o">);</span>
 
-    String script <span style="color:#f92672">=</span> <span style="color:#e6db74">&#34;function sum(a, b) {&#34;</span> <span style="color:#f92672">+</span>
-                    <span style="color:#e6db74">&#34;   var result = a + b;&#34;</span> <span style="color:#f92672">+</span>
-                    <span style="color:#e6db74">&#34;   return result;&#34;</span> <span style="color:#f92672">+</span>
-                    <span style="color:#e6db74">&#34;}&#34;</span><span style="color:#f92672">;</span>
-    engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>script<span style="color:#f92672">);</span>
+    <span class="n">String</span> <span class="n">script</span> <span class="o">=</span> <span class="s">&#34;function sum(a, b) {&#34;</span> <span class="o">+</span>
+                    <span class="s">&#34;   var result = a + b;&#34;</span> <span class="o">+</span>
+                    <span class="s">&#34;   return result;&#34;</span> <span class="o">+</span>
+                    <span class="s">&#34;}&#34;</span><span class="o">;</span>
+    <span class="n">engine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="n">script</span><span class="o">);</span>
 
-    Invocable invocableEngine <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Invocable<span style="color:#f92672">)</span> engine<span style="color:#f92672">;</span>
-    Number result <span style="color:#f92672">=</span>
-            <span style="color:#f92672">(</span>Number<span style="color:#f92672">)</span> invocableEngine<span style="color:#f92672">.</span><span style="color:#a6e22e">invokeFunction</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;sum&#34;</span><span style="color:#f92672">,</span> 2<span style="color:#f92672">,</span> 3<span style="color:#f92672">);</span>
-    System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>result<span style="color:#f92672">);</span> <span style="color:#75715e">// output = 5.0
-</span><span style="color:#75715e"></span>    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+    <span class="n">Invocable</span> <span class="n">invocableEngine</span> <span class="o">=</span> <span class="o">(</span><span class="n">Invocable</span><span class="o">)</span> <span class="n">engine</span><span class="o">;</span>
+    <span class="n">Number</span> <span class="n">result</span> <span class="o">=</span>
+            <span class="o">(</span><span class="n">Number</span><span class="o">)</span> <span class="n">invocableEngine</span><span class="o">.</span><span class="na">invokeFunction</span><span class="o">(</span><span class="s">&#34;sum&#34;</span><span class="o">,</span> <span class="n">2</span><span class="o">,</span> <span class="n">3</span><span class="o">);</span>
+    <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">result</span><span class="o">);</span> <span class="c1">// output = 5.0
+</span><span class="c1"></span>    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
 
-<h3 id="reuse-existing-code">Reuse existing code</h3>
+<h3 id="reuse-existing-code">Reuse existing code<a href="#reuse-existing-code" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>I find this &ldquo;trick&rdquo; useful in cases where you want to reuse existing scripting code. In the following example I use the great <a href="http://www.datejs.com/">datejs library</a> to parse dates written in natural language:</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-java" data-lang="java"><span style="color:#f92672">import</span> java.io.InputStreamReader<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> java.io.Reader<span style="color:#f92672">;</span>
+<div class="highlight"><pre class="chroma"><code class="language-java" data-lang="java"><span class="kn">import</span> <span class="nn">java.io.InputStreamReader</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">java.io.Reader</span><span class="o">;</span>
 
-<span style="color:#f92672">import</span> javax.script.Invocable<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.script.ScriptEngine<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.script.ScriptEngineManager<span style="color:#f92672">;</span>
-<span style="color:#f92672">import</span> javax.script.ScriptException<span style="color:#f92672">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.Invocable</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngine</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptEngineManager</span><span class="o">;</span>
+<span class="kn">import</span> <span class="nn">javax.script.ScriptException</span><span class="o">;</span>
 
-<span style="color:#66d9ef">public</span> <span style="color:#66d9ef">class</span> <span style="color:#a6e22e">DateParser</span> <span style="color:#f92672">{</span>
-    <span style="color:#66d9ef">private</span> <span style="color:#66d9ef">final</span> ScriptEngine engine<span style="color:#f92672">;</span>
+<span class="kd">public</span> <span class="kd">class</span> <span class="nc">DateParser</span> <span class="o">{</span>
+    <span class="kd">private</span> <span class="kd">final</span> <span class="n">ScriptEngine</span> <span class="n">engine</span><span class="o">;</span>
 
-    <span style="color:#66d9ef">public</span> <span style="color:#a6e22e">DateParser</span><span style="color:#f92672">()</span> <span style="color:#66d9ef">throws</span> ScriptException <span style="color:#f92672">{</span>
-        ScriptEngineManager mgr <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> ScriptEngineManager<span style="color:#f92672">();</span>
-        engine <span style="color:#f92672">=</span> mgr<span style="color:#f92672">.</span><span style="color:#a6e22e">getEngineByName</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;js&#34;</span><span style="color:#f92672">);</span>
+    <span class="kd">public</span> <span class="nf">DateParser</span><span class="o">()</span> <span class="kd">throws</span> <span class="n">ScriptException</span> <span class="o">{</span>
+        <span class="n">ScriptEngineManager</span> <span class="n">mgr</span> <span class="o">=</span> <span class="k">new</span> <span class="n">ScriptEngineManager</span><span class="o">();</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">mgr</span><span class="o">.</span><span class="na">getEngineByName</span><span class="o">(</span><span class="s">&#34;js&#34;</span><span class="o">);</span>
 
-        Reader reader <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> InputStreamReader<span style="color:#f92672">(</span>
-                <span style="color:#66d9ef">this</span><span style="color:#f92672">.</span><span style="color:#a6e22e">getClass</span><span style="color:#f92672">().</span><span style="color:#a6e22e">getResourceAsStream</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;/scripts/date.js&#34;</span><span style="color:#f92672">));</span>
-        engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>reader<span style="color:#f92672">);</span>
-        engine<span style="color:#f92672">.</span><span style="color:#a6e22e">eval</span><span style="color:#f92672">(</span>
-            <span style="color:#e6db74">&#34;function parse(value) { &#34;</span> <span style="color:#f92672">+</span>
-            <span style="color:#e6db74">&#34;    return Date.parse(value).toDateString();&#34;</span> <span style="color:#f92672">+</span>
-            <span style="color:#e6db74">&#34;};&#34;</span>
-        <span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
+        <span class="n">Reader</span> <span class="n">reader</span> <span class="o">=</span> <span class="k">new</span> <span class="n">InputStreamReader</span><span class="o">(</span>
+                <span class="k">this</span><span class="o">.</span><span class="na">getClass</span><span class="o">().</span><span class="na">getResourceAsStream</span><span class="o">(</span><span class="s">&#34;/scripts/date.js&#34;</span><span class="o">));</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span><span class="n">reader</span><span class="o">);</span>
+        <span class="n">engine</span><span class="o">.</span><span class="na">eval</span><span class="o">(</span>
+            <span class="s">&#34;function parse(value) { &#34;</span> <span class="o">+</span>
+            <span class="s">&#34;    return Date.parse(value).toDateString();&#34;</span> <span class="o">+</span>
+            <span class="s">&#34;};&#34;</span>
+        <span class="o">);</span>
+    <span class="o">}</span>
 
-    <span style="color:#66d9ef">public</span> String <span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span>String naturalLanguageDate<span style="color:#f92672">)</span>
-            <span style="color:#66d9ef">throws</span> ScriptException<span style="color:#f92672">,</span> NoSuchMethodException <span style="color:#f92672">{</span>
-        Invocable invocableEngine <span style="color:#f92672">=</span> <span style="color:#f92672">(</span>Invocable<span style="color:#f92672">)</span> engine<span style="color:#f92672">;</span>
-        <span style="color:#66d9ef">return</span> <span style="color:#f92672">(</span>String<span style="color:#f92672">)</span> invocableEngine<span style="color:#f92672">.</span><span style="color:#a6e22e">invokeFunction</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;parse&#34;</span><span style="color:#f92672">,</span> naturalLanguageDate<span style="color:#f92672">);</span>
-    <span style="color:#f92672">}</span>
+    <span class="kd">public</span> <span class="n">String</span> <span class="nf">parse</span><span class="o">(</span><span class="n">String</span> <span class="n">naturalLanguageDate</span><span class="o">)</span>
+            <span class="kd">throws</span> <span class="n">ScriptException</span><span class="o">,</span> <span class="n">NoSuchMethodException</span> <span class="o">{</span>
+        <span class="n">Invocable</span> <span class="n">invocableEngine</span> <span class="o">=</span> <span class="o">(</span><span class="n">Invocable</span><span class="o">)</span> <span class="n">engine</span><span class="o">;</span>
+        <span class="k">return</span> <span class="o">(</span><span class="n">String</span><span class="o">)</span> <span class="n">invocableEngine</span><span class="o">.</span><span class="na">invokeFunction</span><span class="o">(</span><span class="s">&#34;parse&#34;</span><span class="o">,</span> <span class="n">naturalLanguageDate</span><span class="o">);</span>
+    <span class="o">}</span>
 
-    <span style="color:#66d9ef">public</span> <span style="color:#66d9ef">static</span> <span style="color:#66d9ef">void</span> <span style="color:#a6e22e">main</span><span style="color:#f92672">(</span>String<span style="color:#f92672">[]</span> args<span style="color:#f92672">)</span> <span style="color:#66d9ef">throws</span> Exception <span style="color:#f92672">{</span>
-        DateParser parser <span style="color:#f92672">=</span> <span style="color:#66d9ef">new</span> DateParser<span style="color:#f92672">();</span>
+    <span class="kd">public</span> <span class="kd">static</span> <span class="kt">void</span> <span class="nf">main</span><span class="o">(</span><span class="n">String</span><span class="o">[]</span> <span class="n">args</span><span class="o">)</span> <span class="kd">throws</span> <span class="n">Exception</span> <span class="o">{</span>
+        <span class="n">DateParser</span> <span class="n">parser</span> <span class="o">=</span> <span class="k">new</span> <span class="n">DateParser</span><span class="o">();</span>
 
-        <span style="color:#75715e">// output = Thu Nov 03 2011
-</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;next thursday&#34;</span><span style="color:#f92672">));</span>
+        <span class="c1">// output = Thu Nov 03 2011
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&#34;next thursday&#34;</span><span class="o">));</span>
 
-        <span style="color:#75715e">// output  = Wed Nov 09 2011
-</span><span style="color:#75715e"></span>        System<span style="color:#f92672">.</span><span style="color:#a6e22e">out</span><span style="color:#f92672">.</span><span style="color:#a6e22e">println</span><span style="color:#f92672">(</span>parser<span style="color:#f92672">.</span><span style="color:#a6e22e">parse</span><span style="color:#f92672">(</span><span style="color:#e6db74">&#34;tomorrow + 10 days&#34;</span><span style="color:#f92672">));</span>
-    <span style="color:#f92672">}</span>
-<span style="color:#f92672">}</span></code></pre></div>
+        <span class="c1">// output  = Wed Nov 09 2011
+</span><span class="c1"></span>        <span class="n">System</span><span class="o">.</span><span class="na">out</span><span class="o">.</span><span class="na">println</span><span class="o">(</span><span class="n">parser</span><span class="o">.</span><span class="na">parse</span><span class="o">(</span><span class="s">&#34;tomorrow + 10 days&#34;</span><span class="o">));</span>
+    <span class="o">}</span>
+<span class="o">}</span></code></pre></div>
 
 <p>Well, that is all for the proof of concept I was looking for. If you want to read a more complete and deep article about this subject, I recommend <a href="http://download.oracle.com/javase/6/docs/technotes/guides/scripting/programmer_guide/index.html">Java Scripting Programmer&rsquo;s Guide at Oracle</a>.</p>
 
-<h3 id="problems-found">Problems found</h3>
+<h3 id="problems-found">Problems found<a href="#problems-found" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>So far, the most problematic point I have found is the conversion from the <code>Object</code> returned by <code>invokeFunction</code> to the appropriate Java types. It is not hard when it is a simple type such as a Number or a String, but it is not so easy when it comes to a more complex type (<code>Array</code>, <code>Date</code>). This is why the <code>parse</code> function in the second example returns a <code>String</code> instead of a <code>Date</code>.</p>
 
 <p>In my first attempt I tried to create a neural network with <a href="http://harthur.github.com/brain/">brain</a>, a javascript supervised machine learning library. It would have been an interesting and even useful piece of code, but I failed miserably, probably because they use code not supported by ECMAScript 1.6.</p>
 
 <p>A little benchmark would also be great, to determine the overhead introduced (if any) when you execute scripting code from Java, and compare it with a external/standalone script engine.</p>
-</div>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://guidogarcia.net">Guido García</a> · All rights reserved</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://guidogarcia.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-<div class="section bottom-menu"><hr/><p>
+	<script src="https://guidogarcia.net/js/main.min.8f39f24808e9d0a9b02da58c2d2838da859dc0b7bdfadbdb1883aae8b6adacfe.js" integrity="sha256-jznySAjp0KmwLaWMLSg42oWdwLe9+tvbGIOq6LatrP4="></script>
 
+</body>
 
-<a href="/posts">Hello. Call me Guido</a>
-
-
-&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
-&#183; <a href="http://bot.guidogarcia.net/">My bot (alpha)</a>
-
-&#183; <a href="https://guidogarcia.net"></a></p></div>
-
-
-<div class="section footer"></div>
-</div>
-</body></html>
+</html>

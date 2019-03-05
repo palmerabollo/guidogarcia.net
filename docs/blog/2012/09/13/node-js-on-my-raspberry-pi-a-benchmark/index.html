@@ -1,47 +1,78 @@
-<!DOCTYPE html><html><head>
+<!DOCTYPE html>
+<html lang="en-us">
 
-<meta charset="utf-8">
-<meta http-equiv="X-UA-Compatible" content="chrome=1">
-<meta name="HandheldFriendly" content="True">
-<meta name="MobileOptimized" content="320">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="referrer" content="no-referrer">
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta http-equiv="X-UA-Compatible" content="ie=edge">
+	<meta name="theme-color" content="#494f5c">
+	<meta name="msapplication-TileColor" content="#494f5c">
 
-<meta name="description" content="Call me Sam, a theme for Hugo.">
+<meta itemprop="name" content="Node.js running on my Raspberry Pi. A benchmark.">
+<meta itemprop="description" content="Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
+See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.">
 
-<meta name="twitter:card" content="summary">
-<meta name="twitter:domain" content="https://guidogarcia.net">
 
-<meta name="twitter:image" content="https://guidogarcia.net/tn.png">
-<meta name="twitter:title" property="og:title" itemprop="title name" content="Call me Guido">
-<meta name="twitter:description" property="og:description" itemprop="description" content="Call me Sam, a theme for Hugo.">
-<meta name="og:type" content="website">
-<meta name="og:url" content="https://guidogarcia.net">
-<meta name="og:image" itemprop="image primaryImageOfPage" content="https://guidogarcia.net/tn.png">
-
-<link rel="shortcut icon" href="https://guidogarcia.net/sam.ico" id="favicon">
-<link rel="stylesheet" href="https://guidogarcia.net/css/style.css">
-
-<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Didact+Gothic">
-
-<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8="
-    crossorigin="anonymous"></script>
+<meta itemprop="datePublished" content="2012-09-13T19:24:58&#43;00:00" />
+<meta itemprop="dateModified" content="2012-09-13T19:24:58&#43;00:00" />
+<meta itemprop="wordCount" content="405">
 
 
 
+<meta itemprop="keywords" content="benchmark,nodejs,raspberry pi,server," />
+<meta property="og:title" content="Node.js running on my Raspberry Pi. A benchmark." />
+<meta property="og:description" content="Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
+See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://guidogarcia.net/blog/2012/09/13/node-js-on-my-raspberry-pi-a-benchmark/" /><meta property="article:published_time" content="2012-09-13T19:24:58&#43;00:00"/>
+<meta property="article:modified_time" content="2012-09-13T19:24:58&#43;00:00"/>
+<meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Node.js running on my Raspberry Pi. A benchmark."/>
+<meta name="twitter:description" content="Few weeks ago I could not resist the temptation to buy a Raspberry Pi, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in wikipedia).
+See how nice it looks. I am more of a software guy, so the first thing I did was to install node.js (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work."/>
+
+	<link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+	<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+	<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+	<link rel="manifest" href="/site.webmanifest">
+	<link rel="mask-icon" href="/safari-pinned-tab.svg" color="">
+	<link rel="shortcut icon" href="/favicon.ico">
+
+	<title>Node.js running on my Raspberry Pi. A benchmark.</title>
+	<link rel="stylesheet" href="https://guidogarcia.net/css/style.min.c693329ce3bac2503f88115a4011a284a06d53e30f484562a37664dc4c5f0a74.css" integrity="sha256-xpMynOO6wlA/iBFaQBGihKBtU+MPSEVio3Zk3ExfCnQ=">
+	
+</head>
+
+<body id="page">
+	
+	<header id="site-header" class="animated slideInUp faster">
+		<div class="hdr-wrapper section-inner">
+			<div class="hdr-left">
+				<div class="site-branding">
+					<a href="https://guidogarcia.net">Call me Guido</a>
+				</div>
+				<nav class="site-nav hide-in-mobile">
+					<a href="https://guidogarcia.net/posts/">Blog</a>
+					<a href="http://bot.guidogarcia.net/">My bot</a>
+				</nav>
+			</div>
+			<div class="hdr-right hdr-icons">
+				<span class="hdr-social hide-in-mobile"><a href="https://twitter.com/palmerabollo" target="_blank" rel="noopener" title="Twitter"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-twitter"><path d="M23 3a10.9 10.9 0 0 1-3.14 1.53 4.48 4.48 0 0 0-7.86 3v1A10.66 10.66 0 0 1 3 4s-4 9 5 13a11.64 11.64 0 0 1-7 2c9 5 20 0 20-11.5a4.5 4.5 0 0 0-.08-.83A7.72 7.72 0 0 0 23 3z"></path></svg></a><a href="https://github.com/palmerabollo" target="_blank" rel="noopener" title="Github"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-github"><path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path></svg></a><a href="https://www.linkedin.com/in/guidogarcia/" target="_blank" rel="noopener" title="Linkedin"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-linkedin"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a></span><button id="menu-btn" class="hdr-btn" title="Menu"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-menu"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg></button>
+			</div>
+		</div>
+	</header>
+	<div id="mobile-menu" class="animated fast">
+		<ul>
+			<li><a href="https://guidogarcia.net/posts/">Blog</a></li>
+			<li><a href="http://bot.guidogarcia.net/">My bot</a></li>
+		</ul>
+	</div>
 
 
-
-
-<title>
-
-Node.js running on my Raspberry Pi. A benchmark.
-
-</title></head><body>
-<div class="wrap">
-<div class="section" id="title">Node.js running on my Raspberry Pi. A benchmark.</div>
-
-<div class="section" id="content">
+	<main class="site-main section-inner thin animated fadeIn faster">
+		<h1>Node.js running on my Raspberry Pi. A benchmark.</h1>
+		<div class="content">
+			
 
 <p>Few weeks ago I could not resist the temptation to buy a <a href="http://www.raspberrypi.org/">Raspberry Pi</a>, the super-cheap 35$ computer that comes with 256MB of RAM and a ARM CPU running at 700MHz and fits in your pocket (more information in <a href="http://en.wikipedia.org/wiki/Raspberry_Pi">wikipedia</a>).</p>
 
@@ -49,14 +80,14 @@ Node.js running on my Raspberry Pi. A benchmark.
 
 <p>See how nice it looks. I am more of a software guy, so the first thing I did was to install <strong>node.js</strong> (v0.6.19) develop the simplest web server you can create in node (5 lines, it simply returns a 200 HTTP response code without any contents) and put the beast to work.</p>
 
-<div class="highlight"><pre style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4"><code class="language-js" data-lang="js"><span style="color:#66d9ef">var</span> <span style="color:#a6e22e">http</span> <span style="color:#f92672">=</span> <span style="color:#a6e22e">require</span>(<span style="color:#e6db74">&#39;http&#39;</span>);
-<span style="color:#a6e22e">http</span>.<span style="color:#a6e22e">createServer</span>(<span style="color:#66d9ef">function</span> (<span style="color:#a6e22e">req</span>, <span style="color:#a6e22e">res</span>) {
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">writeHead</span>(<span style="color:#ae81ff">200</span>);
-    <span style="color:#a6e22e">res</span>.<span style="color:#a6e22e">end</span>();
-}).<span style="color:#a6e22e">listen</span>(<span style="color:#ae81ff">1337</span>);
+<div class="highlight"><pre class="chroma"><code class="language-js" data-lang="js"><span class="kd">var</span> <span class="nx">http</span> <span class="o">=</span> <span class="nx">require</span><span class="p">(</span><span class="s1">&#39;http&#39;</span><span class="p">);</span>
+<span class="nx">http</span><span class="p">.</span><span class="nx">createServer</span><span class="p">(</span><span class="kd">function</span> <span class="p">(</span><span class="nx">req</span><span class="p">,</span> <span class="nx">res</span><span class="p">)</span> <span class="p">{</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">writeHead</span><span class="p">(</span><span class="mi">200</span><span class="p">);</span>
+    <span class="nx">res</span><span class="p">.</span><span class="nx">end</span><span class="p">();</span>
+<span class="p">}).</span><span class="nx">listen</span><span class="p">(</span><span class="mi">1337</span><span class="p">);</span>
 </code></pre></div>
 
-<h3 id="the-benchmark">The benchmark</h3>
+<h3 id="the-benchmark">The benchmark<a href="#the-benchmark" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>I was interested in testing the number of requests per second the application was able to handle running on the Raspberry in the most optimistic scenario. After having some problems running <a href="http://code.google.com/p/httperf/"><strong>httperf</strong></a> and <a href="https://github.com/menavaur/Autobench"><strong>autobench</strong></a> on Mac OS, I finally went with <a href="httpd.apache.org/docs/2.2/programs/ab.html"><strong>apachebench</strong></a> (ab), that can be used to do simple load testings.</p>
 
@@ -69,7 +100,7 @@ Node.js running on my Raspberry Pi. A benchmark.
 
 <p>Additional information: Each concurrency level has been executed three times from my laptop and using a wifi connection; the graph shows the average value. The Raspberry Pi was running the Raspbian “wheezy” image (<a href="http://www.raspberrypi.org/downloads">downloads</a>).</p>
 
-<h3 id="open-points">Open points</h3>
+<h3 id="open-points">Open points<a href="#open-points" class="anchor" aria-hidden="true"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M15 7h3a5 5 0 0 1 5 5 5 5 0 0 1-5 5h-3m-6 0H6a5 5 0 0 1-5-5 5 5 0 0 1 5-5h3"></path><line x1="8" y1="12" x2="16" y2="12"></line></svg></a></h3>
 
 <p>Almost <strong>200 requests per second</strong> in this non real world application that does nothing. It is not bad, enough to develop and try the ideas I have in mind. To be honest, I still do not know why the performance drops so much when the concurrency is 512, or which part (my laptop vs the raspberry) is the bottleneck and why. Any ideas?</p>
 
@@ -78,21 +109,20 @@ Node.js running on my Raspberry Pi. A benchmark.
 <p>I am also waiting for the Java Virtual Machine, that is supposed to be included in the default file system in future releases, to repeat the benchmarks (and probably see how it eats the memory).</p>
 
 <p>It seems interesting, from a research point of view, to <a href="http://www.zdnet.com/raspberry-pi-meets-lego-in-supercomputer-like-cluster-photos-7000004209/">build a cluster</a> and see how it scales. Donations for this purpose are highly appreciated :)</p>
-</div>
+
+		</div>
+	</main>
+
+	<footer id="site-footer" class="section-inner thin animated fadeIn faster">
+		<p>&copy; 2019 <a href="https://guidogarcia.net">Guido García</a> · All rights reserved</p>
+		<p>
+			Made with <a href="https://gohugo.io/" target="_blank" rel="noopener">Hugo</a> &#183; Theme <a href="https://github.com/Track3/hermit" target="_blank" rel="noopener">Hermit</a> &#183; <a href="https://guidogarcia.net/posts/index.xml" target="_blank" title="rss"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-rss"><path d="M4 11a9 9 0 0 1 9 9"></path><path d="M4 4a16 16 0 0 1 16 16"></path><circle cx="5" cy="19" r="1"></circle></svg></a>
+		</p>
+	</footer>
 
 
-<div class="section bottom-menu"><hr/><p>
+	<script src="https://guidogarcia.net/js/main.min.8f39f24808e9d0a9b02da58c2d2838da859dc0b7bdfadbdb1883aae8b6adacfe.js" integrity="sha256-jznySAjp0KmwLaWMLSg42oWdwLe9+tvbGIOq6LatrP4="></script>
 
+</body>
 
-<a href="/posts">Hello. Call me Guido</a>
-
-
-&#183; <a href="https://twitter.com/palmerabollo">Twitter</a>
-&#183; <a href="http://bot.guidogarcia.net/">My bot (alpha)</a>
-
-&#183; <a href="https://guidogarcia.net"></a></p></div>
-
-
-<div class="section footer"></div>
-</div>
-</body></html>
+</html>
